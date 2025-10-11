@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maven Drive Academy — Driving School</title>
   <meta name="robots" content="index, follow" />
-  <meta name="description" content="Maven Drive Academy — Professional driving lessons, refresher courses, and mock tests. Limited offer: £35 per lesson. Master the Drive, Own the Road!" />
+  <meta name="description" content="Maven Drive Academy — Professional driving lessons, refresher courses, and mock tests. Limited offer: £32 per lesson. Master the Drive, Own the Road!" />
 
   <!-- Favicon / Logo -->
   <link rel="icon" type="image/png" href="https://i.postimg.cc/2jTWTB2t/Maven-Logo.png" />
@@ -16,10 +16,9 @@
 
   <style>
     :root{
-      /* Theme variables (auto-updated from logo) */
-      --primary:#2b6cb0;            /* fallback */
-      --primary-contrast:#ffffff;   /* dynamic black/white */
-      --primary-600:#225e9b;        /* fallback shade */
+      --primary:#2b6cb0;
+      --primary-contrast:#ffffff;
+      --primary-600:#225e9b;
       --accent:#ff4d4d;
       --bg-start:#0a0a0a;
       --bg-end:#1a1a1a;
@@ -30,11 +29,31 @@
       --radius:16px;
     }
 
-    * {scroll-margin-top: 84px;}
+    * {scroll-margin-top: 96px;} /* account for topbar + navbar */
     html,body{height:100%}
     body{margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background:var(--surface-2); color:var(--text)}
 
-    /* Header / Navbar */
+    /* NEW: Top social bar */
+    .topbar{
+      background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
+      color: var(--primary-contrast);
+      border-bottom: 1px solid color-mix(in oklab, var(--primary) 40%, transparent);
+      font-size: .95rem;
+    }
+    .topbar a{
+      color: var(--primary-contrast);
+      display:inline-flex; align-items:center; gap:.45rem;
+      padding:.4rem .65rem; border-radius:999px;
+      transition: background .2s ease, transform .2s ease;
+      text-decoration:none; font-weight:700;
+    }
+    .topbar a:hover{ background: color-mix(in oklab, var(--primary) 20%, transparent); transform: translateY(-1px); }
+    .topbar .social-wrap{display:flex; gap:.25rem; justify-content:flex-end}
+    @media (max-width: 768px){
+      .topbar .social-wrap{justify-content:center}
+    }
+
+    /* Navbar */
     .navbar{
       --bs-navbar-color: var(--primary-contrast);
       --bs-navbar-brand-color: var(--primary-contrast);
@@ -51,11 +70,11 @@
     }
     .brand-title{margin:0;line-height:1}
     .brand-title small{display:block;font-weight:600;opacity:.9;margin-top:2px}
-
     .nav-link{font-weight:700;border-radius:999px;padding:.5rem 1rem}
     .nav-link:hover{background:color-mix(in oklab, var(--primary) 18%, #fff); color:var(--primary) !important}
     .offcanvas{background: linear-gradient(180deg, var(--bg-end), var(--bg-start)); color:var(--primary-contrast)}
     .offcanvas .nav-link{color:var(--primary-contrast)}
+    .offcanvas .social-inline a{color:#fff; border:1px solid rgba(255,255,255,.25)}
 
     /* Hero */
     .hero{
@@ -70,22 +89,17 @@
       border-radius:999px; padding:.5rem .9rem; box-shadow:0 8px 24px rgba(0,0,0,.3);
       animation:bounce 1.8s infinite
     }
-    .hero-cta .btn{
-      border:none; border-radius:999px; padding:.9rem 1.25rem; font-weight:800
-    }
-    .btn-primary-grad{
-      background:linear-gradient(90deg, var(--primary), var(--primary-600));
-      color:var(--primary-contrast)
-    }
+    .hero-cta .btn{border:none;border-radius:999px;padding:.9rem 1.25rem;font-weight:800}
+    .btn-primary-grad{background:linear-gradient(90deg, var(--primary), var(--primary-600));color:var(--primary-contrast)}
     .btn-primary-grad:hover{transform:translateY(-1px); box-shadow:0 0 16px color-mix(in oklab, var(--primary) 35%, transparent)}
 
-    /* Cards / sections */
+    /* Sections / cards */
     .section{max-width:1200px;margin:auto;padding:48px 20px}
     .card{border:1px solid rgba(0,0,0,.06); border-radius:var(--radius)}
     .card-hover{transition:transform .2s ease, box-shadow .2s ease}
     .card-hover:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.08)}
 
-    /* Services tabs */
+    /* Tabs */
     .nav-pills .nav-link{border-radius:999px}
     .nav-pills .nav-link.active{background:var(--primary) !important; color:var(--primary-contrast) !important; box-shadow:0 8px 18px rgba(0,0,0,.15)}
 
@@ -109,26 +123,28 @@
     @keyframes pulsePrice{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
     @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
-    /* Utilities */
-    .shadow-soft{box-shadow:0 6px 18px rgba(0,0,0,.08)}
-    .icon-round{width:44px;height:44px;display:inline-grid;place-items:center;border-radius:50%;background:color-mix(in oklab, var(--primary) 18%, #fff); color:var(--primary)}
-    .list-check{list-style:none;padding:0;margin:0}
-    .list-check li{margin:.4rem 0;display:flex;gap:.6rem}
-    .list-check li i{color:var(--primary)}
-
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       *{animation:none !important; transition:none !important}
     }
-
-    /* Responsive tweaks */
-    @media (max-width: 768px){
-      .brand-wrap img{width:60px;height:60px}
-      .display-4, .display-5{font-size:1.9rem}
-    }
   </style>
 </head>
 <body>
+  <!-- TOPBAR: Instagram + Facebook at the very top -->
+  <div class="topbar py-1">
+    <div class="container d-flex align-items-center justify-content-between gap-2">
+      <span class="small opacity-75">Follow Maven Drive Academy</span>
+      <div class="social-wrap">
+        <a href="https://www.instagram.com/drive_sq_academy/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="bi bi-instagram"></i><span class="d-none d-sm-inline">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100092258175464" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="bi bi-facebook"></i><span class="d-none d-sm-inline">Facebook</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg sticky-top" aria-label="Primary">
     <div class="container">
@@ -159,6 +175,17 @@
             <li class="nav-item"><a class="nav-link" href="#faqs">FAQs</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
+
+          <!-- Social links inside mobile drawer too -->
+          <div class="mt-3 mt-lg-0 ms-lg-3 d-flex gap-2 social-inline">
+            <a class="btn btn-sm rounded-pill px-3" href="https://www.instagram.com/drive_sq_academy/" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="bi bi-instagram me-1"></i> Instagram
+            </a>
+            <a class="btn btn-sm rounded-pill px-3" href="https://www.facebook.com/profile.php?id=100092258175464" target="_blank" rel="noopener" aria-label="Facebook">
+              <i class="bi bi-facebook me-1"></i> Facebook
+            </a>
+          </div>
+
           <div class="d-none d-lg-block ms-3">
             <a href="tel:+447352932003" class="btn btn-sm btn-primary-grad"><i class="bi bi-telephone-fill me-1"></i> Call: +44 7352 932003</a>
           </div>
@@ -173,7 +200,7 @@
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
           <span class="badge-offer mb-3 d-inline-flex align-items-center gap-2">
-            <i class="bi bi-lightning-charge-fill"></i> Limited Offer: £35 per lesson
+            <i class="bi bi-lightning-charge-fill"></i> Limited Offer: £32 per lesson
           </span>
           <h2 class="display-5 fw-extrabold mb-3">Learn with Confidence. <span style="color:var(--primary)">Pass with Pride.</span></h2>
           <p class="lead mb-4">Modern, friendly, and DVSA-focused lessons tailored to your pace — from beginners to test-ready drivers. Flexible schedules, manual &amp; automatic, pick-up and drop-off.</p>
@@ -189,7 +216,6 @@
         </div>
         <div class="col-lg-6">
           <div class="ratio ratio-16x9 shadow-soft rounded-4 overflow-hidden">
-            <!-- Showcase (kept simple; no external links) -->
             <img src="https://i.postimg.cc/3x0DKf7f/maven-poster.png" alt="Maven Drive student and instructor" loading="eager" />
           </div>
           <div class="text-center mt-3"><span class="text-light small">“Master the Drive, Own the Road!”</span></div>
@@ -223,7 +249,7 @@
         <div class="col-md-6 col-xl-3">
           <div class="card card-hover h-100 p-3">
             <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-wallet2 icon-round"></i><h3 class="h6 m-0">Great value</h3></div>
-            <p class="mb-0">Transparent pricing, no hidden fees. Limited time: <strong>£35 per lesson</strong>.</p>
+            <p class="mb-0">Transparent pricing, no hidden fees. Limited time: <strong>£32 per lesson</strong>.</p>
           </div>
         </div>
       </div>
@@ -258,7 +284,7 @@
                   <li><i class="bi bi-check-circle"></i> Free theory-app recommendations</li>
                   <li><i class="bi bi-check-circle"></i> Pick-up &amp; drop-off at home/college/work</li>
                 </ul>
-                <p class="price-highlight mt-3">£35</p>
+                <p class="price-highlight mt-3">£32</p>
                 <a href="#contact" class="btn btn-primary-grad mt-2">Book Now</a>
               </div>
             </div>
@@ -272,7 +298,7 @@
                   <li><i class="bi bi-check-circle"></i> Hazard perception &amp; eco-driving tips</li>
                   <li><i class="bi bi-check-circle"></i> Flexible 60/90/120-minute slots</li>
                 </ul>
-                <p class="price-highlight mt-3">£35</p>
+                <p class="price-highlight mt-3">£32</p>
                 <a href="#contact" class="btn btn-primary-grad mt-2">Book Now</a>
               </div>
             </div>
@@ -286,7 +312,7 @@
                   <li><i class="bi bi-check-circle"></i> Detailed debrief &amp; improvement plan</li>
                   <li><i class="bi bi-check-circle"></i> Optional video review (where available)</li>
                 </ul>
-                <p class="price-highlight mt-3">£35</p>
+                <p class="price-highlight mt-3">£32</p>
                 <a href="#contact" class="btn btn-primary-grad mt-2">Book Now</a>
               </div>
             </div>
@@ -302,7 +328,7 @@
         <div class="col-md-4">
           <div class="card card-hover h-100 p-4 text-center">
             <h3 class="h5">Pay as You Go</h3>
-            <div class="display-6 fw-bold text-danger">£35<span class="fs-6 text-muted"> / lesson</span></div>
+            <div class="display-6 fw-bold text-danger">£32<span class="fs-6 text-muted"> / lesson</span></div>
             <p class="text-muted">Perfect for flexible schedules.</p>
             <a href="#contact" class="btn btn-primary-grad">Book Lesson</a>
           </div>
@@ -311,7 +337,7 @@
           <div class="card card-hover h-100 p-4 text-center border border-2" style="border-color:var(--primary)">
             <div class="badge bg-danger align-self-center mb-2">Popular</div>
             <h3 class="h5">Starter Bundle</h3>
-            <div class="display-6 fw-bold">£330</div>
+            <div class="display-6 fw-bold">£320</div>
             <p class="text-muted">10 lessons — build strong fundamentals fast.</p>
             <a href="#contact" class="btn btn-primary-grad">Reserve Bundle</a>
           </div>
@@ -328,7 +354,7 @@
       <p class="text-center mt-3 small text-muted">* Availability and coverage may vary. Get in touch for current openings.</p>
     </section>
 
-    <!-- AREAS COVERED -->
+    <!-- AREAS + WHY -->
     <section class="section">
       <div class="row g-3 align-items-stretch">
         <div class="col-lg-6">
@@ -375,7 +401,7 @@
         </div>
         <div class="col-md-4">
           <div class="card card-hover h-100 p-4">
-            <p class="mb-2">“Flexible times around my shifts and great value at £35.”</p>
+            <p class="mb-2">“Flexible times around my shifts and great value at £32.”</p>
             <div class="small text-muted">— S. Williams</div>
           </div>
         </div>
@@ -461,7 +487,7 @@
     &copy; 2025 <span style="color:var(--primary)">Maven Drive Academy</span>. All Rights Reserved.
   </footer>
 
-  <!-- Floating Contact Button (no external pages) -->
+  <!-- Floating Contact Button -->
   <a href="tel:+447352932003" class="contact-btn" aria-label="Call Maven Drive Academy">
     <i class="bi bi-telephone-fill"></i> Call Us
   </a>
@@ -502,7 +528,7 @@
     })();
   </script>
 
-  <!-- SEO: LocalBusiness structured data (basic, no external links) -->
+  <!-- LocalBusiness structured data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -511,12 +537,15 @@
     "slogan":"Master the Drive, Own the Road!",
     "telephone":"+44 7352 932003",
     "priceRange":"££",
-    "areaServed":"Local area",
+    "sameAs":[
+      "https://www.instagram.com/drive_sq_academy/",
+      "https://www.facebook.com/profile.php?id=100092258175464"
+    ],
     "offers":{
       "@type":"Offer",
       "name":"Lesson",
       "priceCurrency":"GBP",
-      "price":"35",
+      "price":"32",
       "category":"Driving lesson"
     }
   }
