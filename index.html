@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maven Drive Academy — Driving School</title>
   <meta name="robots" content="index, follow" />
-  <meta name="description" content="Maven Drive Academy offers professional driving lessons, refresher courses, and mock tests. Limited offer: £32 per lesson. Book now!" />
+  <meta name="description" content="Maven Drive Academy — Professional driving lessons, refresher courses, and mock tests. Limited offer: £35 per lesson. Master the Drive, Own the Road!" />
 
   <!-- Favicon / Logo -->
   <link rel="icon" type="image/png" href="https://i.postimg.cc/2jTWTB2t/Maven-Logo.png" />
@@ -15,227 +15,279 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
   <style>
-    :root {
-      /* Theme variables — will be updated dynamically from logo dominant color */
-      --primary: #2b6cb0;           /* fallback */
-      --primary-contrast: #ffffff;  /* auto-set to black/white for contrast */
-      --primary-600: #225e9b;       /* derived shade (fallback) */
-      --accent: #ff4d4d;            /* offer / accents remain attention-grabbing */
-      --bg-start: #0a0a0a;          /* header gradient start (neutral, mixed with primary) */
-      --bg-end: #1a1a1a;            /* header gradient end */
-      --text: #333333;
-      --surface: #ffffff;
-      --surface-2: #f9f9f9;
-      --ring: rgba(0,0,0,0.08);
+    :root{
+      /* Theme variables (auto-updated from logo) */
+      --primary:#2b6cb0;            /* fallback */
+      --primary-contrast:#ffffff;   /* dynamic black/white */
+      --primary-600:#225e9b;        /* fallback shade */
+      --accent:#ff4d4d;
+      --bg-start:#0a0a0a;
+      --bg-end:#1a1a1a;
+      --text:#2b2b2b;
+      --surface:#ffffff;
+      --surface-2:#f7f7f9;
+      --ring:rgba(0,0,0,.08);
+      --radius:16px;
     }
 
-    /* General Styles */
-    html, body { height: 100%; }
-    body { margin: 0; font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", sans-serif; background-color: var(--surface-2); color: var(--text); }
-    a { text-decoration: none; color: inherit; }
+    * {scroll-margin-top: 84px;}
+    html,body{height:100%}
+    body{margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background:var(--surface-2); color:var(--text)}
 
-    /* Navbar */
-    header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 10px 20px; position: sticky; top: 0; z-index: 100;
+    /* Header / Navbar */
+    .navbar{
+      --bs-navbar-color: var(--primary-contrast);
+      --bs-navbar-brand-color: var(--primary-contrast);
+      --bs-navbar-hover-color: var(--primary);
       background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
-      color: var(--primary-contrast); box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,.35);
     }
-    .logo-title { display: flex; align-items: center; gap: 10px; animation: fadeInLeft 0.8s ease; }
-    .logo-title img {
-      width: 90px; height: 90px; object-fit: contain; border-radius: 50%;
-      border: 4px solid var(--primary);
-      box-shadow: 0 0 20px color-mix(in oklab, var(--primary) 50%, transparent);
-      animation: pulse 3s infinite ease-in-out;
-      background: #fff;
+    .brand-wrap{display:flex;align-items:center;gap:.75rem}
+    .brand-wrap img{
+      width:72px;height:72px;object-fit:contain;border-radius:50%;
+      border:4px solid var(--primary);background:#fff;
+      box-shadow:0 0 18px color-mix(in oklab, var(--primary) 50%, transparent);
+      animation:pulse 3s infinite ease-in-out
     }
-    .logo-title h1 { margin: 0; font-size: 1.8rem; }
-    .brand-emph { color: var(--primary); }
-    nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
-    nav a { color: var(--primary-contrast); font-weight: bold; transition: all 0.25s; }
-    nav a:hover { color: var(--primary); transform: translateY(-1px); }
+    .brand-title{margin:0;line-height:1}
+    .brand-title small{display:block;font-weight:600;opacity:.9;margin-top:2px}
 
-    /* Dropdown */
-    .dropdown-menu a { color: #111 !important; }
-    .dropdown-menu a:hover { background-color: #f1f1f1; color: #000 !important; }
+    .nav-link{font-weight:700;border-radius:999px;padding:.5rem 1rem}
+    .nav-link:hover{background:color-mix(in oklab, var(--primary) 18%, #fff); color:var(--primary) !important}
+    .offcanvas{background: linear-gradient(180deg, var(--bg-end), var(--bg-start)); color:var(--primary-contrast)}
+    .offcanvas .nav-link{color:var(--primary-contrast)}
 
-    /* Slideshow */
-    .slideshow-container { position: relative; max-width: 100%; height: 500px; margin: 20px auto; overflow: hidden; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.35); background:#000; }
-    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out, transform 6s ease; transform: scale(1.05); }
-    .slide.active { opacity: 1; transform: scale(1); z-index: 1; }
-    .slide img { width: 100%; height: 100%; object-fit: contain; background:#000; }
-    .dots-container { text-align: center; position: absolute; bottom: 15px; width: 100%; }
-    .dot { display: inline-block; width: 12px; height: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.6); border-radius: 50%; cursor: pointer; transition: all 0.25s; border: 2px solid rgba(0,0,0,0.2); }
-    .dot.active { background-color: var(--primary); transform: scale(1.2); }
+    /* Hero */
+    .hero{
+      background:
+        radial-gradient(1200px 600px at 80% -10%, color-mix(in oklab, var(--primary) 20%, transparent), transparent 60%),
+        linear-gradient(180deg, var(--bg-start), var(--bg-end));
+      color:var(--primary-contrast);
+      border-bottom:2px solid var(--primary);
+    }
+    .hero .badge-offer{
+      background:var(--accent); color:#fff; font-weight:800; letter-spacing:.3px;
+      border-radius:999px; padding:.5rem .9rem; box-shadow:0 8px 24px rgba(0,0,0,.3);
+      animation:bounce 1.8s infinite
+    }
+    .hero-cta .btn{
+      border:none; border-radius:999px; padding:.9rem 1.25rem; font-weight:800
+    }
+    .btn-primary-grad{
+      background:linear-gradient(90deg, var(--primary), var(--primary-600));
+      color:var(--primary-contrast)
+    }
+    .btn-primary-grad:hover{transform:translateY(-1px); box-shadow:0 0 16px color-mix(in oklab, var(--primary) 35%, transparent)}
 
-    /* Offer Badge */
-    .price-highlight { color: var(--accent); font-size: 2rem; font-weight: 800; text-shadow: 0 0 8px color-mix(in oklab, var(--accent) 60%, transparent); animation: pulsePrice 1.5s infinite; }
-    @keyframes pulsePrice { 0% { transform: scale(1);} 50% { transform: scale(1.07);} 100% { transform: scale(1);} }
-    .offer-badge { position: absolute; top: -10px; right: -10px; background: var(--accent); color: #fff; padding: 6px 12px; border-radius: 12px; font-weight: 800; font-size: .9rem; box-shadow: 0 2px 6px rgba(0,0,0,0.35); animation: bounce 1.6s infinite; }
-    @keyframes bounce { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-5px);} }
+    /* Cards / sections */
+    .section{max-width:1200px;margin:auto;padding:48px 20px}
+    .card{border:1px solid rgba(0,0,0,.06); border-radius:var(--radius)}
+    .card-hover{transition:transform .2s ease, box-shadow .2s ease}
+    .card-hover:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.08)}
 
-    /* Main Content */
-    main { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-    h2 { text-align: center; color: #000; margin-bottom: 20px; }
+    /* Services tabs */
+    .nav-pills .nav-link{border-radius:999px}
+    .nav-pills .nav-link.active{background:var(--primary) !important; color:var(--primary-contrast) !important; box-shadow:0 8px 18px rgba(0,0,0,.15)}
 
-    /* Services */
-    #services { background: linear-gradient(180deg, var(--surface-2), color-mix(in oklab, var(--primary) 8%, #fff)); padding: 40px 20px; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    #services h3 { margin-top: 15px; }
-    .nav-pills .nav-link { border-radius: 30px; margin-bottom: 10px; transition: all 0.25s; }
-    .nav-pills .nav-link.active { background-color: var(--primary) !important; color: var(--primary-contrast) !important; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-    .nav-pills .nav-link:hover { transform: translateY(-1px); box-shadow: 0 2px 8px var(--ring); }
-
-    /* Book Now Buttons */
-    .btn-offer { background: linear-gradient(90deg, var(--primary), var(--primary-600)); color: var(--primary-contrast); font-weight: 700; border-radius: 50px; padding: 12px 26px; transition: all 0.25s ease; border: none; }
-    .btn-offer:hover { transform: translateY(-1px) scale(1.03); box-shadow: 0 0 15px color-mix(in oklab, var(--primary) 35%, transparent); }
+    /* Price highlight */
+    .price-highlight{color:var(--accent);font-size:2rem;font-weight:900;text-shadow:0 0 8px color-mix(in oklab, var(--accent) 60%, transparent); animation:pulsePrice 1.5s infinite}
 
     /* Contact */
-    .contact-section { background: linear-gradient(135deg, var(--bg-end), var(--bg-start)); color: var(--primary-contrast); padding: 50px 20px; border-radius: 14px; margin-bottom: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.45); }
-    .contact-section form { max-width: 640px; margin: auto; display: flex; flex-direction: column; gap: 14px; animation: fadeInUp 0.8s ease; }
-    .contact-section input, .contact-section textarea, .contact-section select { padding: 12px; border-radius: 8px; border: 1px solid transparent; font-size: 1rem; }
-    .contact-section input:focus, .contact-section textarea:focus, .contact-section select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 30%, transparent); }
-    .contact-section button { padding: 14px; border-radius: 30px; border: none; background: linear-gradient(90deg, var(--primary), var(--primary-600)); color: var(--primary-contrast); font-weight: 800; cursor: pointer; transition: transform 0.25s, opacity 0.25s; }
-    .contact-section button:hover { transform: translateY(-1px); opacity: 0.95; }
+    .contact-section{background:linear-gradient(135deg, var(--bg-end), var(--bg-start)); color:var(--primary-contrast); border-radius:var(--radius)}
+    .contact-section input,.contact-section textarea,.contact-section select{padding:12px;border-radius:10px;border:1px solid transparent;font-size:1rem}
+    .contact-section input:focus,.contact-section textarea:focus,.contact-section select:focus{outline:none;border-color:var(--primary); box-shadow:0 0 0 6px color-mix(in oklab, var(--primary) 28%, transparent)}
 
-    /* Floating Contact Button */
-    .contact-btn { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(45deg, var(--primary), var(--accent)); color: #fff; padding: 15px 20px; border-radius: 50px; font-weight: 800; font-size: 1rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.3); z-index: 1000; transition: all 0.25s ease; }
-    .contact-btn:hover { transform: translateY(-1px) scale(1.03); box-shadow: 0 8px 20px rgba(0,0,0,0.45); }
-    .contact-btn i { font-size: 1.15rem; }
-
-    /* Social Buttons */
-    .social-buttons { display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
-    .social-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; font-size: 1.2rem; font-weight: 800; color: #fff; text-decoration: none; transition: transform 0.25s ease, box-shadow 0.25s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-    .social-btn.instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); }
-    .social-btn.facebook { background: linear-gradient(45deg, #1877f2, #0d47a1); }
-    .social-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
-
-    /* Highlight animation for Book Now */
-    .highlight-contact { animation: highlight 1.5s ease-in-out; }
-    @keyframes highlight { 0% { box-shadow: 0 0 0px var(--accent);} 50% { box-shadow: 0 0 25px var(--accent);} 100% { box-shadow: 0 0 0px var(--accent);} }
+    /* Floating call button */
+    .contact-btn{position:fixed;bottom:22px;right:20px;background:linear-gradient(45deg, var(--primary), var(--accent)); color:#fff;padding:14px 18px;border-radius:999px;font-weight:800;display:flex;align-items:center;gap:8px; box-shadow:0 10px 24px rgba(0,0,0,.35); z-index:1000}
+    .contact-btn:hover{transform:translateY(-1px); box-shadow:0 12px 28px rgba(0,0,0,.45)}
 
     /* Footer */
-    footer { text-align: center; padding: 20px; background-color: var(--bg-end); color: var(--primary-contrast); border-top: 2px solid var(--primary); }
-    footer a { color: var(--primary); }
+    footer{background:var(--bg-end); color:var(--primary-contrast); border-top:2px solid var(--primary); text-align:center; padding:22px}
 
     /* Animations */
-    @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes pulse { 0% { box-shadow: 0 0 10px color-mix(in oklab, var(--primary) 50%, transparent); transform: scale(1);} 50% { box-shadow: 0 0 24px color-mix(in oklab, var(--primary) 90%, transparent); transform: scale(1.04);} 100% { box-shadow: 0 0 10px color-mix(in oklab, var(--primary) 50%, transparent); transform: scale(1);} }
+    @keyframes pulse{0%{box-shadow:0 0 10px color-mix(in oklab, var(--primary) 50%, transparent); transform:scale(1)} 50%{box-shadow:0 0 24px color-mix(in oklab, var(--primary) 90%, transparent); transform:scale(1.03)} 100%{box-shadow:0 0 10px color-mix(in oklab, var(--primary) 50%, transparent); transform:scale(1)}}
+    @keyframes pulsePrice{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
-    /* Responsiveness */
-    @media (max-width: 768px) { nav ul { flex-direction: column; gap: 10px; } .social-buttons { flex-direction: column; gap: 18px; } .slideshow-container { height: 360px; } }
-    b{ color: var(--accent); }
-    c{ color: var(--primary-contrast); }
+    /* Utilities */
+    .shadow-soft{box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .icon-round{width:44px;height:44px;display:inline-grid;place-items:center;border-radius:50%;background:color-mix(in oklab, var(--primary) 18%, #fff); color:var(--primary)}
+    .list-check{list-style:none;padding:0;margin:0}
+    .list-check li{margin:.4rem 0;display:flex;gap:.6rem}
+    .list-check li i{color:var(--primary)}
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important; transition:none !important}
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px){
+      .brand-wrap img{width:60px;height:60px}
+      .display-4, .display-5{font-size:1.9rem}
+    }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="logo-title">
-      <img src="https://i.postimg.cc/2jTWTB2t/Maven-Logo.png" alt="Maven Drive Academy Logo" id="brandLogo" />
-      <h1>Maven <span class="brand-emph">Drive Academy</span></h1>
-    </div>
-    <nav>
-      <ul class="nav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="page1.html">Driving Tips</a></li>
-            <li><a class="dropdown-item" href="page2.html">Learn in Manchester</a></li>
-            <li><a class="dropdown-item" href="page3.html">Refresher Courses</a></li>
-            <li><a class="dropdown-item" href="page4.html">Mock Tests</a></li>
-            <li><a class="dropdown-item" href="page5.html">Pricing &amp; Offers</a></li>
-            <li><a class="dropdown-item" href="page6.html">Lessons Info MCR</a></li>
-            <li><a class="dropdown-item" href="ContactPage.html">Contact &amp; Book</a></li>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <span class="brand-wrap">
+          <img src="https://i.postimg.cc/2jTWTB2t/Maven-Logo.png" alt="Maven Drive Academy Logo" id="brandLogo" />
+          <span>
+            <h1 class="brand-title h4 text-white mb-0">Maven <span style="color:var(--primary)">Drive Academy</span></h1>
+            <small class="text-light-50">Master the Drive, Own the Road!</small>
+          </span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navdrawer" aria-controls="navdrawer" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1) brightness(2)"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="navdrawer" aria-labelledby="navdrawerLabel">
+        <div class="offcanvas-header">
+          <h2 id="navdrawerLabel" class="h5 mb-0">Menu</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-lg-flex align-items-center">
+          <ul class="navbar-nav ms-auto gap-1">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faqs">FAQs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
-        </li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+          <div class="d-none d-lg-block ms-3">
+            <a href="tel:+447352932003" class="btn btn-sm btn-primary-grad"><i class="bi bi-telephone-fill me-1"></i> Call: +44 7352 932003</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="badge-offer mb-3 d-inline-flex align-items-center gap-2">
+            <i class="bi bi-lightning-charge-fill"></i> Limited Offer: £35 per lesson
+          </span>
+          <h2 class="display-5 fw-extrabold mb-3">Learn with Confidence. <span style="color:var(--primary)">Pass with Pride.</span></h2>
+          <p class="lead mb-4">Modern, friendly, and DVSA-focused lessons tailored to your pace — from beginners to test-ready drivers. Flexible schedules, manual &amp; automatic, pick-up and drop-off.</p>
+          <div class="hero-cta d-flex flex-wrap gap-2">
+            <a href="#contact" class="btn btn-primary-grad"><i class="bi bi-calendar-check me-1"></i> Book Your First Lesson</a>
+            <a href="#services" class="btn btn-outline-light fw-bold border-2 rounded-pill"><i class="bi bi-steering-wheel me-1"></i> View Services</a>
+          </div>
+          <div class="d-flex flex-wrap gap-4 mt-4">
+            <div><div class="icon-round"><i class="bi bi-shield-check"></i></div><small class="d-block mt-2">Safety-first</small></div>
+            <div><div class="icon-round"><i class="bi bi-clock-history"></i></div><small class="d-block mt-2">Flexible hours</small></div>
+            <div><div class="icon-round"><i class="bi bi-geo-alt"></i></div><small class="d-block mt-2">Local experts</small></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9 shadow-soft rounded-4 overflow-hidden">
+            <!-- Showcase (kept simple; no external links) -->
+            <img src="https://i.postimg.cc/3x0DKf7f/maven-poster.png" alt="Maven Drive student and instructor" loading="eager" />
+          </div>
+          <div class="text-center mt-3"><span class="text-light small">“Master the Drive, Own the Road!”</span></div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- Slideshow -->
-  <div class="slideshow-container my-4 position-relative" id="home">
-    <div class="slide active"><img src="https://i.postimg.cc/3x0DKf7f/maven-poster.png" alt="Maven poster" /></div>
-    <div class="slide"><img src="https://i.postimg.cc/W4Rqtm1d/maven2.png" alt="Student 2" /></div>
-    <div class="slide"><img src="https://i.postimg.cc/yNFgRJD5/maven-1.png" alt="Student 3" /></div>
-    <div class="slide"><img src="https://i.postimg.cc/G2K4MZJM/maven-poster1.png" alt="Student 4" /></div>
-
-    <div class="dots-container">
-      <span class="dot active" onclick="currentSlide(0)"></span>
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-    <div class="offer-badge">£32/lesson!</div>
-  </div>
-
   <main>
-    <!-- About -->
-    <section id="about" class="mb-5">
-      <h2>About <span class="brand-emph">Maven Drive Academy</span></h2>
-      <p class="text-center mx-auto" style="max-width:800px;">
-        Maven Drive Academy is a professional driving school. We specialise in helping students gain confidence and pass their driving tests safely.
-        Our current price is <b>£32 per lesson</b>, limited offer!
-      </p>
-    </section>
-
-    <!-- Social Media -->
-    <section id="social-media" class="my-5">
-      <h2>Follow Us</h2>
-      <div class="social-buttons">
-        <a href="https://www.instagram.com/drive_sq_academy/" target="_blank" rel="noopener" class="social-btn instagram"><i class="bi bi-instagram"></i> Instagram</a>
-        <a href="https://www.facebook.com/profile.php?id=100092258175464" target="_blank" rel="noopener" class="social-btn facebook"><i class="bi bi-facebook"></i> Facebook</a>
+    <!-- BENEFITS -->
+    <section class="section">
+      <div class="row g-3">
+        <div class="col-md-6 col-xl-3">
+          <div class="card card-hover h-100 p-3">
+            <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-person-check icon-round"></i><h3 class="h6 m-0">Patient, friendly instructors</h3></div>
+            <p class="mb-0">Clear, calm coaching that builds confidence quickly — perfect for nervous beginners and refresher learners.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="card card-hover h-100 p-3">
+            <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-gear icon-round"></i><h3 class="h6 m-0">Manual &amp; Automatic</h3></div>
+            <p class="mb-0">Choose your transmission and switch anytime. Modern, clean cars with dual controls.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="card card-hover h-100 p-3">
+            <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-flag icon-round"></i><h3 class="h6 m-0">Test-route practice</h3></div>
+            <p class="mb-0">Sharpen your skills with realistic mock tests and local test-route familiarisation.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="card card-hover h-100 p-3">
+            <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-wallet2 icon-round"></i><h3 class="h6 m-0">Great value</h3></div>
+            <p class="mb-0">Transparent pricing, no hidden fees. Limited time: <strong>£35 per lesson</strong>.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="mb-5">
-      <h2 class="mb-4">Services &amp; Booking</h2>
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <h2 class="text-center mb-4">Services</h2>
       <div class="row">
         <div class="col-md-3 mb-3">
-          <div class="nav flex-column nav-pills shadow-sm rounded-3 p-2 bg-light" role="tablist">
+          <div class="nav flex-column nav-pills shadow-sm rounded-3 p-2 bg-white" role="tablist">
             <button class="nav-link active d-flex align-items-center gap-2" data-bs-toggle="pill" data-bs-target="#lessons" type="button">
-              <i class="bi bi-steering-wheel fs-5" style="color:var(--primary);"></i> Driving Lessons
+              <i class="bi bi-steering-wheel fs-5" style="color:var(--primary)"></i> Driving Lessons
             </button>
             <button class="nav-link d-flex align-items-center gap-2" data-bs-toggle="pill" data-bs-target="#refresher" type="button">
-              <i class="bi bi-arrow-repeat fs-5" style="color:var(--primary);"></i> Refresher Courses
+              <i class="bi bi-arrow-repeat fs-5" style="color:var(--primary)"></i> Refresher Courses
             </button>
             <button class="nav-link d-flex align-items-center gap-2" data-bs-toggle="pill" data-bs-target="#mock" type="button">
-              <i class="bi bi-journal-check fs-5" style="color:var(--primary);"></i> Mock Tests
+              <i class="bi bi-journal-check fs-5" style="color:var(--primary)"></i> Mock Tests
             </button>
           </div>
         </div>
         <div class="col-md-9">
           <div class="tab-content shadow-lg rounded-4 bg-white p-4">
-            <div class="tab-pane fade show active" id="lessons">
+            <div class="tab-pane fade show active" id="lessons" role="tabpanel">
               <div class="text-center">
-                <i class="bi bi-steering-wheel display-4" style="color:var(--primary);"></i>
+                <i class="bi bi-steering-wheel display-4" style="color:var(--primary)"></i>
                 <h3 class="mt-3">Driving Lessons</h3>
-                <p class="text-muted">Professional driving lessons tailored for all levels, from beginners to advanced learners.</p>
-                <p class="price-highlight">£32</p>
-                <a href="#contact" class="btn btn-offer mt-2 book-now">Book Now</a>
+                <p class="text-muted">Beginner to advanced, including junctions, roundabouts, manoeuvres, parking, and night driving.</p>
+                <ul class="list-check mx-auto" style="max-width:680px;text-align:left">
+                  <li><i class="bi bi-check-circle"></i> Personalised lesson plans &amp; progress tracking</li>
+                  <li><i class="bi bi-check-circle"></i> Free theory-app recommendations</li>
+                  <li><i class="bi bi-check-circle"></i> Pick-up &amp; drop-off at home/college/work</li>
+                </ul>
+                <p class="price-highlight mt-3">£35</p>
+                <a href="#contact" class="btn btn-primary-grad mt-2">Book Now</a>
               </div>
             </div>
-            <div class="tab-pane fade" id="refresher">
+            <div class="tab-pane fade" id="refresher" role="tabpanel">
               <div class="text-center">
-                <i class="bi bi-arrow-repeat display-4" style="color:var(--primary);"></i>
+                <i class="bi bi-arrow-repeat display-4" style="color:var(--primary)"></i>
                 <h3 class="mt-3">Refresher Courses</h3>
-                <p class="text-muted">Regain confidence and sharpen your driving skills with our refresher sessions.</p>
-                <p class="price-highlight">£32</p>
-                <a href="#contact" class="btn btn-offer mt-2 book-now">Book Now</a>
+                <p class="text-muted">Perfect if you’re returning to driving or want to sharpen specific skills like motorways or parking.</p>
+                <ul class="list-check mx-auto" style="max-width:680px;text-align:left">
+                  <li><i class="bi bi-check-circle"></i> Confidence-building sessions</li>
+                  <li><i class="bi bi-check-circle"></i> Hazard perception &amp; eco-driving tips</li>
+                  <li><i class="bi bi-check-circle"></i> Flexible 60/90/120-minute slots</li>
+                </ul>
+                <p class="price-highlight mt-3">£35</p>
+                <a href="#contact" class="btn btn-primary-grad mt-2">Book Now</a>
               </div>
             </div>
-            <div class="tab-pane fade" id="mock">
+            <div class="tab-pane fade" id="mock" role="tabpanel">
               <div class="text-center">
-                <i class="bi bi-journal-check display-4" style="color:var(--primary);"></i>
+                <i class="bi bi-journal-check display-4" style="color:var(--primary)"></i>
                 <h3 class="mt-3">Mock Tests</h3>
-                <p class="text-muted">Prepare for the real driving test with our realistic and supportive mock tests.</p>
-                <p class="price-highlight">£32</p>
-                <a href="#contact" class="btn btn-offer mt-2 book-now">Book Now</a>
+                <p class="text-muted">Realistic mock tests with structured feedback to get you test-ready faster.</p>
+                <ul class="list-check mx-auto" style="max-width:680px;text-align:left">
+                  <li><i class="bi bi-check-circle"></i> Uses local routes and current test standards</li>
+                  <li><i class="bi bi-check-circle"></i> Detailed debrief &amp; improvement plan</li>
+                  <li><i class="bi bi-check-circle"></i> Optional video review (where available)</li>
+                </ul>
+                <p class="price-highlight mt-3">£35</p>
+                <a href="#contact" class="btn btn-primary-grad mt-2">Book Now</a>
               </div>
             </div>
           </div>
@@ -243,110 +295,231 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact-section">
-      <h2><c>Contact Us &amp; Book a Lesson</c></h2>
-      <form action="https://formspree.io/f/xldpppve" method="POST">
-        <input type="text" name="name" class="form-control" placeholder="Full Name" required />
-        <input type="email" name="email" class="form-control" placeholder="Email" required />
-        <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required />
-        <select name="service" class="form-select" required>
-          <option value="">Select Service</option>
-          <option value="driving lesson">Driving Lesson</option>
-          <option value="refresher course">Refresher Course</option>
-          <option value="mock test">Mock Test</option>
-        </select>
-        <textarea name="message" rows="4" class="form-control" placeholder="Any message..."></textarea>
-        <button type="submit" class="btn btn-primary w-100" style="background: linear-gradient(90deg, var(--primary), var(--primary-600)); border:none;">Submit Booking</button>
-      </form>
+    <!-- PRICING / PACKAGES -->
+    <section id="pricing" class="section">
+      <h2 class="text-center mb-4">Pricing &amp; Packages</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card card-hover h-100 p-4 text-center">
+            <h3 class="h5">Pay as You Go</h3>
+            <div class="display-6 fw-bold text-danger">£35<span class="fs-6 text-muted"> / lesson</span></div>
+            <p class="text-muted">Perfect for flexible schedules.</p>
+            <a href="#contact" class="btn btn-primary-grad">Book Lesson</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-hover h-100 p-4 text-center border border-2" style="border-color:var(--primary)">
+            <div class="badge bg-danger align-self-center mb-2">Popular</div>
+            <h3 class="h5">Starter Bundle</h3>
+            <div class="display-6 fw-bold">£330</div>
+            <p class="text-muted">10 lessons — build strong fundamentals fast.</p>
+            <a href="#contact" class="btn btn-primary-grad">Reserve Bundle</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-hover h-100 p-4 text-center">
+            <h3 class="h5">Test Week Focus</h3>
+            <div class="display-6 fw-bold">£—</div>
+            <p class="text-muted">Custom plan of lessons + mock test for your test date.</p>
+            <a href="#contact" class="btn btn-primary-grad">Plan My Week</a>
+          </div>
+        </div>
+      </div>
+      <p class="text-center mt-3 small text-muted">* Availability and coverage may vary. Get in touch for current openings.</p>
+    </section>
+
+    <!-- AREAS COVERED -->
+    <section class="section">
+      <div class="row g-3 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="card card-hover h-100 p-4">
+            <h3 class="h5 mb-3"><i class="bi bi-geo-alt me-2"></i> Areas We Cover</h3>
+            <p class="mb-2">We’re a local academy with deep knowledge of nearby roads and test centres.</p>
+            <ul class="list-check">
+              <li><i class="bi bi-check-circle"></i> City centre &amp; suburbs</li>
+              <li><i class="bi bi-check-circle"></i> Nearby towns &amp; campuses</li>
+              <li><i class="bi bi-check-circle"></i> Major test centres in the area</li>
+            </ul>
+            <p class="mt-3 mb-0">Not sure if we cover your area? Ask in the form below—we’ll confirm right away.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card card-hover h-100 p-4">
+            <h3 class="h5 mb-3"><i class="bi bi-award me-2"></i> Why Choose Maven?</h3>
+            <ul class="list-check">
+              <li><i class="bi bi-check-circle"></i> Calm, expert coaching</li>
+              <li><i class="bi bi-check-circle"></i> Clear progress tracking</li>
+              <li><i class="bi bi-check-circle"></i> Flexible scheduling</li>
+              <li><i class="bi bi-check-circle"></i> Great value, transparent pricing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+      <h2 class="text-center mb-4">What Learners Say</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card card-hover h-100 p-4">
+            <p class="mb-2">“I was a nervous beginner. After a few sessions I felt in control — passed first time!”</p>
+            <div class="small text-muted">— A. Khan</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-hover h-100 p-4">
+            <p class="mb-2">“Clear feedback and realistic mock tests made all the difference.”</p>
+            <div class="small text-muted">— J. Patel</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-hover h-100 p-4">
+            <p class="mb-2">“Flexible times around my shifts and great value at £35.”</p>
+            <div class="small text-muted">— S. Williams</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs" class="section">
+      <h2 class="text-center mb-4">FAQs</h2>
+      <div class="accordion shadow-soft rounded-4 overflow-hidden" id="faqAcc">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
+              How long is a lesson?
+            </button>
+          </h2>
+          <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAcc">
+            <div class="accordion-body">Standard lessons are 60 minutes. 90 and 120-minute sessions are also available on request.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+              Do you offer pick-up and drop-off?
+            </button>
+          </h2>
+          <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAcc">
+            <div class="accordion-body">Yes—home, school, university, or workplace within our coverage area.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+              Manual or automatic?
+            </button>
+          </h2>
+          <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAcc">
+            <div class="accordion-body">We teach in both. Choose what suits you and switch if needed.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="contact-section p-4 p-md-5">
+        <h2 class="text-center mb-3">Contact Us &amp; Book a Lesson</h2>
+        <form action="https://formspree.io/f/xldpppve" method="POST" class="mx-auto" style="max-width:680px">
+          <div class="row g-3">
+            <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Full Name" required aria-label="Full name" /></div>
+            <div class="col-md-6"><input type="tel" name="phone" class="form-control" placeholder="Phone Number" required aria-label="Phone number" /></div>
+            <div class="col-12"><input type="email" name="email" class="form-control" placeholder="Email" required aria-label="Email" /></div>
+            <div class="col-md-6">
+              <select name="service" class="form-select" required aria-label="Select service">
+                <option value="">Select Service</option>
+                <option value="driving lesson">Driving Lesson</option>
+                <option value="refresher course">Refresher Course</option>
+                <option value="mock test">Mock Test</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <select name="transmission" class="form-select" aria-label="Select transmission">
+                <option value="">Transmission</option>
+                <option value="manual">Manual</option>
+                <option value="automatic">Automatic</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <textarea name="message" rows="4" class="form-control" placeholder="Preferred times, area, and any questions..."></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary-grad w-100"><i class="bi bi-send-fill me-1"></i> Submit Booking</button>
+            </div>
+            <input type="hidden" name="campaign" value="website-cta-32" />
+          </div>
+          <p class="text-center small mt-3">Or call us on <a class="link-light fw-bold" href="tel:+447352932003">+44 7352 932003</a></p>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 <span class="brand-emph">Maven Drive Academy</span>. All Rights Reserved.
+    &copy; 2025 <span style="color:var(--primary)">Maven Drive Academy</span>. All Rights Reserved.
   </footer>
 
-  <!-- Floating Contact Button -->
-  <a href="tel:+447352932003" class="contact-btn">
-    <i class="bi bi-telephone-fill"></i> Call Us: +44 7352 932003
+  <!-- Floating Contact Button (no external pages) -->
+  <a href="tel:+447352932003" class="contact-btn" aria-label="Call Maven Drive Academy">
+    <i class="bi bi-telephone-fill"></i> Call Us
   </a>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Theme-from-logo + Slideshow Script -->
+  <!-- Theme-from-logo -->
   <script>
-  // --- Derive theme from logo dominant color (simple average) ---
-  (function deriveThemeFromLogo(){
-    const img = document.getElementById('brandLogo');
-    if (!img) return;
-    const apply = (r,g,b) => {
-      const rgb = (r<<16) | (g<<8) | b;
-      const toHex = v => ('0' + v.toString(16)).slice(-2);
-      const hex = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-      const root = document.documentElement;
-      root.style.setProperty('--primary', hex);
-      // derive a darker shade
-      const dr = Math.max(0, r - 24), dg = Math.max(0, g - 24), db = Math.max(0, b - 24);
-      root.style.setProperty('--primary-600', `#${toHex(dr)}${toHex(dg)}${toHex(db)}`);
-      // set header gradient to mix with primary subtly
-      root.style.setProperty('--bg-start', `rgb(${Math.max(10, dr/4)}, ${Math.max(10, dg/4)}, ${Math.max(10, db/4)})`);
-      root.style.setProperty('--bg-end', `rgb(${Math.max(26, dr/3)}, ${Math.max(26, dg/3)}, ${Math.max(26, db/3)})`);
-      // contrast color
-      const luminance = (0.2126*r + 0.7152*g + 0.0722*b) / 255;
-      const contrast = luminance > 0.55 ? '#000000' : '#ffffff';
-      root.style.setProperty('--primary-contrast', contrast);
-    };
-    const handle = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const w = canvas.width = 64; const h = canvas.height = 64;
-        ctx.drawImage(img, 0, 0, w, h);
-        const data = ctx.getImageData(0,0,w,h).data;
-        let r=0,g=0,b=0,count=0;
-        for (let i=0;i<data.length;i+=4){
-          const a = data[i+3];
-          if (a < 32) continue; // ignore near-transparent
-          r += data[i]; g += data[i+1]; b += data[i+2]; count++;
-        }
-        if (count>0) apply((r/count)|0, (g/count)|0, (b/count)|0);
-      } catch(e) {
-        // likely CORS taint; keep fallback colors
-      }
-    };
-    if (img.complete) handle(); else img.addEventListener('load', handle, {once:true});
-  })();
+    (function deriveThemeFromLogo(){
+      const img=document.getElementById('brandLogo'); if(!img) return;
+      const apply=(r,g,b)=>{
+        const toHex=v=>('0'+v.toString(16)).slice(-2);
+        const hex=`#${toHex(r)}${toHex(g)}${toHex(b)}`;
+        const root=document.documentElement;
+        root.style.setProperty('--primary', hex);
+        const dr=Math.max(0,r-24), dg=Math.max(0,g-24), db=Math.max(0,b-24);
+        root.style.setProperty('--primary-600', `#${toHex(dr)}${toHex(dg)}${toHex(db)}`);
+        root.style.setProperty('--bg-start', `rgb(${Math.max(10, dr/4)}, ${Math.max(10, dg/4)}, ${Math.max(10, db/4)})`);
+        root.style.setProperty('--bg-end', `rgb(${Math.max(26, dr/3)}, ${Math.max(26, dg/3)}, ${Math.max(26, db/3)})`);
+        const luminance=(0.2126*r+0.7152*g+0.0722*b)/255;
+        root.style.setProperty('--primary-contrast', luminance>0.55 ? '#000' : '#fff');
+      };
+      const handle=()=>{
+        try{
+          const c=document.createElement('canvas'), ctx=c.getContext('2d'); c.width=64; c.height=64;
+          ctx.drawImage(img,0,0,c.width,c.height);
+          const data=ctx.getImageData(0,0,c.width,c.height).data;
+          let r=0,g=0,b=0,count=0;
+          for(let i=0;i<data.length;i+=4){
+            const a=data[i+3]; if(a<32) continue;
+            r+=data[i]; g+=data[i+1]; b+=data[i+2]; count++;
+          }
+          if(count>0) apply((r/count)|0,(g/count)|0,(b/count)|0);
+        }catch(e){/* CORS fallback keeps default colours */}
+      };
+      if(img.complete) handle(); else img.addEventListener('load', handle, {once:true});
+    })();
+  </script>
 
-  // --- Slideshow ---
-  document.addEventListener('DOMContentLoaded', function() {
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-
-    function showSlide(n) {
-      slides.forEach((s,i)=>{ s.classList.remove('active'); dots[i].classList.remove('active'); });
-      slides[n].classList.add('active');
-      dots[n].classList.add('active');
+  <!-- SEO: LocalBusiness structured data (basic, no external links) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"DrivingSchool",
+    "name":"Maven Drive Academy",
+    "slogan":"Master the Drive, Own the Road!",
+    "telephone":"+44 7352 932003",
+    "priceRange":"££",
+    "areaServed":"Local area",
+    "offers":{
+      "@type":"Offer",
+      "name":"Lesson",
+      "priceCurrency":"GBP",
+      "price":"35",
+      "category":"Driving lesson"
     }
-    function nextSlide() {
-      slideIndex = (slideIndex + 1) % slides.length;
-      showSlide(slideIndex);
-    }
-    window.currentSlide = function(n) { slideIndex = n; showSlide(slideIndex); };
-    setInterval(nextSlide, 4000);
-
-    // Smooth scroll & highlight for Book Now
-    document.querySelectorAll('.book-now').forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const contact = document.querySelector('#contact');
-        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        contact.classList.add('highlight-contact');
-        setTimeout(() => { contact.classList.remove('highlight-contact'); }, 1500);
-      });
-    });
-  });
+  }
   </script>
 </body>
 </html>
