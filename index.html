@@ -1,1362 +1,1024 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maven Drive Academy — Driving School</title>
-  <meta name="robots" content="index, follow" />
-  <meta name="description" content="Maven Drive Academy — Professional driving lessons, refresher courses, and mock tests. £35 per lesson. Master the Drive, Own the Road!" />
-  <link rel="icon" type="image/png" href="https://i.postimg.cc/2jTWTB2t/Maven-Logo.png" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Maven Drive Academy &mdash; Driving Lessons in Denton, M34 &amp; Manchester</title>
+  <meta name="robots" content="index, follow"/>
+  <meta name="description" content="Maven Drive Academy &mdash; DVSA-approved driving lessons in Denton (M34), Audenshaw, Droylsden &amp; Greater Manchester. &pound;35/hr. 90%+ pass rate. 4.9&star; reviews. Book today!"/>
+  <meta name="keywords" content="driving lessons Denton, driving school M34, driving instructor Denton, learn to drive Audenshaw, driving lessons Droylsden, M34 driving school"/>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/2jTWTB2t/Maven-Logo.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
   <style>
-    :root {
-      --navy: #0c1a3a;
-      --navy-mid: #162550;
-      --navy-light: #1e3270;
-      --gold: #e8b84b;
-      --gold-light: #f5d47a;
-      --gold-deep: #c49a28;
-      --gold-glow: rgba(232,184,75,0.3);
-      --white: #ffffff;
-      --off-white: #f8f6f1;
-      --grey: #8a9bb8;
-      --text: #1a1a2e;
-      --surface: rgba(255,255,255,0.06);
-      --radius: 14px;
-      --radius-lg: 22px;
-    }
+    :root{--navy:#0c1a3a;--navy-mid:#162550;--navy-light:#1e3270;--gold:#e8b84b;--gold-light:#f5d47a;--gold-deep:#c49a28;--gold-glow:rgba(232,184,75,.3);--off:#f8f6f1;--radius:14px;--radius-lg:22px}
+    *{box-sizing:border-box;margin:0;padding:0;scroll-margin-top:86px}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--off);color:#1a1a2e;overflow-x:hidden}
 
-    * { scroll-margin-top: 80px; box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--off-white);
-      color: var(--text);
-      overflow-x: hidden;
-    }
+    /* TOPBAR */
+    .topbar{background:var(--gold);color:var(--navy);font-size:.81rem;font-weight:600;padding:7px 0}
+    .topbar a{color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:.35rem;padding:3px 11px;border-radius:999px;background:rgba(12,26,58,.1);transition:background .2s;font-weight:700}
+    .topbar a:hover{background:rgba(12,26,58,.2)}
 
-    /* ── TOP SOCIAL BAR ── */
-    .topbar {
-      background: var(--gold);
-      color: var(--navy);
-      font-size: .82rem;
-      font-weight: 600;
-      padding: 8px 0;
-      letter-spacing: .01em;
-    }
-    .topbar a {
-      color: var(--navy);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      padding: 3px 12px;
-      border-radius: 999px;
-      background: rgba(12,26,58,0.1);
-      transition: background .2s;
-      font-weight: 700;
-    }
-    .topbar a:hover { background: rgba(12,26,58,0.22); }
+    /* NAVBAR */
+    .navbar{background:var(--navy);padding:0;position:sticky;top:0;z-index:1000;box-shadow:0 4px 28px rgba(0,0,0,.3)}
+    .nbi{display:flex;align-items:center;justify-content:space-between;padding:11px 24px}
+    .bw{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .bl{width:56px;height:56px;border-radius:50%;border:3px solid var(--gold);object-fit:contain;background:#fff;box-shadow:0 0 18px var(--gold-glow);animation:lp 3s ease-in-out infinite}
+    @keyframes lp{0%,100%{box-shadow:0 0 14px var(--gold-glow)}50%{box-shadow:0 0 30px rgba(232,184,75,.55)}}
+    .bt h1{font-family:'DM Serif Display',serif;font-size:1.3rem;color:#fff;margin:0;line-height:1.1}
+    .bt h1 span{color:var(--gold)}
+    .bt small{color:rgba(255,255,255,.48);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+    .nl{display:flex;align-items:center;gap:2px;list-style:none}
+    .nl a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.84rem;font-weight:500;padding:7px 13px;border-radius:999px;transition:all .2s}
+    .nl a:hover{color:var(--gold);background:rgba(232,184,75,.1)}
+    .nc{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;padding:8px 20px!important}
+    .nc:hover{background:var(--gold-light)!important;transform:translateY(-1px)}
+    .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+    .hbg span{display:block;width:25px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+    @media(max-width:991px){.nl{display:none}.hbg{display:flex}}
 
-    /* ── NAVBAR ── */
-    .navbar {
-      background: var(--navy);
-      padding: 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
-      transition: all .3s ease;
-    }
-    .navbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 24px;
-    }
-    .brand-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-    .brand-logo {
-      width: 60px; height: 60px;
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-      object-fit: contain;
-      background: white;
-      box-shadow: 0 0 20px var(--gold-glow);
-      animation: logoPulse 3s ease-in-out infinite;
-    }
-    @keyframes logoPulse {
-      0%,100% { box-shadow: 0 0 16px var(--gold-glow); }
-      50% { box-shadow: 0 0 32px rgba(232,184,75,0.55); }
-    }
-    .brand-text h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      color: white;
-      margin: 0;
-      line-height: 1.1;
-    }
-    .brand-text h1 span { color: var(--gold); }
-    .brand-text small { color: var(--grey); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+    /* MOBILE NAV */
+    .mnav{display:none;position:fixed;inset:0;background:rgba(12,26,58,.97);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+    .mnav.open{display:flex}
+    .mnav a{color:#fff;font-family:'DM Serif Display',serif;font-size:1.85rem;text-decoration:none;transition:color .2s}
+    .mnav a:hover{color:var(--gold)}
+    .mclose{position:absolute;top:20px;right:20px;background:none;border:none;color:#fff;font-size:1.7rem;cursor:pointer}
 
-    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
-    .nav-links a {
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      font-size: .88rem;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 999px;
-      transition: all .2s;
-    }
-    .nav-links a:hover { color: var(--gold); background: rgba(232,184,75,0.1); }
-    .nav-cta {
-      background: var(--gold) !important;
-      color: var(--navy) !important;
-      font-weight: 700 !important;
-      padding: 9px 22px !important;
-      box-shadow: 0 4px 18px var(--gold-glow);
-    }
-    .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); box-shadow: 0 8px 28px var(--gold-glow) !important; }
+    /* HERO SLIDESHOW */
+    .hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;min-height:88vh;display:flex;align-items:center}
+    .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;z-index:1}
+    .slide.active{opacity:1;z-index:2}
+    .slide img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .slide-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,26,58,.88) 0%,rgba(12,26,58,.6) 55%,rgba(12,26,58,.3) 100%)}
+    .hero-c{position:relative;z-index:10;padding:80px 0 90px}
+    .hbadge{display:inline-flex;align-items:center;gap:9px;background:rgba(232,184,75,.14);border:1px solid rgba(232,184,75,.38);color:var(--gold);padding:6px 17px;border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+    .bdot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:bdp 1.8s ease-in-out infinite;box-shadow:0 0 8px var(--gold)}
+    @keyframes bdp{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.45}}
+    .hero h2{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5.5vw,4.5rem);line-height:1.05;margin-bottom:16px}
+    .hero h2 .acc{color:var(--gold);font-style:italic}
+    .hero-desc{color:rgba(255,255,255,.74);font-size:1rem;line-height:1.8;max-width:470px;margin-bottom:28px;font-weight:300}
+    .hpill{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:var(--navy);border-radius:999px;padding:11px 24px;font-weight:800;font-size:1.05rem;margin-bottom:26px;box-shadow:0 8px 26px var(--gold-glow)}
+    .hbtns{display:flex;gap:12px;flex-wrap:wrap}
+    .sdots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:15;display:flex;gap:8px}
+    .sdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.32);border:none;cursor:pointer;transition:all .3s;padding:0}
+    .sdot.active{background:var(--gold);width:22px;border-radius:999px}
+    .sarr{position:absolute;top:50%;transform:translateY(-50%);z-index:15;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;font-size:1rem;backdrop-filter:blur(4px)}
+    .sarr:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .sarr.prev{left:16px}
+    .sarr.next{right:16px}
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span { display: block; width: 26px; height: 2px; background: white; border-radius: 2px; transition: .3s; }
+    /* BUTTONS */
+    .btn-g{background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:var(--navy);border:none;border-radius:999px;padding:12px 28px;font-weight:700;font-size:.91rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .25s;box-shadow:0 6px 20px var(--gold-glow);cursor:pointer;font-family:'DM Sans',sans-serif}
+    .btn-g:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(232,184,75,.5);color:var(--navy)}
+    .btn-ow{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.33);border-radius:999px;padding:12px 28px;font-weight:600;font-size:.91rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+    .btn-ow:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+    .btn-n{background:var(--navy);color:#fff;border:none;border-radius:999px;padding:12px 24px;font-weight:700;font-size:.86rem;text-decoration:none;display:block;text-align:center;transition:all .25s;cursor:pointer;width:100%;font-family:'DM Sans',sans-serif}
+    .btn-n:hover{background:var(--navy-light);color:#fff;transform:translateY(-1px);box-shadow:0 8px 22px rgba(12,26,58,.2)}
+    .btn-nl{background:var(--navy);color:#fff;border-radius:999px;padding:14px 34px;font-weight:700;font-size:.93rem;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .25s;box-shadow:0 6px 22px rgba(12,26,58,.25)}
+    .btn-nl:hover{background:var(--navy-light);color:#fff;transform:translateY(-2px)}
+    .btn-wa{background:#25D366;color:#fff;border-radius:999px;padding:14px 34px;font-weight:700;font-size:.93rem;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .25s}
+    .btn-wa:hover{background:#1da851;color:#fff;transform:translateY(-2px)}
 
-    /* mobile drawer */
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(12,26,58,0.98);
-      z-index: 9999;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-    }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a {
-      color: white;
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      text-decoration: none;
-      transition: color .2s;
-    }
-    .mobile-nav a:hover { color: var(--gold); }
-    .mobile-close {
-      position: absolute;
-      top: 24px; right: 24px;
-      background: none; border: none;
-      color: white; font-size: 1.8rem; cursor: pointer;
-    }
+    /* BOOKING SECTION */
+    .bsec{background:#fff;padding:56px 0;border-bottom:3px solid var(--off)}
+    .binner{background:var(--navy);border-radius:var(--radius-lg);padding:44px;box-shadow:0 20px 60px rgba(12,26,58,.18)}
+    .binner h2{font-family:'DM Serif Display',serif;font-size:1.9rem;color:#fff;margin-bottom:5px}
+    .binner .sub{color:rgba(255,255,255,.55);font-size:.88rem;margin-bottom:28px}
+    .fl{display:block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px}
+    .fi{width:100%;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.11);border-radius:10px;padding:12px 15px;font-family:'DM Sans',sans-serif;font-size:.9rem;color:#fff;transition:all .25s;margin-bottom:14px;appearance:none;-webkit-appearance:none}
+    .fi::placeholder{color:rgba(255,255,255,.28)}
+    .fi:focus{outline:none;border-color:var(--gold);background:rgba(232,184,75,.07);box-shadow:0 0 0 4px rgba(232,184,75,.1)}
+    .fi option{background:var(--navy);color:#fff}
+    .fsuccess{display:none;text-align:center;padding:40px 20px;color:#fff}
+    .fsuccess .tick{font-size:3.5rem;color:var(--gold);margin-bottom:14px}
+    .fsuccess h3{font-family:'DM Serif Display',serif;font-size:1.9rem;color:var(--gold);margin-bottom:10px}
+    .fsuccess p{color:rgba(255,255,255,.65);line-height:1.8}
 
-    @media (max-width: 991px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-    }
+    /* TRUST BAR */
+    .tbar{background:#fff;border-bottom:1px solid rgba(0,0,0,.07);padding:20px 0}
+    .ti{display:flex;align-items:center;gap:10px;padding:3px 0}
+    .tic{width:40px;height:40px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.08rem;flex-shrink:0}
+    .ti strong{font-size:.87rem;color:var(--navy);display:block;line-height:1.2}
+    .ti span{font-size:.72rem;color:#888}
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, var(--navy-light) 100%);
-      color: white;
-      padding: 80px 0 100px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 900px 700px at 100% 0%, rgba(232,184,75,0.1) 0%, transparent 60%),
-        radial-gradient(ellipse 600px 500px at -10% 100%, rgba(232,184,75,0.07) 0%, transparent 55%);
-      pointer-events: none;
-    }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(232,184,75,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(232,184,75,0.05) 1px, transparent 1px);
-      background-size: 70px 70px;
-      animation: gridPulse 6s ease-in-out infinite;
-      pointer-events: none;
-    }
-    @keyframes gridPulse { 0%,100%{opacity:.4} 50%{opacity:.9} }
+    /* SECTIONS */
+    .sec{padding:76px 0}
+    .sec-dk{background:var(--navy);color:#fff}
+    .sec-lt{background:var(--off)}
+    .sec-wh{background:#fff}
+    .stag{display:inline-flex;align-items:center;gap:8px;color:var(--gold-deep);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:11px}
+    .stag::before{content:'';width:24px;height:2px;background:var(--gold);border-radius:2px}
+    .sec-dk .stag{color:var(--gold)}
+    .stitle{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.1;margin-bottom:13px}
+    .stitle .acc{color:var(--gold-deep);font-style:italic}
+    .sec-dk .stitle .acc{color:var(--gold)}
+    .sbody{color:#666;font-size:.91rem;line-height:1.85;font-weight:300}
+    .sec-dk .sbody{color:rgba(255,255,255,.6)}
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: rgba(232,184,75,0.15);
-      border: 1px solid rgba(232,184,75,0.4);
-      color: var(--gold);
-      padding: 7px 20px;
-      border-radius: 999px;
-      font-size: .78rem;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    .badge-dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; animation: badgePulse 1.8s ease-in-out infinite; box-shadow: 0 0 10px var(--gold); }
-    @keyframes badgePulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.6);opacity:.5} }
+    /* BENEFIT CARDS */
+    .bcard{background:#fff;border-radius:var(--radius);padding:26px 20px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 10px rgba(0,0,0,.04);transition:all .3s;height:100%}
+    .bcard:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(12,26,58,.09);border-color:rgba(232,184,75,.28)}
+    .bico{width:48px;height:48px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.2rem;margin-bottom:15px}
+    .bcard h3{font-size:.94rem;font-weight:700;color:var(--navy);margin-bottom:7px}
+    .bcard p{font-size:.83rem;color:#666;line-height:1.7;margin:0}
 
-    .hero h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 1.05;
-      margin-bottom: 20px;
-    }
-    .hero h2 .accent { color: var(--gold); font-style: italic; }
+    /* SERVICE TABS */
+    .stab{background:#fff;border:2px solid rgba(0,0,0,.08);color:#666;border-radius:999px;padding:8px 20px;font-size:.83rem;font-weight:600;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:7px;font-family:'DM Sans',sans-serif}
+    .stab.active,.stab:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+    .spanel{background:#fff;border-radius:var(--radius-lg);padding:34px;border:1px solid rgba(0,0,0,.07);box-shadow:0 4px 18px rgba(0,0,0,.05);display:none}
+    .spanel.active{display:block}
+    .ckl{list-style:none;padding:0;margin:0}
+    .ckl li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.86rem;color:#444}
+    .ckl li:last-child{border-bottom:none}
+    .ckl .bi{color:var(--gold-deep);font-size:.98rem;flex-shrink:0;margin-top:2px}
+    .sptag{font-family:'DM Serif Display',serif;font-size:2.7rem;color:var(--navy);font-weight:400;margin:16px 0 0}
+    .sptag sup{font-size:1.3rem;vertical-align:top;margin-top:7px;display:inline-block}
+    .sptag small{font-family:'DM Sans',sans-serif;font-size:.92rem;color:#888}
 
-    .hero-desc { color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.8; max-width: 500px; margin-bottom: 36px; font-weight: 300; }
+    /* PRICING */
+    .pcard{background:#fff;border-radius:var(--radius-lg);padding:32px 24px;border:2px solid rgba(0,0,0,.06);transition:all .3s;height:100%;position:relative;overflow:hidden}
+    .pcard:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(12,26,58,.1)}
+    .pcard.feat{background:var(--navy);border-color:var(--gold);color:#fff}
+    .pbadge{position:absolute;top:15px;right:15px;background:var(--gold);color:var(--navy);font-size:.63rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:999px}
+    .plabel{font-size:.7rem;font-weight:700;color:#888;letter-spacing:.14em;text-transform:uppercase;margin-bottom:7px}
+    .feat .plabel{color:var(--gold)}
+    .pamount{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--navy);line-height:1;margin-bottom:4px}
+    .feat .pamount{color:var(--gold)}
+    .pdesc{color:#888;font-size:.81rem;margin-bottom:20px}
+    .feat .pdesc{color:rgba(255,255,255,.52)}
+    .plist{list-style:none;padding:0;margin-bottom:24px}
+    .plist li{display:flex;align-items:flex-start;gap:9px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.83rem;color:#555}
+    .feat .plist li{color:rgba(255,255,255,.78);border-color:rgba(255,255,255,.07)}
+    .plist .bi{color:var(--navy-light);font-size:.88rem;flex-shrink:0;margin-top:3px}
+    .feat .plist .bi{color:var(--gold)}
+    .feat .btn-n{background:var(--gold);color:var(--navy)}
+    .feat .btn-n:hover{background:var(--gold-light);color:var(--navy)}
 
-    .hero-price-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
-      color: var(--navy);
-      border-radius: 999px;
-      padding: 12px 28px;
-      font-weight: 800;
-      font-size: 1.2rem;
-      margin-bottom: 32px;
-      box-shadow: 0 8px 32px var(--gold-glow);
-      animation: pricePop 2s ease-in-out infinite;
-    }
-    @keyframes pricePop { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+    /* TESTIMONIALS */
+    .tcard{background:#fff;border-radius:var(--radius);padding:24px 20px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 10px rgba(0,0,0,.04);height:100%;position:relative}
+    .tcard::before{content:'"';font-family:'DM Serif Display',serif;font-size:4.8rem;color:var(--gold);opacity:.11;position:absolute;top:8px;left:14px;line-height:1}
+    .stars{color:var(--gold);font-size:.86rem;letter-spacing:2px;margin-bottom:11px}
+    .ttxt{color:#555;font-size:.86rem;line-height:1.8;font-style:italic;margin-bottom:16px}
+    .tauth{font-weight:700;font-size:.82rem;color:var(--navy)}
+    .trole{font-size:.72rem;color:#999}
 
-    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
-      color: var(--navy);
-      border: none;
-      border-radius: 999px;
-      padding: 14px 32px;
-      font-weight: 700;
-      font-size: .95rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all .25s;
-      box-shadow: 0 6px 24px var(--gold-glow);
-    }
-    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(232,184,75,0.5); color: var(--navy); }
-    .btn-outline-white {
-      background: transparent;
-      color: white;
-      border: 2px solid rgba(255,255,255,0.35);
-      border-radius: 999px;
-      padding: 14px 32px;
-      font-weight: 600;
-      font-size: .95rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all .25s;
-    }
-    .btn-outline-white:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    /* LOCAL SECTION */
+    .lsec{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 55%,var(--navy-light) 100%);color:#fff;padding:76px 0;position:relative;overflow:hidden}
+    .lsec::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(232,184,75,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(232,184,75,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+    .apill{display:inline-flex;align-items:center;gap:6px;background:rgba(232,184,75,.11);border:1px solid rgba(232,184,75,.28);color:var(--gold);padding:5px 14px;border-radius:999px;font-size:.74rem;font-weight:600;letter-spacing:.07em;margin:3px}
+    .rcard{background:rgba(255,255,255,.055);border:1px solid rgba(232,184,75,.17);border-radius:var(--radius);padding:20px;height:100%}
+    .rcard h4{color:var(--gold);font-size:.87rem;font-weight:700;margin-bottom:11px;display:flex;align-items:center;gap:7px}
+    .rcard ul{list-style:none;padding:0;margin:0}
+    .rcard li{color:rgba(255,255,255,.7);font-size:.81rem;padding:5px 0;display:flex;align-items:flex-start;gap:7px;border-bottom:1px solid rgba(255,255,255,.055)}
+    .rcard li:last-child{border-bottom:none}
+    .rcard li::before{content:'&#8594;';color:var(--gold);font-size:.7rem;margin-top:2px;flex-shrink:0}
+    .pgrid{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+    .pc{background:rgba(232,184,75,.09);border:1px solid rgba(232,184,75,.22);color:var(--gold-light);padding:5px 12px;border-radius:7px;font-size:.76rem;font-weight:600;font-family:monospace;letter-spacing:.05em}
+    .ccard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:18px;text-align:center}
+    .ccard i{font-size:1.7rem;color:var(--gold);margin-bottom:9px;display:block}
+    .ccard h4{color:#fff;font-size:.89rem;font-weight:700;margin-bottom:3px}
+    .ccard p{color:rgba(255,255,255,.48);font-size:.75rem;margin:0}
 
-    /* hero image */
-    .hero-img-wrap {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 3px solid rgba(232,184,75,0.3);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 60px rgba(232,184,75,0.15);
-      position: relative;
-    }
-    .hero-img-wrap img { width: 100%; display: block; }
-    .hero-img-badge {
-      position: absolute;
-      bottom: 20px; left: 20px;
-      background: rgba(12,26,58,0.9);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(232,184,75,0.4);
-      color: white;
-      padding: 10px 18px;
-      border-radius: 12px;
-      font-size: .82rem;
-      font-weight: 600;
-    }
-    .hero-img-badge .star { color: var(--gold); }
+    /* FAQ */
+    .fitem{border-bottom:1px solid rgba(0,0,0,.07)}
+    .fbtn{width:100%;background:none;border:none;text-align:left;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:18px;font-family:'DM Sans',sans-serif;font-size:.91rem;font-weight:600;color:var(--navy);cursor:pointer;transition:color .2s}
+    .fbtn:hover{color:var(--gold-deep)}
+    .fico{width:28px;height:28px;border:2px solid rgba(12,26,58,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.8rem;flex-shrink:0;transition:all .3s}
+    .fitem.open .fico{background:var(--navy);color:var(--gold);border-color:var(--navy);transform:rotate(45deg)}
+    .fans{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+    .fans p{color:#666;font-size:.86rem;line-height:1.85;padding-bottom:16px;font-weight:300}
 
-    /* trust bar */
-    .trust-bar {
-      background: white;
-      border-bottom: 1px solid rgba(0,0,0,0.07);
-      padding: 20px 0;
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 4px 0;
-    }
-    .trust-icon {
-      width: 40px; height: 40px;
-      background: linear-gradient(135deg, var(--navy), var(--navy-light));
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-    .trust-item strong { font-size: .9rem; color: var(--navy); display: block; line-height: 1.2; }
-    .trust-item span { font-size: .75rem; color: #888; }
+    /* CONTACT STRIP */
+    .cstrip{background:var(--off);padding:56px 0}
+    .ccard2{background:#fff;border-radius:var(--radius);padding:22px;border:1px solid rgba(0,0,0,.06);display:flex;align-items:center;gap:14px;height:100%;transition:all .25s;text-decoration:none;color:inherit}
+    .ccard2:hover{box-shadow:0 10px 28px rgba(12,26,58,.09);transform:translateY(-2px);border-color:rgba(232,184,75,.28)}
+    .cico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}
+    .clabel{font-size:.68rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:3px}
+    .cval{font-size:.89rem;color:var(--navy);font-weight:600}
 
-    /* ── SECTION DEFAULTS ── */
-    .section { padding: 80px 0; }
-    .section-dark { background: var(--navy); color: white; }
-    .section-light { background: var(--off-white); }
-    .section-white { background: white; }
+    /* CTA BANNER */
+    .ctab{background:linear-gradient(135deg,var(--gold-deep),var(--gold),var(--gold-light));padding:58px 0;text-align:center}
+    .ctab h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3.5vw,2.7rem);color:var(--navy);margin-bottom:9px}
+    .ctab p{color:rgba(12,26,58,.68);font-size:.95rem;margin-bottom:24px}
 
-    .s-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--gold-deep);
-      font-size: .74rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .s-tag::before { content: ''; width: 28px; height: 2px; background: var(--gold); border-radius: 2px; }
+    /* FOOTER */
+    footer{background:var(--navy);color:rgba(255,255,255,.62);padding:58px 0 0;border-top:3px solid var(--gold)}
+    .fb{font-family:'DM Serif Display',serif;font-size:1.55rem;color:#fff;margin-bottom:5px}
+    .fb span{color:var(--gold)}
+    .fh{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:15px}
+    .fl2{color:rgba(255,255,255,.55);text-decoration:none;font-size:.82rem;display:block;margin-bottom:9px;transition:color .2s}
+    .fl2:hover{color:var(--gold)}
+    .ftb{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;margin-top:46px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:11px}
+    .ftb p{font-size:.77rem;color:rgba(255,255,255,.36);margin:0}
+    .pby{display:inline-flex;align-items:center;gap:7px;font-size:.74rem;color:rgba(255,255,255,.38)}
+    .sqlg{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:700;background:linear-gradient(135deg,#c49a28,#e8b84b,#f5d47a,#e8b84b,#c49a28);background-size:250%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 3s ease-in-out infinite;filter:drop-shadow(0 0 6px rgba(232,184,75,.35))}
+    @keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+    .pby a{text-decoration:none}
 
-    .s-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .s-title .accent { color: var(--gold-deep); font-style: italic; }
-    .section-dark .s-title .accent { color: var(--gold); }
-    .s-body { color: #666; font-size: .95rem; line-height: 1.85; font-weight: 300; }
-    .section-dark .s-body { color: rgba(255,255,255,0.65); }
+    /* WHATSAPP FLOAT */
+    .waf{position:fixed;bottom:24px;right:24px;z-index:9000;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 26px rgba(37,211,102,.42);transition:transform .2s,box-shadow .2s}
+    .waf:hover{transform:scale(1.1);box-shadow:0 12px 38px rgba(37,211,102,.62)}
+    .waf i{font-size:1.6rem;color:#fff}
+    .wap{position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(37,211,102,.45);animation:wpp 2.2s ease-out infinite}
+    @keyframes wpp{0%{transform:scale(1);opacity:.65}100%{transform:scale(1.55);opacity:0}}
 
-    /* ── BENEFIT CARDS ── */
-    .benefit-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-      transition: all .3s ease;
-      height: 100%;
-    }
-    .benefit-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(12,26,58,0.1); border-color: rgba(232,184,75,0.3); }
-    .benefit-icon {
-      width: 52px; height: 52px;
-      background: linear-gradient(135deg, var(--navy), var(--navy-light));
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 1.3rem;
-      margin-bottom: 18px;
-    }
-    .benefit-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .benefit-card p { font-size: .87rem; color: #666; line-height: 1.7; margin: 0; }
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
 
-    /* ── SERVICES TABS ── */
-    .service-tabs { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
-    .s-tab {
-      background: white;
-      border: 2px solid rgba(0,0,0,0.08);
-      color: #666;
-      border-radius: 999px;
-      padding: 10px 24px;
-      font-size: .87rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all .25s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    @media(max-width:768px){
+      .hero-c{padding:60px 0 70px}
+      .binner{padding:26px 18px}
+      .lsec{padding:60px 0}
+      .sarr{display:none}
+      .ftb{flex-direction:column;text-align:center}
     }
-    .s-tab.active, .s-tab:hover {
-      background: var(--navy);
-      border-color: var(--navy);
-      color: white;
-    }
-    .service-panel {
-      background: white;
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      border: 1px solid rgba(0,0,0,0.07);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
-      display: none;
-    }
-    .service-panel.active { display: block; }
-    .check-list { list-style: none; padding: 0; margin: 0; }
-    .check-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      font-size: .9rem;
-      color: #444;
-    }
-    .check-list li:last-child { border-bottom: none; }
-    .check-list .bi { color: var(--gold-deep); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
-    .service-price-tag {
-      font-family: 'DM Serif Display', serif;
-      font-size: 3rem;
-      color: var(--navy);
-      font-weight: 400;
-      margin: 20px 0 0;
-    }
-    .service-price-tag sup { font-size: 1.5rem; vertical-align: top; margin-top: 8px; display: inline-block; }
-    .service-price-tag small { font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #888; }
-
-    /* ── PRICING CARDS ── */
-    .price-card {
-      background: white;
-      border-radius: var(--radius-lg);
-      padding: 36px 28px;
-      border: 2px solid rgba(0,0,0,0.06);
-      transition: all .3s ease;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-    .price-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(12,26,58,0.12); }
-    .price-card.featured {
-      background: var(--navy);
-      border-color: var(--gold);
-      color: white;
-    }
-    .price-card.featured .price-label { color: var(--gold); }
-    .price-card.featured .price-desc { color: rgba(255,255,255,0.6); }
-    .price-card.featured .price-list li { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.08); }
-    .price-card.featured .price-list .bi { color: var(--gold); }
-    .popular-badge {
-      position: absolute;
-      top: 18px; right: 18px;
-      background: var(--gold);
-      color: var(--navy);
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 999px;
-    }
-    .price-label { font-size: .75rem; font-weight: 700; color: var(--navy-light); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
-    .price-amount { font-family: 'DM Serif Display', serif; font-size: 3.4rem; color: var(--navy); line-height: 1; margin-bottom: 4px; }
-    .price-card.featured .price-amount { color: var(--gold); }
-    .price-desc { color: #888; font-size: .84rem; margin-bottom: 24px; }
-    .price-list { list-style: none; padding: 0; margin-bottom: 28px; }
-    .price-list li {
-      display: flex; align-items: flex-start; gap: 10px;
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      font-size: .85rem; color: #555;
-    }
-    .price-list .bi { color: var(--navy-light); font-size: .9rem; flex-shrink: 0; margin-top: 3px; }
-    .btn-navy {
-      background: var(--navy);
-      color: white;
-      border: none;
-      border-radius: 999px;
-      padding: 13px 28px;
-      font-weight: 700;
-      font-size: .88rem;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-      transition: all .25s;
-    }
-    .btn-navy:hover { background: var(--navy-light); color: white; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(12,26,58,0.2); }
-    .price-card.featured .btn-navy { background: var(--gold); color: var(--navy); }
-    .price-card.featured .btn-navy:hover { background: var(--gold-light); }
-
-    /* ── TESTIMONIALS ── */
-    .testi-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-      height: 100%;
-      position: relative;
-    }
-    .testi-card::before {
-      content: '"';
-      font-family: 'DM Serif Display', serif;
-      font-size: 5rem;
-      color: var(--gold);
-      opacity: .15;
-      position: absolute;
-      top: 8px; left: 18px;
-      line-height: 1;
-    }
-    .stars { color: var(--gold); font-size: .9rem; letter-spacing: 2px; margin-bottom: 14px; }
-    .testi-text { color: #555; font-size: .9rem; line-height: 1.8; font-style: italic; margin-bottom: 20px; }
-    .testi-author { font-weight: 700; font-size: .85rem; color: var(--navy); }
-    .testi-role { font-size: .75rem; color: #999; }
-
-    /* ── AREAS ── */
-    .area-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius);
-      padding: 24px;
-      height: 100%;
-    }
-    .area-card h4 { color: var(--gold); font-size: .95rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-    .area-card ul { list-style: none; padding: 0; margin: 0; }
-    .area-card li { color: rgba(255,255,255,0.75); font-size: .85rem; padding: 6px 0; display: flex; align-items: center; gap: 8px; }
-    .area-card li::before { content: '→'; color: var(--gold); font-size: .75rem; }
-
-    /* ── FAQ ── */
-    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
-    .faq-btn {
-      width: 100%;
-      background: none;
-      border: none;
-      text-align: left;
-      padding: 20px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .95rem;
-      font-weight: 600;
-      color: var(--navy);
-      cursor: pointer;
-      transition: color .2s;
-    }
-    .faq-btn:hover { color: var(--gold-deep); }
-    .faq-icon {
-      width: 30px; height: 30px;
-      border: 2px solid rgba(12,26,58,0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--navy);
-      font-size: .85rem;
-      flex-shrink: 0;
-      transition: all .3s;
-    }
-    .faq-item.open .faq-icon { background: var(--navy); color: var(--gold); border-color: var(--navy); transform: rotate(45deg); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s cubic-bezier(.4,0,.2,1); }
-    .faq-answer p { color: #666; font-size: .9rem; line-height: 1.85; padding-bottom: 20px; font-weight: 300; }
-
-    /* ── CONTACT ── */
-    .contact-form-wrap {
-      background: white;
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-    .field-label { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); margin-bottom: 7px; }
-    .field-input {
-      width: 100%;
-      background: var(--off-white);
-      border: 2px solid transparent;
-      border-radius: 10px;
-      padding: 13px 16px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .92rem;
-      color: var(--text);
-      transition: all .25s;
-      margin-bottom: 18px;
-    }
-    .field-input::placeholder { color: #bbb; }
-    .field-input:focus { outline: none; border-color: var(--navy); background: white; box-shadow: 0 0 0 4px rgba(12,26,58,0.06); }
-    .contact-detail-item { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
-    .c-icon {
-      width: 46px; height: 46px;
-      background: var(--off-white);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-      color: var(--navy);
-      flex-shrink: 0;
-      border: 1px solid rgba(0,0,0,0.07);
-    }
-    .c-label { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 2px; }
-    .c-val { font-size: .9rem; color: var(--navy); font-weight: 500; }
-    .c-val a { color: var(--navy); text-decoration: none; }
-    .c-val a:hover { color: var(--gold-deep); }
-
-    /* ── WHATSAPP FLOAT ── */
-    .wa-float {
-      position: fixed;
-      bottom: 28px; right: 28px;
-      z-index: 9000;
-      width: 60px; height: 60px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 8px 32px rgba(37,211,102,0.45);
-      animation: waBounce 3s ease-in-out infinite;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .wa-float:hover { transform: scale(1.1); box-shadow: 0 14px 42px rgba(37,211,102,0.6); }
-    .wa-float i { font-size: 1.7rem; color: white; }
-    @keyframes waBounce { 0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.45)} 50%{box-shadow:0 8px 52px rgba(37,211,102,0.7)} }
-
-    /* wa tooltip */
-    .wa-tooltip {
-      position: fixed;
-      bottom: 38px; right: 98px;
-      z-index: 8999;
-      background: var(--navy);
-      color: white;
-      font-size: .82rem;
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 8px;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .3s;
-    }
-    .wa-float:hover + .wa-tooltip { opacity: 1; }
-    .wa-tooltip::after { content: ''; position: absolute; right: -7px; top: 50%; transform: translateY(-50%); border: 7px solid transparent; border-left-color: var(--navy); border-right: none; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.7);
-      padding: 60px 0 0;
-      border-top: 3px solid var(--gold);
-    }
-    .footer-brand {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.6rem;
-      color: white;
-      margin-bottom: 8px;
-    }
-    .footer-brand span { color: var(--gold); }
-    .footer-tagline { font-size: .8rem; color: var(--grey); font-style: italic; margin-bottom: 20px; }
-    .f-head { font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
-    .f-link { color: rgba(255,255,255,0.6); text-decoration: none; font-size: .86rem; display: block; margin-bottom: 10px; transition: color .2s; }
-    .f-link:hover { color: var(--gold); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 20px 0;
-      margin-top: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-    .footer-bottom p { font-size: .8rem; color: rgba(255,255,255,0.45); margin: 0; }
-    .powered-by {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: .78rem;
-      color: rgba(255,255,255,0.45);
-    }
-    .sq-logo-gold {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #c49a28, #e8b84b, #f5d47a, #e8b84b, #c49a28);
-      background-size: 250%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: goldShimmer 3s ease-in-out infinite;
-      filter: drop-shadow(0 0 8px rgba(232,184,75,0.4));
-    }
-    @keyframes goldShimmer { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
-    .powered-by a { text-decoration: none; }
-    .powered-by a:hover .sq-logo-gold { filter: drop-shadow(0 0 14px rgba(232,184,75,0.7)); }
-
-    /* ── REVEAL ANIMATIONS ── */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.4,0,.2,1), transform .8s cubic-bezier(.4,0,.2,1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .rd1 { transition-delay: .12s; }
-    .rd2 { transition-delay: .24s; }
-    .rd3 { transition-delay: .36s; }
-
-    /* ── CTA BANNER ── */
-    .cta-banner {
-      background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-light));
-      padding: 60px 0;
-      text-align: center;
-    }
-    .cta-banner h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-    .cta-banner p { color: rgba(12,26,58,0.7); font-size: 1rem; margin-bottom: 28px; }
-    .btn-navy-lg {
-      background: var(--navy);
-      color: white;
-      border: none;
-      border-radius: 999px;
-      padding: 16px 40px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all .25s;
-      box-shadow: 0 8px 30px rgba(12,26,58,0.3);
-    }
-    .btn-navy-lg:hover { background: var(--navy-light); color: white; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(12,26,58,0.4); }
-
-    @media (max-width: 768px) {
-      .hero { padding: 60px 0 70px; }
-      .contact-form-wrap { padding: 28px 20px; }
-      .service-panel { padding: 28px 20px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
-
-    @media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation: none !important; transition: none !important; } }
+    @media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%20Academy%2C%20I%27d%20like%20to%20book%20a%20lesson" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-  <div class="wa-tooltip">Chat with us on WhatsApp</div>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%20Academy%2C%20I'd%20like%20to%20book%20a%20driving%20lesson" class="waf" target="_blank" rel="noopener" aria-label="WhatsApp Maven Drive Academy">
+  <div class="wap"></div>
+  <i class="bi bi-whatsapp"></i>
+</a>
 
-  <!-- MOBILE NAV -->
-  <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
-    <a href="#home" onclick="closeMobile()">Home</a>
-    <a href="#services" onclick="closeMobile()">Services</a>
-    <a href="#pricing" onclick="closeMobile()">Pricing</a>
-    <a href="#faqs" onclick="closeMobile()">FAQs</a>
-    <a href="#contact" onclick="closeMobile()" style="color:var(--gold)">Book a Lesson</a>
+<!-- MOBILE NAV -->
+<div class="mnav" id="mobileNav" role="dialog" aria-label="Navigation menu">
+  <button class="mclose" id="mobileClose" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+  <a href="#home" onclick="cm()">Home</a>
+  <a href="#booking" onclick="cm()">Book a Lesson</a>
+  <a href="#services" onclick="cm()">Services</a>
+  <a href="#pricing" onclick="cm()">Pricing</a>
+  <a href="#denton" onclick="cm()">Areas We Cover</a>
+  <a href="#faqs" onclick="cm()">FAQs</a>
+  <a href="#contact" onclick="cm()" style="color:var(--gold)">Contact</a>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+      <span><i class="bi bi-lightning-charge-fill me-1"></i>&pound;35/hr &mdash; Manual &amp; Automatic &middot; Denton M34 &middot; Audenshaw &middot; Droylsden &middot; Manchester</span>
+      <div class="d-flex gap-2">
+        <a href="https://www.instagram.com/mavendriveacademy/?hl=en" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram me-1"></i><span class="d-none d-sm-inline">Instagram</span></a>
+        <a href="https://www.facebook.com/mavendriveacademy" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook me-1"></i><span class="d-none d-sm-inline">Facebook</span></a>
+      </div>
+    </div>
   </div>
+</div>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
-        <span class="fw-600"><i class="bi bi-lightning-charge-fill me-1"></i>Limited Offer: £35 per lesson — Book today!</span>
-        <div class="d-flex gap-2">
-          <a href="https://www.instagram.com/mavendriveacademy/?hl=en" target="_blank" rel="noopener"><i class="bi bi-instagram me-1"></i><span class="d-none d-sm-inline">Instagram</span></a>
-          <a href="https://www.facebook.com/mavendriveacademy" target="_blank" rel="noopener"><i class="bi bi-facebook me-1"></i><span class="d-none d-sm-inline">Facebook</span></a>
+<!-- NAVBAR -->
+<nav class="navbar" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nbi">
+      <a href="#home" class="bw" aria-label="Maven Drive Academy home">
+        <img src="https://i.postimg.cc/2jTWTB2t/Maven-Logo.png" alt="Maven Drive Academy logo" class="bl"/>
+        <div class="bt">
+          <h1>Maven <span>Drive Academy</span></h1>
+          <small>Master the Drive, Own the Road!</small>
         </div>
-      </div>
+      </a>
+      <ul class="nl">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#booking">Book Now</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#denton">Areas</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><a href="#contact" class="nc">Contact</a></li>
+      </ul>
+      <button class="hbg" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+</nav>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="mainNav">
+<!-- HERO SLIDESHOW -->
+<header id="home" class="hero" aria-label="Hero">
+  <div class="slide active" id="slide0">
+    <img src="https://i.postimg.cc/3x0DKf7f/maven-poster.png" alt="Maven Drive Academy student with instructor"/>
+    <div class="slide-ov"></div>
+  </div>
+  <div class="slide" id="slide1">
+    <img src="https://i.postimg.cc/vHTbRtw3/cineevent-pic.jpg" alt="Professional driving lesson in progress"/>
+    <div class="slide-ov"></div>
+  </div>
+  <div class="slide" id="slide2">
+    <img src="https://i.postimg.cc/SNdq31PK/pic4-cineevent.jpg" alt="Confident learner driver on lesson"/>
+    <div class="slide-ov"></div>
+  </div>
+
+  <button class="sarr prev" id="slidePrev" aria-label="Previous slide"><i class="bi bi-chevron-left"></i></button>
+  <button class="sarr next" id="slideNext" aria-label="Next slide"><i class="bi bi-chevron-right"></i></button>
+
+  <div class="sdots" role="tablist" aria-label="Slideshow">
+    <button class="sdot active" data-slide="0" aria-label="Slide 1" role="tab" aria-selected="true"></button>
+    <button class="sdot" data-slide="1" aria-label="Slide 2" role="tab" aria-selected="false"></button>
+    <button class="sdot" data-slide="2" aria-label="Slide 3" role="tab" aria-selected="false"></button>
+  </div>
+
+  <div class="hero-c">
     <div class="container">
-      <div class="navbar-inner">
-        <a href="#home" class="brand-wrap">
-          <img src="https://i.postimg.cc/2jTWTB2t/Maven-Logo.png" alt="Maven Drive Academy" class="brand-logo" />
-          <div class="brand-text">
-            <h1>Maven <span>Drive Academy</span></h1>
-            <small>Master the Drive, Own the Road!</small>
-          </div>
-        </a>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#contact" class="nav-cta">Book Now</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header id="home" class="hero">
-    <div class="hero-grid"></div>
-    <div class="container position-relative">
       <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            DVSA Approved Driving School
-          </div>
-          <h2>Learn with Confidence.<br><span class="accent">Pass with Pride.</span></h2>
-          <p class="hero-desc">Modern, friendly lessons tailored to your pace — from complete beginners to test-ready drivers. Manual &amp; automatic, flexible schedules, pick-up and drop-off included.</p>
-          <div class="hero-price-pill">
-            <i class="bi bi-lightning-charge-fill"></i>
-            Limited Offer — Only £35 per lesson
-          </div>
-          <div class="hero-btns">
-            <a href="#contact" class="btn-gold"><i class="bi bi-calendar-check"></i> Book Your First Lesson</a>
-            <a href="#services" class="btn-outline-white"><i class="bi bi-steering-wheel"></i> Our Services</a>
+        <div class="col-lg-7">
+          <div class="hbadge"><span class="bdot"></span>DVSA Approved &middot; Denton &amp; M34</div>
+          <h2>Learn with Confidence.<br><span class="acc">Pass with Pride.</span></h2>
+          <p class="hero-desc">Professional driving lessons in Denton, Audenshaw, Droylsden and across Greater Manchester. Manual &amp; automatic &mdash; same great price, no surprises.</p>
+          <div class="hpill"><i class="bi bi-lightning-charge-fill"></i>Only &pound;35 per lesson &mdash; Limited Availability</div>
+          <div class="hbtns">
+            <a href="#booking" class="btn-g"><i class="bi bi-calendar-check"></i> Book Your First Lesson</a>
+            <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="btn-ow"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="hero-img-wrap">
-            <img src="https://i.postimg.cc/3x0DKf7f/maven-poster.png" alt="Maven Drive Academy — Learner and instructor" loading="eager" />
-            <div class="hero-img-badge">
-              <span class="star">★★★★★</span> Trusted by local learners
+        <div class="col-lg-5 d-none d-lg-block">
+          <div style="background:rgba(255,255,255,.07);border:1px solid rgba(232,184,75,.22);border-radius:var(--radius-lg);padding:24px;backdrop-filter:blur(8px)">
+            <div class="d-flex align-items-center gap-3 mb-3 pb-3" style="border-bottom:1px solid rgba(255,255,255,.08)">
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="bi bi-star-fill" style="color:var(--navy)"></i></div>
+              <div><div style="font-weight:700;color:#fff;font-size:.93rem">4.9 Stars on Google</div><div style="color:rgba(255,255,255,.5);font-size:.76rem">87 verified reviews</div></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="container">
-      <div class="row g-3 justify-content-center">
-        <div class="col-6 col-md-3">
-          <div class="trust-item">
-            <div class="trust-icon"><i class="bi bi-shield-check-fill"></i></div>
-            <div><strong>DVSA Approved</strong><span>Fully certified school</span></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="trust-item">
-            <div class="trust-icon"><i class="bi bi-star-fill"></i></div>
-            <div><strong>4.9★ Reviews</strong><span>87 Google reviews</span></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="trust-item">
-            <div class="trust-icon"><i class="bi bi-trophy-fill"></i></div>
-            <div><strong>90%+ Pass Rate</strong><span>Above national average</span></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="trust-item">
-            <div class="trust-icon"><i class="bi bi-gear-fill"></i></div>
-            <div><strong>Manual & Auto</strong><span>Same great price</span></div>
+            <div class="d-flex align-items-center gap-3 mb-3 pb-3" style="border-bottom:1px solid rgba(255,255,255,.08)">
+              <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold-deep),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="bi bi-trophy-fill" style="color:var(--navy)"></i></div>
+              <div><div style="font-weight:700;color:#fff;font-size:.93rem">90%+ First-Time Pass Rate</div><div style="color:rgba(255,255,255,.5);font-size:.76rem">Above national average</div></div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <div style="width:44px;height:44px;border-radius:50%;background:rgba(232,184,75,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="bi bi-geo-alt-fill" style="color:var(--gold)"></i></div>
+              <div><div style="font-weight:700;color:#fff;font-size:.93rem">Local to Denton &amp; M34</div><div style="color:rgba(255,255,255,.5);font-size:.76rem">Pick-up from your door</div></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</header>
 
-  <main>
-    <!-- BENEFITS -->
-    <section class="section section-light">
-      <div class="container">
-        <div class="row g-4 reveal">
-          <div class="col-md-6 col-xl-3">
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="bi bi-person-check-fill"></i></div>
-              <h3>Patient, Expert Instructors</h3>
-              <p>Calm, clear coaching that builds confidence fast — perfect for nervous learners and those returning to driving.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="bi bi-gear-fill"></i></div>
-              <h3>Manual &amp; Automatic</h3>
-              <p>Same price for both transmissions. Switch anytime. Modern, clean dual-control cars for maximum safety.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="bi bi-flag-fill"></i></div>
-              <h3>Test-Route Practice</h3>
-              <p>Realistic mock tests and full familiarisation with your local test centre routes and current standards.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="bi bi-geo-alt-fill"></i></div>
-              <h3>Pick-Up &amp; Drop-Off</h3>
-              <p>We come to you — home, college, or work. Flexible scheduling that fits around your life, not ours.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section section-white">
-      <div class="container">
-        <div class="row g-5 align-items-start">
-          <div class="col-lg-4 reveal">
-            <div class="s-tag">What We Offer</div>
-            <h2 class="s-title">Services Built Around <span class="accent">You</span></h2>
-            <p class="s-body">From your very first lesson to test day, we're with you every step of the way with personalised coaching and expert guidance.</p>
-            <div class="service-tabs mt-4">
-              <button class="s-tab active" onclick="showTab('lessons', this)"><i class="bi bi-steering-wheel"></i> Lessons</button>
-              <button class="s-tab" onclick="showTab('refresher', this)"><i class="bi bi-arrow-repeat"></i> Refresher</button>
-              <button class="s-tab" onclick="showTab('mock', this)"><i class="bi bi-journal-check"></i> Mock Tests</button>
-            </div>
-          </div>
-          <div class="col-lg-8 reveal rd1">
-            <div class="service-panel active" id="panel-lessons">
-              <div class="row align-items-center g-4">
-                <div class="col-md-7">
-                  <h3 class="fw-bold mb-3" style="font-family:'DM Serif Display',serif;font-size:1.6rem;">Driving Lessons</h3>
-                  <p class="text-muted small mb-4">From junctions and roundabouts to complex manoeuvres and night driving — we cover everything to get you test-ready.</p>
-                  <ul class="check-list">
-                    <li><i class="bi bi-check-circle-fill"></i> Personalised lesson plans &amp; progress tracking</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Free theory app recommendations &amp; support</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Pick-up &amp; drop-off at home, college, or work</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Manual &amp; automatic — same great price</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Flexible morning, evening &amp; weekend slots</li>
-                  </ul>
-                </div>
-                <div class="col-md-5 text-center">
-                  <div class="service-price-tag"><sup>£</sup>35 <small>/ hour</small></div>
-                  <p class="text-muted small mt-1 mb-4">Same price for manual &amp; automatic</p>
-                  <a href="#contact" class="btn-gold d-inline-flex"><i class="bi bi-calendar-check me-1"></i> Book Now</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-panel" id="panel-refresher">
-              <div class="row align-items-center g-4">
-                <div class="col-md-7">
-                  <h3 class="fw-bold mb-3" style="font-family:'DM Serif Display',serif;font-size:1.6rem;">Refresher Courses</h3>
-                  <p class="text-muted small mb-4">Returning to driving after a break, or want to sharpen specific skills? We'll build your confidence back quickly.</p>
-                  <ul class="check-list">
-                    <li><i class="bi bi-check-circle-fill"></i> Confidence-building sessions at your pace</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Motorway, parking, and hazard perception focus</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Flexible 60, 90 or 120-minute slots</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Eco-driving tips for everyday efficiency</li>
-                  </ul>
-                </div>
-                <div class="col-md-5 text-center">
-                  <div class="service-price-tag"><sup>£</sup>35 <small>/ hour</small></div>
-                  <p class="text-muted small mt-1 mb-4">Flexible session lengths available</p>
-                  <a href="#contact" class="btn-gold d-inline-flex"><i class="bi bi-calendar-check me-1"></i> Book Now</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-panel" id="panel-mock">
-              <div class="row align-items-center g-4">
-                <div class="col-md-7">
-                  <h3 class="fw-bold mb-3" style="font-family:'DM Serif Display',serif;font-size:1.6rem;">Mock Tests</h3>
-                  <p class="text-muted small mb-4">Replicate your actual test experience with structured feedback to identify and fix gaps before test day.</p>
-                  <ul class="check-list">
-                    <li><i class="bi bi-check-circle-fill"></i> Uses real local test routes &amp; current standards</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Detailed debrief &amp; personalised improvement plan</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Builds test-day composure and confidence</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Optional video review where available</li>
-                  </ul>
-                </div>
-                <div class="col-md-5 text-center">
-                  <div class="service-price-tag"><sup>£</sup>35 <small>/ session</small></div>
-                  <p class="text-muted small mt-1 mb-4">Full mock test experience included</p>
-                  <a href="#contact" class="btn-gold d-inline-flex"><i class="bi bi-calendar-check me-1"></i> Book Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" class="section section-light">
-      <div class="container">
-        <div class="text-center reveal mb-5">
-          <div class="s-tag d-inline-flex">Our Packages</div>
-          <h2 class="s-title">Simple, <span class="accent">Transparent</span> Pricing</h2>
-          <p class="s-body mx-auto" style="max-width:520px;">No hidden fees, no surprises. Pick the option that suits your schedule and goals.</p>
-        </div>
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="price-card">
-              <div class="price-label">Pay As You Go</div>
-              <div class="price-amount">£35</div>
-              <div class="price-desc">Per lesson — perfect for flexibility</div>
-              <ul class="price-list">
-                <li><i class="bi bi-check2"></i> 1-hour lesson</li>
-                <li><i class="bi bi-check2"></i> Manual or automatic</li>
-                <li><i class="bi bi-check2"></i> Pick-up &amp; drop-off</li>
-                <li><i class="bi bi-check2"></i> Progress feedback</li>
-              </ul>
-              <a href="#contact" class="btn-navy">Book a Lesson</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 reveal rd1">
-            <div class="price-card featured">
-              <div class="popular-badge">Most Popular</div>
-              <div class="price-label">Starter Bundle</div>
-              <div class="price-amount">£350</div>
-              <div class="price-desc">10 lessons — best value for beginners</div>
-              <ul class="price-list">
-                <li><i class="bi bi-check2"></i> 10 × 1-hour lessons</li>
-                <li><i class="bi bi-check2"></i> Personalised lesson plan</li>
-                <li><i class="bi bi-check2"></i> Manual or automatic</li>
-                <li><i class="bi bi-check2"></i> Regular progress tracking</li>
-                <li><i class="bi bi-check2"></i> Free theory app guidance</li>
-              </ul>
-              <a href="#contact" class="btn-navy">Reserve Bundle</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 reveal rd2">
-            <div class="price-card">
-              <div class="price-label">Test Week Focus</div>
-              <div class="price-amount" style="font-size:2rem;padding-top:8px;">Custom</div>
-              <div class="price-desc">Tailored plan around your test date</div>
-              <ul class="price-list">
-                <li><i class="bi bi-check2"></i> Lessons leading up to test</li>
-                <li><i class="bi bi-check2"></i> Full mock test included</li>
-                <li><i class="bi bi-check2"></i> Test-route familiarisation</li>
-                <li><i class="bi bi-check2"></i> Debrief &amp; action plan</li>
-              </ul>
-              <a href="#contact" class="btn-navy">Get a Quote</a>
-            </div>
-          </div>
-        </div>
-        <p class="text-center mt-4 text-muted small reveal">*Block bookings can be arranged. Contact us for intensive courses and custom packages.</p>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section section-dark">
-      <div class="container">
-        <div class="text-center reveal mb-5">
-          <div class="s-tag d-inline-flex" style="color:var(--gold)">What Learners Say</div>
-          <h2 class="s-title" style="color:white">Real Results, <span style="color:var(--gold);font-style:italic">Real Stories</span></h2>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-4 reveal">
-            <div class="testi-card">
-              <div class="stars">★★★★★</div>
-              <p class="testi-text">"I was a nervous beginner who nearly gave up. After just a few sessions I felt completely in control — passed first time! Best decision I made."</p>
-              <div class="testi-author">A. Khan</div>
-              <div class="testi-role">First-time passer</div>
-            </div>
-          </div>
-          <div class="col-md-4 reveal rd1">
-            <div class="testi-card">
-              <div class="stars">★★★★★</div>
-              <p class="testi-text">"Clear, constructive feedback every lesson. The mock test was spot-on — the real thing felt identical. Absolutely worth every penny at £35."</p>
-              <div class="testi-author">J. Patel</div>
-              <div class="testi-role">Recent passer</div>
-            </div>
-          </div>
-          <div class="col-md-4 reveal rd2">
-            <div class="testi-card">
-              <div class="stars">★★★★★</div>
-              <p class="testi-text">"Incredibly flexible with times around my work shifts. Friendly instructor, great value, and I passed with only minor faults. Highly recommend!"</p>
-              <div class="testi-author">S. Williams</div>
-              <div class="testi-role">Flexible learner</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AREAS + WHY MAVEN -->
-    <section class="section section-dark" style="padding-top:0">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-6 reveal">
-            <div class="area-card">
-              <h4><i class="bi bi-geo-alt-fill"></i> Areas We Cover</h4>
-              <ul>
-                <li>City centre &amp; surrounding suburbs</li>
-                <li>Nearby towns and university campuses</li>
-                <li>All major DVSA test centres in the area</li>
-                <li>Home, college, and workplace pick-up</li>
-              </ul>
-              <p style="color:rgba(255,255,255,0.5);font-size:.82rem;margin-top:16px;">Not sure if we cover your area? Message us — we'll confirm immediately.</p>
-            </div>
-          </div>
-          <div class="col-lg-6 reveal rd1">
-            <div class="area-card">
-              <h4><i class="bi bi-award-fill"></i> Why Choose Maven Drive?</h4>
-              <ul>
-                <li>DVSA-approved, fully certified instructors</li>
-                <li>90%+ first-time pass rate</li>
-                <li>4.9★ from 87 genuine Google reviews</li>
-                <li>Manual &amp; automatic at the same price — unique USP</li>
-                <li>Transparent pricing, zero hidden fees</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQs -->
-    <section id="faqs" class="section section-white">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-4 reveal">
-            <div class="s-tag">Got Questions?</div>
-            <h2 class="s-title">Frequently <span class="accent">Asked</span></h2>
-            <p class="s-body">Can't find your answer? Get in touch — we're always happy to help.</p>
-            <a href="#contact" class="btn-gold d-inline-flex mt-4"><i class="bi bi-chat-dots"></i> Ask Us Directly</a>
-          </div>
-          <div class="col-lg-8 reveal rd1">
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">How long is a lesson? <span class="faq-icon">+</span></button>
-              <div class="faq-answer"><p>Standard lessons are 60 minutes. 90-minute and 120-minute sessions are also available on request — great for intensive preparation closer to test day.</p></div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">Do you offer pick-up and drop-off? <span class="faq-icon">+</span></button>
-              <div class="faq-answer"><p>Yes — we pick up from your home, school, university, or workplace within our coverage area. Just let us know your preferred location when you book.</p></div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">Manual or automatic — which should I choose? <span class="faq-icon">+</span></button>
-              <div class="faq-answer"><p>Both are priced at £35 per lesson — a genuine USP! Manual gives you a full UK licence, but automatic is faster to learn. Your instructor will advise what suits you best, and you can switch if needed.</p></div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">How do I pay? <span class="faq-icon">+</span></button>
-              <div class="faq-answer"><p>We accept payment by bank transfer, cash, or card. Block bookings can be pre-paid for a seamless experience. No deposits required for your first lesson.</p></div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">How many lessons will I need? <span class="faq-icon">+</span></button>
-              <div class="faq-answer"><p>The DVSA average is 45 hours, but many of our learners pass in fewer with consistent practice. We'll give you an honest estimate after your first lesson and track your progress every session.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section section-light">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-4 reveal">
-            <div class="s-tag">Get In Touch</div>
-            <h2 class="s-title">Book Your <span class="accent">Lesson Today</span></h2>
-            <p class="s-body mb-5">Fill in the form and we'll be in touch within a few hours to confirm your booking.</p>
-            <div class="contact-detail-item">
-              <div class="c-icon"><i class="bi bi-telephone-fill"></i></div>
-              <div>
-                <div class="c-label">Call / WhatsApp</div>
-                <div class="c-val"><a href="tel:+447545560067">07545 560 067</a></div>
-              </div>
-            </div>
-            <div class="contact-detail-item">
-              <div class="c-icon" style="background:#e7f9ef;color:#25D366"><i class="bi bi-whatsapp"></i></div>
-              <div>
-                <div class="c-label">WhatsApp</div>
-                <div class="c-val"><a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank">Message us now →</a></div>
-              </div>
-            </div>
-            <div class="contact-detail-item">
-              <div class="c-icon"><i class="bi bi-instagram"></i></div>
-              <div>
-                <div class="c-label">Instagram</div>
-                <div class="c-val"><a href="https://www.instagram.com/mavendriveacademy/?hl=en" target="_blank">@mavendriveacademy</a></div>
-              </div>
-            </div>
-            <div class="contact-detail-item">
-              <div class="c-icon"><i class="bi bi-facebook"></i></div>
-              <div>
-                <div class="c-label">Facebook</div>
-                <div class="c-val"><a href="https://www.facebook.com/mavendriveacademy" target="_blank">Maven Drive Academy</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 reveal rd1">
-            <div class="contact-form-wrap">
-              <h3 style="font-family:'DM Serif Display',serif;font-size:1.7rem;color:var(--navy);margin-bottom:28px;">Book a Lesson</h3>
-              <form action="https://formspree.io/f/xldpppve" method="POST">
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="field-label">Full Name *</label>
-                    <input type="text" name="name" class="field-input" placeholder="Your full name" required />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="field-label">Phone Number *</label>
-                    <input type="tel" name="phone" class="field-input" placeholder="07XXX XXX XXX" required />
-                  </div>
-                  <div class="col-12">
-                    <label class="field-label">Email Address *</label>
-                    <input type="email" name="email" class="field-input" placeholder="your@email.com" required />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="field-label">Service *</label>
-                    <select name="service" class="field-input" required>
-                      <option value="">Select a service...</option>
-                      <option value="Driving Lesson">Driving Lesson</option>
-                      <option value="Refresher Course">Refresher Course</option>
-                      <option value="Mock Test">Mock Test</option>
-                      <option value="Intensive Course">Intensive Course</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="field-label">Transmission</label>
-                    <select name="transmission" class="field-input">
-                      <option value="">No preference</option>
-                      <option value="Manual">Manual</option>
-                      <option value="Automatic">Automatic</option>
-                    </select>
-                  </div>
-                  <div class="col-12">
-                    <label class="field-label">Message / Preferred Times</label>
-                    <textarea name="message" rows="4" class="field-input" placeholder="Tell us your preferred times, area, and any questions..."></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn-gold w-100" style="justify-content:center;font-size:1rem;padding:16px;">
-                      <i class="bi bi-send-fill"></i> Submit Booking Request
-                    </button>
-                  </div>
-                  <input type="hidden" name="campaign" value="website-cta-35" />
-                </div>
-                <p class="text-center mt-3" style="font-size:.82rem;color:#999;">Or call / WhatsApp us directly: <a href="tel:+447545560067" style="color:var(--navy);font-weight:700;">07545 560 067</a></p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- CTA BANNER -->
-  <div class="cta-banner">
-    <div class="container reveal">
-      <h2>Ready to Start Your Journey?</h2>
-      <p>Book your first lesson today — flexible times, no pressure, just results.</p>
-      <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="#contact" class="btn-navy-lg"><i class="bi bi-calendar-check-fill"></i> Book Now — £35/hr</a>
-        <a href="https://wa.me/447545560067" target="_blank" class="btn-navy-lg" style="background:white;color:var(--navy)"><i class="bi bi-whatsapp" style="color:#25D366"></i> WhatsApp Us</a>
-      </div>
+<!-- TRUST BAR -->
+<div class="tbar">
+  <div class="container">
+    <div class="row g-3 justify-content-center">
+      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-shield-check-fill"></i></div><div><strong>DVSA Approved</strong><span>Fully certified school</span></div></div></div>
+      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-star-fill"></i></div><div><strong>4.9&star; Rating</strong><span>87 Google reviews</span></div></div></div>
+      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-trophy-fill"></i></div><div><strong>90%+ Pass Rate</strong><span>Above national average</span></div></div></div>
+      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-gear-fill"></i></div><div><strong>Manual &amp; Auto</strong><span>Same price &mdash; unique!</span></div></div></div>
     </div>
   </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="row g-4 pb-2">
-        <div class="col-lg-4">
-          <div class="footer-brand">Maven <span>Drive Academy</span></div>
-          <div class="footer-tagline">"Master the Drive, Own the Road!"</div>
-          <p style="font-size:.85rem;line-height:1.8;max-width:280px;">Professional, DVSA-approved driving lessons for learners of all levels. Manual &amp; automatic at the same great price.</p>
-          <div class="d-flex gap-3 mt-4">
-            <a href="https://www.instagram.com/mavendriveacademy/?hl=en" target="_blank" style="color:rgba(255,255,255,0.5);font-size:1.3rem;transition:.2s;"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.facebook.com/mavendriveacademy" target="_blank" style="color:rgba(255,255,255,0.5);font-size:1.3rem;transition:.2s;"><i class="bi bi-facebook"></i></a>
-            <a href="https://wa.me/447545560067" target="_blank" style="color:rgba(255,255,255,0.5);font-size:1.3rem;transition:.2s;"><i class="bi bi-whatsapp"></i></a>
-          </div>
-        </div>
-        <div class="col-6 col-lg-2">
-          <div class="f-head">Navigate</div>
-          <a href="#home" class="f-link">Home</a>
-          <a href="#services" class="f-link">Services</a>
-          <a href="#pricing" class="f-link">Pricing</a>
-          <a href="#faqs" class="f-link">FAQs</a>
-          <a href="#contact" class="f-link">Contact</a>
-        </div>
-        <div class="col-6 col-lg-2">
-          <div class="f-head">Services</div>
-          <a href="#services" class="f-link">Driving Lessons</a>
-          <a href="#services" class="f-link">Refresher Courses</a>
-          <a href="#services" class="f-link">Mock Tests</a>
-          <a href="#services" class="f-link">Intensive Courses</a>
-        </div>
-        <div class="col-lg-4">
-          <div class="f-head">Contact</div>
-          <a href="tel:+447545560067" class="f-link"><i class="bi bi-telephone me-2"></i>07545 560 067</a>
-          <a href="https://wa.me/447545560067" target="_blank" class="f-link"><i class="bi bi-whatsapp me-2" style="color:#25D366;"></i>WhatsApp</a>
-          <a href="https://www.instagram.com/mavendriveacademy" target="_blank" class="f-link"><i class="bi bi-instagram me-2"></i>@mavendriveacademy</a>
-          <a href="https://www.facebook.com/mavendriveacademy" target="_blank" class="f-link"><i class="bi bi-facebook me-2"></i>Facebook</a>
-          <div class="mt-3" style="font-size:.82rem;color:rgba(255,255,255,0.35);">
-            <i class="bi bi-shield-check me-1" style="color:var(--gold)"></i> DVSA Approved &nbsp;&bull;&nbsp;
-            <i class="bi bi-star-fill me-1" style="color:var(--gold)"></i> 4.9★ / 87 Reviews
-          </div>
-        </div>
-      </div>
+<main>
 
-      <div class="footer-bottom">
-        <p>© 2025 Maven Drive Academy. All Rights Reserved.</p>
-        <div class="powered-by">
-          <span>Designed &amp; hosted by</span>
-          <a href="https://www.sqwebsites.co.uk" target="_blank" rel="noopener" title="SQ Websites — Professional Web Design Manchester">
-            <span class="sq-logo-gold">SQ</span>
+<!-- BOOKING (directly below hero) -->
+<section id="booking" class="bsec">
+  <div class="container">
+    <div class="binner">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-4">
+          <h2>Book a Lesson</h2>
+          <p class="sub">Fill in the form and we&rsquo;ll confirm your booking within a few hours. Or contact us directly:</p>
+          <a href="tel:+447545560067" class="d-flex align-items-center gap-3 mb-3 text-decoration-none" style="color:inherit">
+            <div class="cico" style="background:rgba(232,184,75,.15);border:1px solid rgba(232,184,75,.28)"><i class="bi bi-telephone-fill" style="color:var(--gold)"></i></div>
+            <div><div class="clabel" style="color:rgba(255,255,255,.48)">Call us</div><div style="color:#fff;font-weight:600;font-size:.9rem">07545 560 067</div></div>
           </a>
-          <a href="https://www.sqwebsites.co.uk" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);text-decoration:none;font-size:.78rem;">sqwebsites.co.uk</a>
+          <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="d-flex align-items-center gap-3 mb-4 text-decoration-none" style="color:inherit">
+            <div class="cico" style="background:#25D366"><i class="bi bi-whatsapp" style="color:#fff;font-size:1.1rem"></i></div>
+            <div><div class="clabel" style="color:rgba(255,255,255,.48)">WhatsApp</div><div style="color:#fff;font-weight:600;font-size:.9rem">Message us now &rarr;</div></div>
+          </a>
+          <div style="background:rgba(232,184,75,.09);border:1px solid rgba(232,184,75,.2);border-radius:10px;padding:14px">
+            <p style="color:rgba(255,255,255,.7);font-size:.8rem;margin:0;line-height:1.7"><i class="bi bi-info-circle me-2" style="color:var(--gold)"></i>We cover <strong style="color:var(--gold)">Denton, M34, Audenshaw, Droylsden, Hyde, Gorton</strong> and surrounding areas. Pick-up from your door.</p>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <form id="bookingForm" action="https://formspree.io/f/xldpppve" method="POST" novalidate>
+            <div id="formFields">
+              <div class="row g-0">
+                <div class="col-md-6 pe-md-2">
+                  <label class="fl" for="b-name">Full Name *</label>
+                  <input type="text" id="b-name" name="name" class="fi" placeholder="Your full name" required/>
+                </div>
+                <div class="col-md-6 ps-md-2">
+                  <label class="fl" for="b-phone">Phone / WhatsApp *</label>
+                  <input type="tel" id="b-phone" name="phone" class="fi" placeholder="07XXX XXX XXX" required/>
+                </div>
+              </div>
+              <label class="fl" for="b-email">Email Address *</label>
+              <input type="email" id="b-email" name="email" class="fi" placeholder="your@email.com" required/>
+              <div class="row g-0">
+                <div class="col-md-6 pe-md-2">
+                  <label class="fl" for="b-service">Service *</label>
+                  <select id="b-service" name="service" class="fi" required>
+                    <option value="">Select a service&hellip;</option>
+                    <option value="Driving Lesson - 35ph">Driving Lesson (&pound;35/hr)</option>
+                    <option value="Refresher Course - 35ph">Refresher Course (&pound;35/hr)</option>
+                    <option value="Mock Test - 35">Mock Test (&pound;35)</option>
+                    <option value="Intensive Course - custom">Intensive Course (custom)</option>
+                    <option value="Starter Bundle 10 Lessons - 350">Starter Bundle &mdash; 10 Lessons (&pound;350)</option>
+                  </select>
+                </div>
+                <div class="col-md-6 ps-md-2">
+                  <label class="fl" for="b-trans">Transmission</label>
+                  <select id="b-trans" name="transmission" class="fi">
+                    <option value="No preference">No preference</option>
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                  </select>
+                </div>
+              </div>
+              <label class="fl" for="b-area">Your Pickup Area / Postcode *</label>
+              <input type="text" id="b-area" name="area" class="fi" placeholder="e.g. Denton, M34 2AB" required/>
+              <label class="fl" for="b-msg">Preferred Times &amp; Any Questions</label>
+              <textarea id="b-msg" name="message" rows="3" class="fi" placeholder="e.g. Evenings and weekends preferred, complete beginner&hellip;" style="margin-bottom:0;resize:vertical"></textarea>
+              <input type="hidden" name="_subject" value="New Lesson Booking - Maven Drive Academy"/>
+              <input type="hidden" name="source" value="maven-website"/>
+              <button type="submit" id="bookBtn" class="btn-g mt-3 w-100" style="justify-content:center;font-size:.98rem;padding:14px;border-radius:12px">
+                <i class="bi bi-send-fill"></i> Submit Booking Request
+              </button>
+              <p style="color:rgba(255,255,255,.38);font-size:.76rem;text-align:center;margin-top:9px">We respond within a few hours &middot; Your details are kept private</p>
+            </div>
+            <div class="fsuccess" id="formSuccess">
+              <div class="tick"><i class="bi bi-check-circle-fill"></i></div>
+              <h3>Booking Request Sent!</h3>
+              <p>Thanks &mdash; we&rsquo;ll be in touch within a few hours to confirm your lesson.<br>Can&rsquo;t wait? Call or WhatsApp us directly:</p>
+              <a href="tel:+447545560067" class="btn-g mt-3 d-inline-flex"><i class="bi bi-telephone-fill"></i> 07545 560 067</a>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    /* Mobile Nav */
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileClose = document.getElementById('mobileClose');
-    hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
-    mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
-    function closeMobile() { mobileNav.classList.remove('open'); }
+<!-- BENEFITS -->
+<section class="sec sec-lt">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="stag d-inline-flex">Why Choose Us</div>
+      <h2 class="stitle">Everything You Need to <span class="acc">Pass First Time</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-xl-3 reveal">
+        <div class="bcard">
+          <div class="bico"><i class="bi bi-person-check-fill"></i></div>
+          <h3>Patient, Expert Instructors</h3>
+          <p>Calm, clear coaching that builds real confidence &mdash; perfect for nervous learners and those returning after a break.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3 reveal rd1">
+        <div class="bcard">
+          <div class="bico"><i class="bi bi-gear-fill"></i></div>
+          <h3>Manual &amp; Automatic &mdash; Same Price</h3>
+          <p>Both transmissions cost &pound;35/hr. A genuinely unique offer. Switch anytime. Modern dual-control cars maintained to the highest standard.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3 reveal rd2">
+        <div class="bcard">
+          <div class="bico"><i class="bi bi-flag-fill"></i></div>
+          <h3>Test-Route Specialists</h3>
+          <p>We know every road around Denton, M34 and nearby DVSA test centres. Realistic mock tests with full debrief every time.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3 reveal rd3">
+        <div class="bcard">
+          <div class="bico"><i class="bi bi-geo-alt-fill"></i></div>
+          <h3>Door-to-Door Pick-Up</h3>
+          <p>We collect you from home, school, college or work across Denton, M34 and surrounding areas at no extra charge.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    /* Service tabs */
-    function showTab(id, btn) {
-      document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.s-tab').forEach(t => t.classList.remove('active'));
-      document.getElementById('panel-' + id).classList.add('active');
-      btn.classList.add('active');
+<!-- SERVICES -->
+<section id="services" class="sec sec-wh">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-4 reveal">
+        <div class="stag">What We Offer</div>
+        <h2 class="stitle">Services Built Around <span class="acc">You</span></h2>
+        <p class="sbody">From your very first lesson to test day, we provide personalised coaching and expert guidance every step of the way.</p>
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <button class="stab active" onclick="showTab('lessons',this)"><i class="bi bi-steering-wheel"></i> Lessons</button>
+          <button class="stab" onclick="showTab('refresher',this)"><i class="bi bi-arrow-repeat"></i> Refresher</button>
+          <button class="stab" onclick="showTab('mock',this)"><i class="bi bi-journal-check"></i> Mock Tests</button>
+          <button class="stab" onclick="showTab('intensive',this)"><i class="bi bi-lightning-charge"></i> Intensive</button>
+        </div>
+      </div>
+      <div class="col-lg-8 reveal rd1">
+        <div class="spanel active" id="panel-lessons">
+          <div class="row align-items-center g-4">
+            <div class="col-md-7">
+              <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:10px">Driving Lessons</h3>
+              <p style="color:#888;font-size:.84rem;margin-bottom:16px">From junctions and roundabouts to complex manoeuvres and dual carriageways &mdash; we cover everything the DVSA test requires.</p>
+              <ul class="ckl">
+                <li><i class="bi bi-check-circle-fill"></i> Personalised lesson plans &amp; progress tracking every session</li>
+                <li><i class="bi bi-check-circle-fill"></i> Free theory app guidance &amp; hazard perception support</li>
+                <li><i class="bi bi-check-circle-fill"></i> Pick-up from home, college or work in Denton &amp; M34</li>
+                <li><i class="bi bi-check-circle-fill"></i> Manual &amp; automatic at the exact same price &mdash; &pound;35/hr</li>
+                <li><i class="bi bi-check-circle-fill"></i> Morning, evening &amp; weekend slots available</li>
+              </ul>
+            </div>
+            <div class="col-md-5 text-center">
+              <div class="sptag"><sup>&pound;</sup>35<small>/hr</small></div>
+              <p style="color:#aaa;font-size:.78rem;margin:5px 0 16px">Manual &amp; automatic same price</p>
+              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i> Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="spanel" id="panel-refresher">
+          <div class="row align-items-center g-4">
+            <div class="col-md-7">
+              <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:10px">Refresher Courses</h3>
+              <p style="color:#888;font-size:.84rem;margin-bottom:16px">Returning after a break? Want to tackle motorways or improve parking? We&rsquo;ll rebuild your confidence fast.</p>
+              <ul class="ckl">
+                <li><i class="bi bi-check-circle-fill"></i> Confidence-building at your own pace</li>
+                <li><i class="bi bi-check-circle-fill"></i> Motorway driving, parking &amp; hazard perception focus</li>
+                <li><i class="bi bi-check-circle-fill"></i> Flexible 60, 90 or 120-minute sessions</li>
+                <li><i class="bi bi-check-circle-fill"></i> Eco-driving &amp; modern road awareness tips</li>
+              </ul>
+            </div>
+            <div class="col-md-5 text-center">
+              <div class="sptag"><sup>&pound;</sup>35<small>/hr</small></div>
+              <p style="color:#aaa;font-size:.78rem;margin:5px 0 16px">Flexible session lengths</p>
+              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i> Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="spanel" id="panel-mock">
+          <div class="row align-items-center g-4">
+            <div class="col-md-7">
+              <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:10px">Mock Tests</h3>
+              <p style="color:#888;font-size:.84rem;margin-bottom:16px">Replicate your actual DVSA test experience with structured feedback so you know exactly what to fix before test day.</p>
+              <ul class="ckl">
+                <li><i class="bi bi-check-circle-fill"></i> Real local test routes and current DVSA standards</li>
+                <li><i class="bi bi-check-circle-fill"></i> Detailed debrief with fault analysis &amp; action plan</li>
+                <li><i class="bi bi-check-circle-fill"></i> Builds test-day composure and reduces nerves</li>
+                <li><i class="bi bi-check-circle-fill"></i> Optional video review where available</li>
+              </ul>
+            </div>
+            <div class="col-md-5 text-center">
+              <div class="sptag"><sup>&pound;</sup>35<small>/session</small></div>
+              <p style="color:#aaa;font-size:.78rem;margin:5px 0 16px">Full mock test experience</p>
+              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i> Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="spanel" id="panel-intensive">
+          <div class="row align-items-center g-4">
+            <div class="col-md-7">
+              <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:10px">Intensive Courses</h3>
+              <p style="color:#888;font-size:.84rem;margin-bottom:16px">Need your licence quickly? Our intensive courses pack learning into days or weeks, keeping you test-ready fast.</p>
+              <ul class="ckl">
+                <li><i class="bi bi-check-circle-fill"></i> Tailored fast-track lesson plans</li>
+                <li><i class="bi bi-check-circle-fill"></i> Multiple lessons per week or per day available</li>
+                <li><i class="bi bi-check-circle-fill"></i> Mock test included in every package</li>
+                <li><i class="bi bi-check-circle-fill"></i> Test booking assistance provided</li>
+              </ul>
+            </div>
+            <div class="col-md-5 text-center">
+              <div class="sptag" style="font-size:2rem;padding-top:10px">Custom</div>
+              <p style="color:#aaa;font-size:.78rem;margin:5px 0 16px">Tailored to your timeline</p>
+              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i> Get a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="sec sec-lt">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="stag d-inline-flex">Our Packages</div>
+      <h2 class="stitle">Simple, <span class="acc">Transparent</span> Pricing</h2>
+      <p class="sbody mx-auto" style="max-width:480px">No hidden fees. No surprises. Choose the option that fits your goals and schedule.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="pcard">
+          <div class="plabel">Pay As You Go</div>
+          <div class="pamount">&pound;35</div>
+          <div class="pdesc">Per lesson &mdash; ultimate flexibility</div>
+          <ul class="plist">
+            <li><i class="bi bi-check2"></i> 1-hour lesson</li>
+            <li><i class="bi bi-check2"></i> Manual or automatic</li>
+            <li><i class="bi bi-check2"></i> Pick-up &amp; drop-off included</li>
+            <li><i class="bi bi-check2"></i> Progress feedback every lesson</li>
+          </ul>
+          <a href="#booking" class="btn-n">Book a Lesson</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal rd1">
+        <div class="pcard feat">
+          <div class="pbadge">Most Popular</div>
+          <div class="plabel">Starter Bundle</div>
+          <div class="pamount">&pound;350</div>
+          <div class="pdesc">10 lessons &mdash; best value to pass</div>
+          <ul class="plist">
+            <li><i class="bi bi-check2"></i> 10 &times; 1-hour lessons</li>
+            <li><i class="bi bi-check2"></i> Personalised lesson plan</li>
+            <li><i class="bi bi-check2"></i> Manual or automatic</li>
+            <li><i class="bi bi-check2"></i> Regular progress tracking</li>
+            <li><i class="bi bi-check2"></i> Free theory app guidance</li>
+          </ul>
+          <a href="#booking" class="btn-n">Reserve Bundle</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal rd2">
+        <div class="pcard">
+          <div class="plabel">Test Week Focus</div>
+          <div class="pamount" style="font-size:2rem;padding-top:6px">Custom</div>
+          <div class="pdesc">Intensive package around your test date</div>
+          <ul class="plist">
+            <li><i class="bi bi-check2"></i> Lessons leading up to your test</li>
+            <li><i class="bi bi-check2"></i> Full mock test included</li>
+            <li><i class="bi bi-check2"></i> Test-route familiarisation</li>
+            <li><i class="bi bi-check2"></i> Debrief &amp; improvement plan</li>
+          </ul>
+          <a href="#booking" class="btn-n">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-4 reveal" style="color:#999;font-size:.8rem">Block bookings and intensive courses available &mdash; <a href="#booking" style="color:var(--gold-deep);font-weight:600">contact us for a custom quote.</a></p>
+  </div>
+</section>
+
+<!-- DENTON & M34 LOCAL SECTION -->
+<section id="denton" class="lsec">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="stag d-inline-flex" style="justify-content:center">Local Expertise</div>
+      <h2 class="stitle" style="color:#fff">Driving Lessons in <span style="color:var(--gold);font-style:italic">Denton &amp; M34</span></h2>
+      <p style="color:rgba(255,255,255,.6);max-width:600px;margin:0 auto;font-size:.91rem;line-height:1.8;font-weight:300">We&rsquo;re based locally and know every road, junction, and test-centre route in the M34 postcode area. Our learners get a genuine insider advantage on test day.</p>
+    </div>
+
+    <div class="text-center mb-5 reveal">
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Denton</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Audenshaw</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Droylsden</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Hyde</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Romiley</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Gorton</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Haughton Green</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Dukinfield</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Openshaw</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Failsworth</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i> Bredbury</span>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="rcard">
+          <h4><i class="bi bi-signpost-2-fill"></i> Key Roads We Train On</h4>
+          <ul>
+            <li>Manchester Road (A57) &mdash; Denton to city</li>
+            <li>Stockport Road (A560) &mdash; Denton to Stockport</li>
+            <li>Ashton Road (A635) &mdash; Audenshaw</li>
+            <li>Hulme Road &mdash; Denton / Reddish</li>
+            <li>Crown Point Road, Denton</li>
+            <li>Windmill Lane, Denton</li>
+            <li>Two Trees Lane, Denton</li>
+            <li>Broomfield Lane, Haughton</li>
+            <li>Sunnyside Road, Denton</li>
+            <li>Dane Road, Audenshaw</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal rd1">
+        <div class="rcard">
+          <h4><i class="bi bi-mailbox2-flag"></i> Postcodes We Cover</h4>
+          <div class="pgrid">
+            <span class="pc">M34 1</span>
+            <span class="pc">M34 2</span>
+            <span class="pc">M34 3</span>
+            <span class="pc">M34 5</span>
+            <span class="pc">M34 6</span>
+            <span class="pc">M34 7</span>
+            <span class="pc">SK14</span>
+            <span class="pc">M43</span>
+            <span class="pc">M11</span>
+            <span class="pc">M12</span>
+            <span class="pc">M18</span>
+            <span class="pc">OL7</span>
+            <span class="pc">SK6</span>
+            <span class="pc">M35</span>
+          </div>
+          <p style="color:rgba(255,255,255,.42);font-size:.74rem;margin-top:12px;margin-bottom:0">Not listed? Ask us &mdash; we likely cover your area.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal rd2">
+        <div class="rcard">
+          <h4><i class="bi bi-arrow-repeat"></i> Denton Junctions &amp; Roundabouts</h4>
+          <ul>
+            <li>Denton roundabout (A57 / A560)</li>
+            <li>Crown Point retail roundabout</li>
+            <li>Audenshaw crossroads (A635)</li>
+            <li>Haughton Green junction</li>
+            <li>Manchester Rd / Stockport Rd split</li>
+            <li>M60 Junction 24 (Denton island)</li>
+            <li>Bredbury island (A560 / M60)</li>
+            <li>Gorton roundabout (A57)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal rd3">
+        <div class="rcard">
+          <h4><i class="bi bi-buildings-fill"></i> Local Landmarks We Use</h4>
+          <ul>
+            <li>Denton Town Centre</li>
+            <li>Crown Point Shopping Park</li>
+            <li>Tesco Extra, Hyde Road</li>
+            <li>Tameside Hospital, Ashton</li>
+            <li>Denton Golf Club</li>
+            <li>Haughton Dale Nature Reserve</li>
+            <li>Audenshaw Reservoirs</li>
+            <li>Hyde Town Hall, SK14</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal mb-3">
+      <h3 style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:5px">Nearby DVSA Test Centres</h3>
+      <p style="color:rgba(255,255,255,.48);font-size:.84rem;margin-bottom:22px">We practise the exact routes used at each centre. You&rsquo;ll arrive knowing every road.</p>
+    </div>
+    <div class="row g-3 reveal">
+      <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Tameside</h4><p>Ashton-under-Lyne</p></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Stockport</h4><p>Stockport town centre</p></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Gorton</h4><p>Manchester M18</p></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Hyde</h4><p>Hyde, SK14</p></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Didsbury</h4><p>South Manchester</p></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Openshaw</h4><p>Manchester M11</p></div></div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <p style="color:rgba(255,255,255,.62);font-size:.93rem;margin-bottom:18px">Ready to learn with a local instructor who knows every road in M34?</p>
+      <a href="#booking" class="btn-g" style="font-size:.97rem;padding:14px 34px"><i class="bi bi-calendar-check-fill"></i> Book Your Lesson Today</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec sec-wh">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="stag d-inline-flex">What Learners Say</div>
+      <h2 class="stitle">Real Results, <span class="acc">Real Stories</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 reveal">
+        <div class="tcard">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="ttxt">&ldquo;I was a nervous beginner from Denton who nearly gave up. After a few sessions I felt completely in control &mdash; passed first time! The instructor knew all the local roads brilliantly.&rdquo;</p>
+          <div class="tauth">A. Khan</div>
+          <div class="trole">Denton, M34 &mdash; First-time passer</div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal rd1">
+        <div class="tcard">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="ttxt">&ldquo;Clear, constructive feedback every lesson. The mock test covered the exact Tameside test centre routes and the real thing felt identical. Worth every penny.&rdquo;</p>
+          <div class="tauth">J. Patel</div>
+          <div class="trole">Audenshaw &mdash; Recent passer</div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal rd2">
+        <div class="tcard">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="ttxt">&ldquo;Incredibly flexible &mdash; worked around my shifts. They picked me up from Crown Point and knew every road in M34. Friendly instructor, great value at &pound;35, passed with only minor faults!&rdquo;</p>
+          <div class="tauth">S. Williams</div>
+          <div class="trole">Droylsden &mdash; Flexible learner</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section id="faqs" class="sec sec-lt">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 reveal">
+        <div class="stag">Got Questions?</div>
+        <h2 class="stitle">Frequently <span class="acc">Asked</span></h2>
+        <p class="sbody">Can&rsquo;t find your answer? Get in touch and we&rsquo;ll respond quickly.</p>
+        <a href="#booking" class="btn-g d-inline-flex mt-4"><i class="bi bi-chat-dots"></i> Ask Us</a>
+      </div>
+      <div class="col-lg-8 reveal rd1">
+        <div class="fitem">
+          <button class="fbtn" onclick="tFaq(this)">How long is a lesson? <span class="fico">+</span></button>
+          <div class="fans"><p>Standard lessons are 60 minutes. 90-minute and 120-minute sessions are available on request &mdash; great for intensive preparation close to test day. The &pound;35 rate applies per hour in all cases.</p></div>
+        </div>
+        <div class="fitem">
+          <button class="fbtn" onclick="tFaq(this)">Do you cover Denton and the M34 postcode area? <span class="fico">+</span></button>
+          <div class="fans"><p>Yes &mdash; Denton and M34 is our home patch. We cover all M34 postcodes (M34 1, 2, 3, 5, 6, 7) as well as Audenshaw, Droylsden, Hyde (SK14), Gorton (M18), Haughton Green, Dukinfield and surrounding areas. Pick-up is from your door at no extra charge.</p></div>
+        </div>
+        <div class="fitem">
+          <button class="fbtn" onclick="tFaq(this)">Manual or automatic &mdash; which should I choose? <span class="fico">+</span></button>
+          <div class="fans"><p>Both cost exactly &pound;35/hr &mdash; a genuine USP of ours. A manual licence covers all vehicles, but automatic can be quicker to learn. We&rsquo;ll advise after your first lesson and you can switch at any time with no extra cost.</p></div>
+        </div>
+        <div class="fitem">
+          <button class="fbtn" onclick="tFaq(this)">Which test centre will I take my test at? <span class="fico">+</span></button>
+          <div class="fans"><p>The closest DVSA test centres to Denton are Tameside (Ashton-under-Lyne), Gorton (M18), Hyde (SK14), and Stockport. We practise the exact routes used at each one so you&rsquo;ll know every road, junction and roundabout before test day.</p></div>
+        </div>
+        <div class="fitem">
+          <button class="fbtn" onclick="tFaq(this)">How many lessons will I need? <span class="fico">+</span></button>
+          <div class="fans"><p>The DVSA average is around 45 hours but many of our Denton-area learners pass in fewer with consistent practice. We give you an honest estimate after your first lesson and track your progress each session.</p></div>
+        </div>
+        <div class="fitem">
+          <button class="fbtn" onclick="tFaq(this)">How do I pay? <span class="fico">+</span></button>
+          <div class="fans"><p>We accept bank transfer, cash or card. Block bookings can be pre-paid. No deposit required for your first lesson &mdash; just show up ready to learn!</p></div>
+        </div>
+        <div class="fitem">
+          <button class="fbtn" onclick="tFaq(this)">Do you do pick-up and drop-off? <span class="fico">+</span></button>
+          <div class="fans"><p>Yes &mdash; we collect you from home, school, university, college or work anywhere in our coverage area including Denton, Audenshaw, Droylsden, Hyde and surrounding M34 postcodes. All at no extra cost.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<section id="contact" class="cstrip">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="stag d-inline-flex">Get In Touch</div>
+      <h2 class="stitle">We&rsquo;re Just a <span class="acc">Call Away</span></h2>
+      <p class="sbody mx-auto" style="max-width:440px">Prefer to reach out directly? Here&rsquo;s every way to contact Maven Drive Academy.</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-3 reveal">
+        <a href="tel:+447545560067" class="ccard2">
+          <div class="cico" style="background:#e8f0fe"><i class="bi bi-telephone-fill" style="color:var(--navy);font-size:1.1rem"></i></div>
+          <div><div class="clabel">Call Us</div><div class="cval">07545 560 067</div></div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal rd1">
+        <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="ccard2">
+          <div class="cico" style="background:#e7f9ef"><i class="bi bi-whatsapp" style="color:#25D366;font-size:1.2rem"></i></div>
+          <div><div class="clabel">WhatsApp</div><div class="cval">Message us now &rarr;</div></div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal rd2">
+        <a href="https://www.instagram.com/mavendriveacademy/?hl=en" target="_blank" rel="noopener" class="ccard2">
+          <div class="cico" style="background:#fce4f3"><i class="bi bi-instagram" style="color:#c13584;font-size:1.15rem"></i></div>
+          <div><div class="clabel">Instagram</div><div class="cval">@mavendriveacademy</div></div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal rd3">
+        <a href="https://www.facebook.com/mavendriveacademy" target="_blank" rel="noopener" class="ccard2">
+          <div class="cico" style="background:#e7f0fe"><i class="bi bi-facebook" style="color:#1877f2;font-size:1.15rem"></i></div>
+          <div><div class="clabel">Facebook</div><div class="cval">Maven Drive Academy</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CTA BANNER -->
+<div class="ctab">
+  <div class="container reveal">
+    <h2>Ready to Start Your Journey?</h2>
+    <p>Book your first lesson in Denton or M34 today &mdash; flexible times, no pressure, just results.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="#booking" class="btn-nl"><i class="bi bi-calendar-check-fill"></i> Book Now &mdash; &pound;35/hr</a>
+      <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="btn-wa"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4 pb-2">
+      <div class="col-lg-4">
+        <div class="fb">Maven <span>Drive Academy</span></div>
+        <p style="font-size:.76rem;color:rgba(255,255,255,.38);font-style:italic;margin-bottom:14px">&ldquo;Master the Drive, Own the Road!&rdquo;</p>
+        <p style="font-size:.83rem;line-height:1.8;max-width:275px">DVSA-approved driving lessons in Denton, M34 &amp; Greater Manchester. Manual &amp; automatic at the same price &mdash; &pound;35/hr.</p>
+        <div class="d-flex gap-3 mt-4">
+          <a href="https://www.instagram.com/mavendriveacademy/?hl=en" target="_blank" rel="noopener" style="color:rgba(255,255,255,.48);font-size:1.25rem;transition:color .2s" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/mavendriveacademy" target="_blank" rel="noopener" style="color:rgba(255,255,255,.48);font-size:1.25rem;transition:color .2s" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://wa.me/447545560067" target="_blank" rel="noopener" style="color:rgba(255,255,255,.48);font-size:1.25rem;transition:color .2s" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+        <div class="mt-4" style="font-size:.76rem;color:rgba(255,255,255,.3)">
+          <i class="bi bi-shield-check me-1" style="color:var(--gold)"></i> DVSA Approved &nbsp;&middot;&nbsp;
+          <i class="bi bi-star-fill me-1" style="color:var(--gold)"></i> 4.9&#9733; / 87 Reviews
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="fh">Navigate</div>
+        <a href="#home" class="fl2">Home</a>
+        <a href="#booking" class="fl2">Book a Lesson</a>
+        <a href="#services" class="fl2">Services</a>
+        <a href="#pricing" class="fl2">Pricing</a>
+        <a href="#denton" class="fl2">Areas We Cover</a>
+        <a href="#faqs" class="fl2">FAQs</a>
+        <a href="#contact" class="fl2">Contact</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="fh">Services</div>
+        <a href="#services" class="fl2">Driving Lessons</a>
+        <a href="#services" class="fl2">Refresher Courses</a>
+        <a href="#services" class="fl2">Mock Tests</a>
+        <a href="#services" class="fl2">Intensive Courses</a>
+      </div>
+      <div class="col-lg-4">
+        <div class="fh">Contact &amp; Areas</div>
+        <a href="tel:+447545560067" class="fl2"><i class="bi bi-telephone me-2"></i>07545 560 067</a>
+        <a href="https://wa.me/447545560067" target="_blank" rel="noopener" class="fl2"><i class="bi bi-whatsapp me-2" style="color:#25D366"></i>WhatsApp</a>
+        <a href="https://www.instagram.com/mavendriveacademy" target="_blank" rel="noopener" class="fl2"><i class="bi bi-instagram me-2"></i>@mavendriveacademy</a>
+        <a href="https://www.facebook.com/mavendriveacademy" target="_blank" rel="noopener" class="fl2"><i class="bi bi-facebook me-2"></i>Facebook</a>
+        <div class="mt-3" style="font-size:.78rem;color:rgba(255,255,255,.32);line-height:1.9">
+          <strong style="color:rgba(255,255,255,.48)">Areas:</strong><br>
+          Denton &middot; M34 1&ndash;7 &middot; Audenshaw &middot; Droylsden<br>
+          Hyde &middot; Haughton Green &middot; Gorton &middot; Openshaw
+        </div>
+      </div>
+    </div>
+    <div class="ftb">
+      <p>&copy; 2025 Maven Drive Academy. All Rights Reserved.</p>
+      <div class="pby">
+        <span>Designed &amp; hosted by</span>
+        <a href="https://www.sqwebsites.co.uk" target="_blank" rel="noopener" title="SQ Websites &mdash; Professional Web Design Manchester"><span class="sqlg">SQ</span></a>
+        <a href="https://www.sqwebsites.co.uk" target="_blank" rel="noopener" style="color:rgba(255,255,255,.38);text-decoration:none;font-size:.74rem">sqwebsites.co.uk</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* MOBILE NAV */
+var hamburger=document.getElementById('hamburger'),mobileNav=document.getElementById('mobileNav'),mobileClose=document.getElementById('mobileClose');
+hamburger.addEventListener('click',function(){mobileNav.classList.add('open');hamburger.setAttribute('aria-expanded','true')});
+mobileClose.addEventListener('click',cm);
+function cm(){mobileNav.classList.remove('open');hamburger.setAttribute('aria-expanded','false')}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')cm()});
+
+/* SLIDESHOW */
+var slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.sdot'),cur=0,timer=null;
+function goSlide(n){
+  slides[cur].classList.remove('active');dots[cur].classList.remove('active');dots[cur].setAttribute('aria-selected','false');
+  cur=(n+slides.length)%slides.length;
+  slides[cur].classList.add('active');dots[cur].classList.add('active');dots[cur].setAttribute('aria-selected','true');
+}
+function startAuto(){timer=setInterval(function(){goSlide(cur+1)},5000)}
+function resetAuto(){clearInterval(timer);startAuto()}
+document.getElementById('slidePrev').addEventListener('click',function(){goSlide(cur-1);resetAuto()});
+document.getElementById('slideNext').addEventListener('click',function(){goSlide(cur+1);resetAuto()});
+dots.forEach(function(d){d.addEventListener('click',function(){goSlide(+d.dataset.slide);resetAuto()})});
+startAuto();
+
+/* SERVICE TABS */
+function showTab(id,btn){
+  document.querySelectorAll('.spanel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.stab').forEach(function(t){t.classList.remove('active')});
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* FAQ */
+function tFaq(btn){
+  var item=btn.closest('.fitem'),isOpen=item.classList.contains('open');
+  document.querySelectorAll('.fitem.open').forEach(function(i){i.classList.remove('open');i.querySelector('.fans').style.maxHeight='0'});
+  if(!isOpen){item.classList.add('open');var a=item.querySelector('.fans');a.style.maxHeight=a.scrollHeight+'px'}
+}
+
+/* REVEAL */
+var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.07,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
+
+/* BOOKING FORM - AJAX */
+var form=document.getElementById('bookingForm'),bookBtn=document.getElementById('bookBtn'),fFields=document.getElementById('formFields'),fSuccess=document.getElementById('formSuccess');
+form.addEventListener('submit',async function(e){
+  e.preventDefault();
+  if(!form.checkValidity()){form.reportValidity();return}
+  bookBtn.disabled=true;
+  bookBtn.innerHTML='<i class="bi bi-hourglass-split"></i> Sending...';
+  try{
+    var res=await fetch('https://formspree.io/f/xldpppve',{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(res.ok){fFields.style.display='none';fSuccess.style.display='block'}
+    else{
+      var data=await res.json();
+      var msg=data.errors?data.errors.map(function(x){return x.message}).join(', '):'Something went wrong. Please try again.';
+      bookBtn.disabled=false;bookBtn.innerHTML='<i class="bi bi-exclamation-triangle"></i> Error &mdash; try again';
+      alert('Submission error: '+msg);
     }
+  }catch(err){bookBtn.disabled=false;bookBtn.innerHTML='<i class="bi bi-exclamation-triangle"></i> Error &mdash; check connection'}
+});
 
-    /* FAQ */
-    function toggleFaq(btn) {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-answer').style.maxHeight = '0';
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        const ans = item.querySelector('.faq-answer');
-        ans.style.maxHeight = ans.scrollHeight + 'px';
-      }
-    }
-
-    /* Reveal on scroll */
-    const revealObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: .08, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-    /* Structured data */
-    const ld = document.createElement('script');
-    ld.type = 'application/ld+json';
-    ld.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "DrivingSchool",
-      "name": "Maven Drive Academy",
-      "slogan": "Master the Drive, Own the Road!",
-      "telephone": "+447545560067",
-      "priceRange": "££",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "87" },
-      "sameAs": [
-        "https://www.instagram.com/mavendriveacademy/",
-        "https://www.facebook.com/mavendriveacademy"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "name": "Driving Lesson",
-        "priceCurrency": "GBP",
-        "price": "35"
-      }
-    });
-    document.head.appendChild(ld);
-  </script>
+/* STRUCTURED DATA */
+var ld=document.createElement('script');ld.type='application/ld+json';
+ld.text=JSON.stringify({"@context":"https://schema.org","@type":"DrivingSchool","name":"Maven Drive Academy","slogan":"Master the Drive, Own the Road!","telephone":"+447545560067","priceRange":"££","areaServed":["Denton","M34","Audenshaw","Droylsden","Hyde","Gorton","Haughton Green","Greater Manchester"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"87"},"sameAs":["https://www.instagram.com/mavendriveacademy/","https://www.facebook.com/mavendriveacademy"],"offers":{"@type":"Offer","name":"Driving Lesson","priceCurrency":"GBP","price":"35"}});
+document.head.appendChild(ld);
+</script>
 </body>
 </html>
