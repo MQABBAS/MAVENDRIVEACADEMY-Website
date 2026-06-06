@@ -3,37 +3,48 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Maven Drive Academy &mdash; Driving Lessons in Denton, M34 &amp; Manchester</title>
+  <title>Maven Drive Academy - Driving Lessons in Denton, M34</title>
   <meta name="robots" content="index, follow"/>
-  <meta name="description" content="Maven Drive Academy &mdash; DVSA-approved driving lessons in Denton (M34), Audenshaw, Droylsden &amp; Greater Manchester. &pound;35/hr. 90%+ pass rate. 4.9&star; reviews. Book today!"/>
-  <meta name="keywords" content="driving lessons Denton, driving school M34, driving instructor Denton, learn to drive Audenshaw, driving lessons Droylsden, M34 driving school"/>
+  <meta name="description" content="Maven Drive Academy - DVSA-approved driving lessons in Denton, M34 and surrounding areas. From £35/hr. Manual and automatic. Book today and we'll reply instantly on WhatsApp."/>
+  <meta name="keywords" content="driving lessons Denton, driving school M34, driving instructor Denton, learn to drive Denton, driving lessons Haughton Green, driving lessons Audenshaw"/>
   <link rel="icon" type="image/png" href="https://i.postimg.cc/2jTWTB2t/Maven-Logo.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
   <style>
-    :root{--navy:#0c1a3a;--navy-mid:#162550;--navy-light:#1e3270;--gold:#e8b84b;--gold-light:#f5d47a;--gold-deep:#c49a28;--gold-glow:rgba(232,184,75,.3);--off:#f8f6f1;--radius:14px;--radius-lg:22px}
-    *{box-sizing:border-box;margin:0;padding:0;scroll-margin-top:86px}
+    :root{
+      --navy:#0c1a3a;
+      --navy-mid:#162550;
+      --navy-light:#1e3270;
+      --gold:#e8b84b;
+      --gold-light:#f5d47a;
+      --gold-deep:#c49a28;
+      --gold-glow:rgba(232,184,75,.3);
+      --off:#f8f6f1;
+      --radius:14px;
+      --radius-lg:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;scroll-margin-top:84px}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--off);color:#1a1a2e;overflow-x:hidden}
 
     /* TOPBAR */
     .topbar{background:var(--gold);color:var(--navy);font-size:.81rem;font-weight:600;padding:7px 0}
     .topbar a{color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:.35rem;padding:3px 11px;border-radius:999px;background:rgba(12,26,58,.1);transition:background .2s;font-weight:700}
-    .topbar a:hover{background:rgba(12,26,58,.2)}
+    .topbar a:hover{background:rgba(12,26,58,.22)}
 
     /* NAVBAR */
     .navbar{background:var(--navy);padding:0;position:sticky;top:0;z-index:1000;box-shadow:0 4px 28px rgba(0,0,0,.3)}
-    .nbi{display:flex;align-items:center;justify-content:space-between;padding:11px 24px}
+    .nbi{display:flex;align-items:center;justify-content:space-between;padding:10px 24px}
     .bw{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .bl{width:56px;height:56px;border-radius:50%;border:3px solid var(--gold);object-fit:contain;background:#fff;box-shadow:0 0 18px var(--gold-glow);animation:lp 3s ease-in-out infinite}
-    @keyframes lp{0%,100%{box-shadow:0 0 14px var(--gold-glow)}50%{box-shadow:0 0 30px rgba(232,184,75,.55)}}
-    .bt h1{font-family:'DM Serif Display',serif;font-size:1.3rem;color:#fff;margin:0;line-height:1.1}
+    .bl{width:54px;height:54px;border-radius:50%;border:3px solid var(--gold);object-fit:contain;background:#fff;box-shadow:0 0 16px var(--gold-glow);animation:lp 3s ease-in-out infinite}
+    @keyframes lp{0%,100%{box-shadow:0 0 12px var(--gold-glow)}50%{box-shadow:0 0 28px rgba(232,184,75,.55)}}
+    .bt h1{font-family:'DM Serif Display',serif;font-size:1.28rem;color:#fff;margin:0;line-height:1.1}
     .bt h1 span{color:var(--gold)}
-    .bt small{color:rgba(255,255,255,.48);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+    .bt small{color:rgba(255,255,255,.45);font-size:.67rem;letter-spacing:.08em;text-transform:uppercase}
     .nl{display:flex;align-items:center;gap:2px;list-style:none}
-    .nl a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.84rem;font-weight:500;padding:7px 13px;border-radius:999px;transition:all .2s}
+    .nl a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.83rem;font-weight:500;padding:7px 12px;border-radius:999px;transition:all .2s}
     .nl a:hover{color:var(--gold);background:rgba(232,184,75,.1)}
     .nc{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;padding:8px 20px!important}
     .nc:hover{background:var(--gold-light)!important;transform:translateY(-1px)}
@@ -42,68 +53,88 @@
     @media(max-width:991px){.nl{display:none}.hbg{display:flex}}
 
     /* MOBILE NAV */
-    .mnav{display:none;position:fixed;inset:0;background:rgba(12,26,58,.97);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+    .mnav{display:none;position:fixed;inset:0;background:rgba(12,26,58,.97);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:26px}
     .mnav.open{display:flex}
     .mnav a{color:#fff;font-family:'DM Serif Display',serif;font-size:1.85rem;text-decoration:none;transition:color .2s}
     .mnav a:hover{color:var(--gold)}
     .mclose{position:absolute;top:20px;right:20px;background:none;border:none;color:#fff;font-size:1.7rem;cursor:pointer}
 
-    /* HERO SLIDESHOW */
-    .hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;min-height:88vh;display:flex;align-items:center}
-    .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;z-index:1}
-    .slide.active{opacity:1;z-index:2}
-    .slide img{width:100%;height:100%;object-fit:cover;object-position:center top}
-    .slide-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,26,58,.88) 0%,rgba(12,26,58,.6) 55%,rgba(12,26,58,.3) 100%)}
-    .hero-c{position:relative;z-index:10;padding:80px 0 90px}
+    /* HERO - single image, no slideshow */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:var(--navy);
+      color:#fff;
+      min-height:85vh;
+      display:flex;
+      align-items:center;
+    }
+    .hero-bg{
+      position:absolute;inset:0;
+      background-image:url('https://i.postimg.cc/3x0DKf7f/maven-poster.png');
+      background-size:cover;
+      background-position:center top;
+      z-index:1;
+    }
+    .hero-ov{
+      position:absolute;inset:0;
+      background:linear-gradient(100deg,rgba(12,26,58,.9) 0%,rgba(12,26,58,.7) 50%,rgba(12,26,58,.35) 100%);
+      z-index:2;
+    }
+    .hero-c{position:relative;z-index:3;padding:80px 0 90px}
     .hbadge{display:inline-flex;align-items:center;gap:9px;background:rgba(232,184,75,.14);border:1px solid rgba(232,184,75,.38);color:var(--gold);padding:6px 17px;border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
     .bdot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:bdp 1.8s ease-in-out infinite;box-shadow:0 0 8px var(--gold)}
     @keyframes bdp{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.45}}
     .hero h2{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5.5vw,4.5rem);line-height:1.05;margin-bottom:16px}
     .hero h2 .acc{color:var(--gold);font-style:italic}
-    .hero-desc{color:rgba(255,255,255,.74);font-size:1rem;line-height:1.8;max-width:470px;margin-bottom:28px;font-weight:300}
+    .hero-desc{color:rgba(255,255,255,.76);font-size:1rem;line-height:1.82;max-width:480px;margin-bottom:28px;font-weight:300}
     .hpill{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:var(--navy);border-radius:999px;padding:11px 24px;font-weight:800;font-size:1.05rem;margin-bottom:26px;box-shadow:0 8px 26px var(--gold-glow)}
     .hbtns{display:flex;gap:12px;flex-wrap:wrap}
-    .sdots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:15;display:flex;gap:8px}
-    .sdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.32);border:none;cursor:pointer;transition:all .3s;padding:0}
-    .sdot.active{background:var(--gold);width:22px;border-radius:999px}
-    .sarr{position:absolute;top:50%;transform:translateY(-50%);z-index:15;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;font-size:1rem;backdrop-filter:blur(4px)}
-    .sarr:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
-    .sarr.prev{left:16px}
-    .sarr.next{right:16px}
+
+    /* HERO INFO CARD */
+    .hero-info{background:rgba(255,255,255,.07);border:1px solid rgba(232,184,75,.22);border-radius:var(--radius-lg);padding:24px;backdrop-filter:blur(8px)}
+    .hi-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .hi-row:last-child{border-bottom:none;padding-bottom:0}
+    .hi-row:first-child{padding-top:0}
+    .hi-ico{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+    .hi-title{font-weight:700;color:#fff;font-size:.9rem;line-height:1.2}
+    .hi-sub{color:rgba(255,255,255,.5);font-size:.75rem;margin-top:2px}
 
     /* BUTTONS */
-    .btn-g{background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:var(--navy);border:none;border-radius:999px;padding:12px 28px;font-weight:700;font-size:.91rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .25s;box-shadow:0 6px 20px var(--gold-glow);cursor:pointer;font-family:'DM Sans',sans-serif}
+    .btn-g{background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:var(--navy);border:none;border-radius:999px;padding:13px 30px;font-weight:700;font-size:.92rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .25s;box-shadow:0 6px 20px var(--gold-glow);cursor:pointer;font-family:'DM Sans',sans-serif}
     .btn-g:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(232,184,75,.5);color:var(--navy)}
-    .btn-ow{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.33);border-radius:999px;padding:12px 28px;font-weight:600;font-size:.91rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+    .btn-ow{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.33);border-radius:999px;padding:13px 30px;font-weight:600;font-size:.92rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
     .btn-ow:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
     .btn-n{background:var(--navy);color:#fff;border:none;border-radius:999px;padding:12px 24px;font-weight:700;font-size:.86rem;text-decoration:none;display:block;text-align:center;transition:all .25s;cursor:pointer;width:100%;font-family:'DM Sans',sans-serif}
     .btn-n:hover{background:var(--navy-light);color:#fff;transform:translateY(-1px);box-shadow:0 8px 22px rgba(12,26,58,.2)}
     .btn-nl{background:var(--navy);color:#fff;border-radius:999px;padding:14px 34px;font-weight:700;font-size:.93rem;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .25s;box-shadow:0 6px 22px rgba(12,26,58,.25)}
     .btn-nl:hover{background:var(--navy-light);color:#fff;transform:translateY(-2px)}
-    .btn-wa{background:#25D366;color:#fff;border-radius:999px;padding:14px 34px;font-weight:700;font-size:.93rem;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .25s}
+    .btn-wa{background:#25D366;color:#fff;border-radius:999px;padding:14px 34px;font-weight:700;font-size:.93rem;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .25s;box-shadow:0 6px 20px rgba(37,211,102,.3)}
     .btn-wa:hover{background:#1da851;color:#fff;transform:translateY(-2px)}
+    .btn-wa-sm{background:#25D366;color:#fff;border-radius:999px;padding:10px 22px;font-weight:700;font-size:.86rem;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .25s}
+    .btn-wa-sm:hover{background:#1da851;color:#fff;transform:translateY(-1px)}
+
+    /* TRUST BAR */
+    .tbar{background:#fff;border-bottom:1px solid rgba(0,0,0,.07);padding:20px 0}
+    .ti{display:flex;align-items:center;gap:10px;padding:3px 0}
+    .tic{width:40px;height:40px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.05rem;flex-shrink:0}
+    .ti strong{font-size:.87rem;color:var(--navy);display:block;line-height:1.2}
+    .ti span{font-size:.72rem;color:#888}
 
     /* BOOKING SECTION */
-    .bsec{background:#fff;padding:56px 0;border-bottom:3px solid var(--off)}
+    .bsec{background:#fff;padding:60px 0;border-bottom:3px solid var(--off)}
     .binner{background:var(--navy);border-radius:var(--radius-lg);padding:44px;box-shadow:0 20px 60px rgba(12,26,58,.18)}
     .binner h2{font-family:'DM Serif Display',serif;font-size:1.9rem;color:#fff;margin-bottom:5px}
-    .binner .sub{color:rgba(255,255,255,.55);font-size:.88rem;margin-bottom:28px}
-    .fl{display:block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px}
+    .binner .sub{color:rgba(255,255,255,.52);font-size:.88rem;margin-bottom:26px}
+    .fl{display:block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.52);margin-bottom:6px}
     .fi{width:100%;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.11);border-radius:10px;padding:12px 15px;font-family:'DM Sans',sans-serif;font-size:.9rem;color:#fff;transition:all .25s;margin-bottom:14px;appearance:none;-webkit-appearance:none}
     .fi::placeholder{color:rgba(255,255,255,.28)}
     .fi:focus{outline:none;border-color:var(--gold);background:rgba(232,184,75,.07);box-shadow:0 0 0 4px rgba(232,184,75,.1)}
     .fi option{background:var(--navy);color:#fff}
     .fsuccess{display:none;text-align:center;padding:40px 20px;color:#fff}
-    .fsuccess .tick{font-size:3.5rem;color:var(--gold);margin-bottom:14px}
+    .fsuccess .tick{font-size:3rem;color:var(--gold);margin-bottom:14px}
     .fsuccess h3{font-family:'DM Serif Display',serif;font-size:1.9rem;color:var(--gold);margin-bottom:10px}
     .fsuccess p{color:rgba(255,255,255,.65);line-height:1.8}
-
-    /* TRUST BAR */
-    .tbar{background:#fff;border-bottom:1px solid rgba(0,0,0,.07);padding:20px 0}
-    .ti{display:flex;align-items:center;gap:10px;padding:3px 0}
-    .tic{width:40px;height:40px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.08rem;flex-shrink:0}
-    .ti strong{font-size:.87rem;color:var(--navy);display:block;line-height:1.2}
-    .ti span{font-size:.72rem;color:#888}
 
     /* SECTIONS */
     .sec{padding:76px 0}
@@ -120,7 +151,7 @@
     .sec-dk .sbody{color:rgba(255,255,255,.6)}
 
     /* BENEFIT CARDS */
-    .bcard{background:#fff;border-radius:var(--radius);padding:26px 20px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 10px rgba(0,0,0,.04);transition:all .3s;height:100%}
+    .bcard{background:#fff;border-radius:var(--radius);padding:26px 22px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 10px rgba(0,0,0,.04);transition:all .3s;height:100%}
     .bcard:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(12,26,58,.09);border-color:rgba(232,184,75,.28)}
     .bico{width:48px;height:48px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.2rem;margin-bottom:15px}
     .bcard h3{font-size:.94rem;font-weight:700;color:var(--navy);margin-bottom:7px}
@@ -134,7 +165,7 @@
     .ckl{list-style:none;padding:0;margin:0}
     .ckl li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.86rem;color:#444}
     .ckl li:last-child{border-bottom:none}
-    .ckl .bi{color:var(--gold-deep);font-size:.98rem;flex-shrink:0;margin-top:2px}
+    .ckl .bi{color:var(--gold-deep);font-size:.95rem;flex-shrink:0;margin-top:2px}
     .sptag{font-family:'DM Serif Display',serif;font-size:2.7rem;color:var(--navy);font-weight:400;margin:16px 0 0}
     .sptag sup{font-size:1.3rem;vertical-align:top;margin-top:7px;display:inline-block}
     .sptag small{font-family:'DM Sans',sans-serif;font-size:.92rem;color:#888}
@@ -159,29 +190,37 @@
     .feat .btn-n:hover{background:var(--gold-light);color:var(--navy)}
 
     /* TESTIMONIALS */
-    .tcard{background:#fff;border-radius:var(--radius);padding:24px 20px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 10px rgba(0,0,0,.04);height:100%;position:relative}
-    .tcard::before{content:'"';font-family:'DM Serif Display',serif;font-size:4.8rem;color:var(--gold);opacity:.11;position:absolute;top:8px;left:14px;line-height:1}
-    .stars{color:var(--gold);font-size:.86rem;letter-spacing:2px;margin-bottom:11px}
+    .tcard{background:#fff;border-radius:var(--radius);padding:26px 22px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 10px rgba(0,0,0,.04);height:100%;position:relative}
+    .tcard::before{content:'"';font-family:'DM Serif Display',serif;font-size:5rem;color:var(--gold);opacity:.11;position:absolute;top:8px;left:14px;line-height:1}
+    .stars{color:var(--gold);font-size:.88rem;letter-spacing:2px;margin-bottom:11px}
     .ttxt{color:#555;font-size:.86rem;line-height:1.8;font-style:italic;margin-bottom:16px}
     .tauth{font-weight:700;font-size:.82rem;color:var(--navy)}
     .trole{font-size:.72rem;color:#999}
 
-    /* LOCAL SECTION */
+    /* LOCAL / DENTON SECTION */
     .lsec{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 55%,var(--navy-light) 100%);color:#fff;padding:76px 0;position:relative;overflow:hidden}
     .lsec::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(232,184,75,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(232,184,75,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-    .apill{display:inline-flex;align-items:center;gap:6px;background:rgba(232,184,75,.11);border:1px solid rgba(232,184,75,.28);color:var(--gold);padding:5px 14px;border-radius:999px;font-size:.74rem;font-weight:600;letter-spacing:.07em;margin:3px}
-    .rcard{background:rgba(255,255,255,.055);border:1px solid rgba(232,184,75,.17);border-radius:var(--radius);padding:20px;height:100%}
-    .rcard h4{color:var(--gold);font-size:.87rem;font-weight:700;margin-bottom:11px;display:flex;align-items:center;gap:7px}
+    .apill{display:inline-flex;align-items:center;gap:6px;background:rgba(232,184,75,.11);border:1px solid rgba(232,184,75,.26);color:var(--gold);padding:5px 14px;border-radius:999px;font-size:.74rem;font-weight:600;letter-spacing:.06em;margin:3px}
+    .rcard{background:rgba(255,255,255,.055);border:1px solid rgba(232,184,75,.16);border-radius:var(--radius);padding:22px;height:100%}
+    .rcard h4{color:var(--gold);font-size:.88rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:7px}
     .rcard ul{list-style:none;padding:0;margin:0}
-    .rcard li{color:rgba(255,255,255,.7);font-size:.81rem;padding:5px 0;display:flex;align-items:flex-start;gap:7px;border-bottom:1px solid rgba(255,255,255,.055)}
-    .rcard li:last-child{border-bottom:none}
-    .rcard li::before{content:';';color:var(--gold);font-size:.7rem;margin-top:2px;flex-shrink:0}
+    .rcard li{color:rgba(255,255,255,.68);font-size:.81rem;padding:5px 0;display:flex;align-items:flex-start;gap:7px;border-bottom:1px solid rgba(255,255,255,.055)}
+    .rcard li:last-child{border-bottom:none;padding-bottom:0}
+    .rcard li::before{content:'\2192';color:var(--gold);font-size:.7rem;margin-top:3px;flex-shrink:0}
     .pgrid{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
     .pc{background:rgba(232,184,75,.09);border:1px solid rgba(232,184,75,.22);color:var(--gold-light);padding:5px 12px;border-radius:7px;font-size:.76rem;font-weight:600;font-family:monospace;letter-spacing:.05em}
     .ccard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:18px;text-align:center}
     .ccard i{font-size:1.7rem;color:var(--gold);margin-bottom:9px;display:block}
-    .ccard h4{color:#fff;font-size:.89rem;font-weight:700;margin-bottom:3px}
-    .ccard p{color:rgba(255,255,255,.48);font-size:.75rem;margin:0}
+    .ccard h4{color:#fff;font-size:.88rem;font-weight:700;margin-bottom:3px}
+    .ccard p{color:rgba(255,255,255,.46);font-size:.74rem;margin:0}
+
+    /* WHATSAPP INSTANT REPLY STRIP */
+    .wa-strip{background:#25D366;padding:18px 0;color:#fff}
+    .wa-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .wa-strip-text{display:flex;align-items:center;gap:12px}
+    .wa-strip-text i{font-size:1.6rem;flex-shrink:0}
+    .wa-strip-text div strong{font-size:.95rem;font-weight:700;display:block}
+    .wa-strip-text div span{font-size:.8rem;opacity:.85}
 
     /* FAQ */
     .fitem{border-bottom:1px solid rgba(0,0,0,.07)}
@@ -201,9 +240,9 @@
     .cval{font-size:.89rem;color:var(--navy);font-weight:600}
 
     /* CTA BANNER */
-    .ctab{background:linear-gradient(135deg,var(--gold-deep),var(--gold),var(--gold-light));padding:58px 0;text-align:center}
-    .ctab h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3.5vw,2.7rem);color:var(--navy);margin-bottom:9px}
-    .ctab p{color:rgba(12,26,58,.68);font-size:.95rem;margin-bottom:24px}
+    .ctab{background:linear-gradient(135deg,var(--gold-deep),var(--gold),var(--gold-light));padding:60px 0;text-align:center}
+    .ctab h2{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);color:var(--navy);margin-bottom:9px}
+    .ctab p{color:rgba(12,26,58,.68);font-size:.95rem;margin-bottom:26px}
 
     /* FOOTER */
     footer{background:var(--navy);color:rgba(255,255,255,.62);padding:58px 0 0;border-top:3px solid var(--gold)}
@@ -227,16 +266,16 @@
     @keyframes wpp{0%{transform:scale(1);opacity:.65}100%{transform:scale(1.55);opacity:0}}
 
     /* REVEAL */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1)}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .72s cubic-bezier(.4,0,.2,1),transform .72s cubic-bezier(.4,0,.2,1)}
     .reveal.visible{opacity:1;transform:translateY(0)}
     .rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
 
     @media(max-width:768px){
       .hero-c{padding:60px 0 70px}
       .binner{padding:26px 18px}
-      .lsec{padding:60px 0}
-      .sarr{display:none}
+      .lsec{padding:58px 0}
       .ftb{flex-direction:column;text-align:center}
+      .wa-strip-inner{flex-direction:column;text-align:center}
     }
     @media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}}
   </style>
@@ -265,7 +304,7 @@
 <div class="topbar">
   <div class="container">
     <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
-      <span><i class="bi bi-lightning-charge-fill me-1"></i>&pound;35/hr &mdash; Manual &amp; Automatic &middot; Denton M34 &middot; Audenshaw &middot; Droylsden &middot; Manchester</span>
+      <span><i class="bi bi-lightning-charge-fill me-1"></i>From £35/hr &mdash; Manual &amp; Automatic &mdash; Denton &amp; M34</span>
       <div class="d-flex gap-2">
         <a href="https://www.instagram.com/mavendriveacademy/?hl=en" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram me-1"></i><span class="d-none d-sm-inline">Instagram</span></a>
         <a href="https://www.facebook.com/mavendriveacademy" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook me-1"></i><span class="d-none d-sm-inline">Facebook</span></a>
@@ -301,41 +340,52 @@
   </div>
 </nav>
 
-<!-- HERO SLIDESHOW -->
+<!-- HERO -->
 <header id="home" class="hero" aria-label="Hero">
-  <div class="slide active" id="slide0">
-    <img src="https://i.postimg.cc/3x0DKf7f/maven-poster.png" alt="Maven Drive Academy student with instructor"/>
-    <div class="slide-ov"></div>
-  </div>
- 
-
-
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
   <div class="hero-c">
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-7">
-          <div class="hbadge"><span class="bdot"></span>DVSA Approved &middot; Denton &amp; M34</div>
-          <h2>Learn with Confidence.<br><span class="acc">Pass with Pride.</span></h2>
-          <p class="hero-desc">Professional driving lessons in Denton, Audenshaw, Droylsden and across Greater Manchester. Manual &amp; automatic &mdash; same great price, no surprises.</p>
-          <div class="hpill"><i class="bi bi-lightning-charge-fill"></i>Only &pound;35 per lesson &mdash; Limited Availability</div>
+          <div class="hbadge"><span class="bdot"></span>DVSA Approved &mdash; Denton &amp; M34</div>
+          <h2>Learn to Drive with<br><span class="acc">Real Confidence.</span></h2>
+          <p class="hero-desc">Professional, friendly driving lessons in Denton and across the M34 area. We take you from complete beginner to test-ready at your own pace &mdash; manual and automatic, same price.</p>
+          <div class="hpill"><i class="bi bi-lightning-charge-fill"></i>From £35 per lesson</div>
           <div class="hbtns">
-            <a href="#booking" class="btn-g"><i class="bi bi-calendar-check"></i> Book Your First Lesson</a>
-            <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="btn-ow"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+            <a href="#booking" class="btn-g"><i class="bi bi-calendar-check"></i>Book Your First Lesson</a>
+            <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="btn-ow"><i class="bi bi-whatsapp"></i>WhatsApp Us</a>
           </div>
         </div>
         <div class="col-lg-5 d-none d-lg-block">
-          <div style="background:rgba(255,255,255,.07);border:1px solid rgba(232,184,75,.22);border-radius:var(--radius-lg);padding:24px;backdrop-filter:blur(8px)">
-            <div class="d-flex align-items-center gap-3 mb-3 pb-3" style="border-bottom:1px solid rgba(255,255,255,.08)">
-              <div style="width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="bi bi-star-fill" style="color:var(--navy)"></i></div>
-              <div><div style="font-weight:700;color:#fff;font-size:.93rem">4.9 Stars on Google</div><div style="color:rgba(255,255,255,.5);font-size:.76rem">87 verified reviews</div></div>
+          <div class="hero-info">
+            <div class="hi-row">
+              <div class="hi-ico" style="background:var(--gold)"><i class="bi bi-shield-check-fill" style="color:var(--navy)"></i></div>
+              <div>
+                <div class="hi-title">DVSA Approved Instructors</div>
+                <div class="hi-sub">Fully qualified and DBS checked</div>
+              </div>
             </div>
-            <div class="d-flex align-items-center gap-3 mb-3 pb-3" style="border-bottom:1px solid rgba(255,255,255,.08)">
-              <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold-deep),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="bi bi-trophy-fill" style="color:var(--navy)"></i></div>
-              <div><div style="font-weight:700;color:#fff;font-size:.93rem">90%+ First-Time Pass Rate</div><div style="color:rgba(255,255,255,.5);font-size:.76rem">Above national average</div></div>
+            <div class="hi-row">
+              <div class="hi-ico" style="background:rgba(232,184,75,.15)"><i class="bi bi-gear-fill" style="color:var(--gold)"></i></div>
+              <div>
+                <div class="hi-title">Manual &amp; Automatic</div>
+                <div class="hi-sub">Same price &mdash; you choose</div>
+              </div>
             </div>
-            <div class="d-flex align-items-center gap-3">
-              <div style="width:44px;height:44px;border-radius:50%;background:rgba(232,184,75,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="bi bi-geo-alt-fill" style="color:var(--gold)"></i></div>
-              <div><div style="font-weight:700;color:#fff;font-size:.93rem">Local to Denton &amp; M34</div><div style="color:rgba(255,255,255,.5);font-size:.76rem">Pick-up from your door</div></div>
+            <div class="hi-row">
+              <div class="hi-ico" style="background:rgba(255,255,255,.1)"><i class="bi bi-geo-alt-fill" style="color:var(--gold)"></i></div>
+              <div>
+                <div class="hi-title">Local to Denton &amp; M34</div>
+                <div class="hi-sub">Pick-up from your door</div>
+              </div>
+            </div>
+            <div class="hi-row">
+              <div class="hi-ico" style="background:#25D366"><i class="bi bi-whatsapp" style="color:#fff"></i></div>
+              <div>
+                <div class="hi-title">WhatsApp &mdash; Instant Reply</div>
+                <div class="hi-sub">Message us now and we respond fast</div>
+              </div>
             </div>
           </div>
         </div>
@@ -348,34 +398,52 @@
 <div class="tbar">
   <div class="container">
     <div class="row g-3 justify-content-center">
-      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-shield-check-fill"></i></div><div><strong>DVSA Approved</strong><span>Fully certified school</span></div></div></div>
-      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-star-fill"></i></div><div><strong>4.9&star; Rating</strong><span>87 Google reviews</span></div></div></div>
-      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-trophy-fill"></i></div><div><strong>90%+ Pass Rate</strong><span>Above national average</span></div></div></div>
-      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-gear-fill"></i></div><div><strong>Manual &amp; Auto</strong><span>Same price &mdash; unique!</span></div></div></div>
+      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-shield-check-fill"></i></div><div><strong>DVSA Approved</strong><span>Qualified instructors</span></div></div></div>
+      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-star-fill"></i></div><div><strong>4.9 Stars</strong><span>87 Google reviews</span></div></div></div>
+      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-whatsapp"></i></div><div><strong>Instant WhatsApp Reply</strong><span>We respond right away</span></div></div></div>
+      <div class="col-6 col-md-3"><div class="ti"><div class="tic"><i class="bi bi-gear-fill"></i></div><div><strong>Manual &amp; Auto</strong><span>Same price &mdash; £35/hr</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP INSTANT REPLY STRIP -->
+<div class="wa-strip">
+  <div class="container">
+    <div class="wa-strip-inner">
+      <div class="wa-strip-text">
+        <i class="bi bi-whatsapp"></i>
+        <div>
+          <strong>WhatsApp us for an instant reply</strong>
+          <span>Message us now and we'll get back to you right away &mdash; no waiting, no forms needed</span>
+        </div>
+      </div>
+      <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="btn-wa-sm" style="background:#fff;color:#25D366;font-weight:700;white-space:nowrap">
+        <i class="bi bi-whatsapp"></i>Message Us Now
+      </a>
     </div>
   </div>
 </div>
 
 <main>
 
-<!-- BOOKING (directly below hero) -->
+<!-- BOOKING -->
 <section id="booking" class="bsec">
   <div class="container">
     <div class="binner">
       <div class="row g-5 align-items-start">
         <div class="col-lg-4">
           <h2>Book a Lesson</h2>
-          <p class="sub">Fill in the form and we&rsquo;ll confirm your booking within a few hours. Or contact us directly:</p>
+          <p class="sub">Fill in the form and we'll confirm your booking quickly. Or just WhatsApp us for an instant reply.</p>
           <a href="tel:+447545560067" class="d-flex align-items-center gap-3 mb-3 text-decoration-none" style="color:inherit">
             <div class="cico" style="background:rgba(232,184,75,.15);border:1px solid rgba(232,184,75,.28)"><i class="bi bi-telephone-fill" style="color:var(--gold)"></i></div>
-            <div><div class="clabel" style="color:rgba(255,255,255,.48)">Call us</div><div style="color:#fff;font-weight:600;font-size:.9rem">07545 560 067</div></div>
+            <div><div class="clabel" style="color:rgba(255,255,255,.45)">Call us</div><div style="color:#fff;font-weight:600;font-size:.9rem">07545 560 067</div></div>
           </a>
           <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="d-flex align-items-center gap-3 mb-4 text-decoration-none" style="color:inherit">
             <div class="cico" style="background:#25D366"><i class="bi bi-whatsapp" style="color:#fff;font-size:1.1rem"></i></div>
-            <div><div class="clabel" style="color:rgba(255,255,255,.48)">WhatsApp</div><div style="color:#fff;font-weight:600;font-size:.9rem">Message us now &rarr;</div></div>
+            <div><div class="clabel" style="color:rgba(255,255,255,.45)">WhatsApp &mdash; Instant Reply</div><div style="color:#fff;font-weight:600;font-size:.9rem">Message us now</div></div>
           </a>
           <div style="background:rgba(232,184,75,.09);border:1px solid rgba(232,184,75,.2);border-radius:10px;padding:14px">
-            <p style="color:rgba(255,255,255,.7);font-size:.8rem;margin:0;line-height:1.7"><i class="bi bi-info-circle me-2" style="color:var(--gold)"></i>We cover <strong style="color:var(--gold)">Denton, M34, Audenshaw, Droylsden, Hyde, Gorton</strong> and surrounding areas. Pick-up from your door.</p>
+            <p style="color:rgba(255,255,255,.68);font-size:.8rem;margin:0;line-height:1.7"><i class="bi bi-geo-alt-fill me-2" style="color:var(--gold)"></i>We cover <strong style="color:var(--gold)">Denton, M34, Audenshaw, Droylsden, Hyde and Haughton Green.</strong> Pick-up from your door.</p>
           </div>
         </div>
         <div class="col-lg-8">
@@ -383,26 +451,26 @@
             <div id="formFields">
               <div class="row g-0">
                 <div class="col-md-6 pe-md-2">
-                  <label class="fl" for="b-name">Full Name *</label>
+                  <label class="fl" for="b-name">Full Name</label>
                   <input type="text" id="b-name" name="name" class="fi" placeholder="Your full name" required/>
                 </div>
                 <div class="col-md-6 ps-md-2">
-                  <label class="fl" for="b-phone">Phone / WhatsApp *</label>
+                  <label class="fl" for="b-phone">Phone / WhatsApp</label>
                   <input type="tel" id="b-phone" name="phone" class="fi" placeholder="07XXX XXX XXX" required/>
                 </div>
               </div>
-              <label class="fl" for="b-email">Email Address *</label>
+              <label class="fl" for="b-email">Email Address</label>
               <input type="email" id="b-email" name="email" class="fi" placeholder="your@email.com" required/>
               <div class="row g-0">
                 <div class="col-md-6 pe-md-2">
-                  <label class="fl" for="b-service">Service *</label>
+                  <label class="fl" for="b-service">Service</label>
                   <select id="b-service" name="service" class="fi" required>
-                    <option value="">Select a service&hellip;</option>
-                    <option value="Driving Lesson - 35ph">Driving Lesson (&pound;35/hr)</option>
-                    <option value="Refresher Course - 35ph">Refresher Course (&pound;35/hr)</option>
-                    <option value="Mock Test - 35">Mock Test (&pound;35)</option>
-                    <option value="Intensive Course - custom">Intensive Course (custom)</option>
-                    <option value="Starter Bundle 10 Lessons - 350">Starter Bundle &mdash; 10 Lessons (&pound;350)</option>
+                    <option value="">Select a service...</option>
+                    <option value="Driving Lesson - £35/hr">Driving Lesson (£35/hr)</option>
+                    <option value="Refresher Course - £35/hr">Refresher Course (£35/hr)</option>
+                    <option value="Mock Test - £35">Mock Test (£35)</option>
+                    <option value="Intensive Course">Intensive Course</option>
+                    <option value="Starter Bundle - 10 Lessons £350">Starter Bundle &mdash; 10 Lessons (£350)</option>
                   </select>
                 </div>
                 <div class="col-md-6 ps-md-2">
@@ -414,22 +482,22 @@
                   </select>
                 </div>
               </div>
-              <label class="fl" for="b-area">Your Pickup Area / Postcode *</label>
-              <input type="text" id="b-area" name="area" class="fi" placeholder="e.g. Denton, M34 2AB" required/>
-              <label class="fl" for="b-msg">Preferred Times &amp; Any Questions</label>
-              <textarea id="b-msg" name="message" rows="3" class="fi" placeholder="e.g. Evenings and weekends preferred, complete beginner&hellip;" style="margin-bottom:0;resize:vertical"></textarea>
+              <label class="fl" for="b-area">Your Area / Postcode in Denton</label>
+              <input type="text" id="b-area" name="area" class="fi" placeholder="e.g. Denton, M34 2AB"/>
+              <label class="fl" for="b-msg">Anything else? Preferred times, questions...</label>
+              <textarea id="b-msg" name="message" rows="3" class="fi" style="margin-bottom:0;resize:vertical" placeholder="e.g. Evenings preferred, complete beginner, nervous driver..."></textarea>
               <input type="hidden" name="_subject" value="New Lesson Booking - Maven Drive Academy"/>
               <input type="hidden" name="source" value="maven-website"/>
-              <button type="submit" id="bookBtn" class="btn-g mt-3 w-100" style="justify-content:center;font-size:.98rem;padding:14px;border-radius:12px">
-                <i class="bi bi-send-fill"></i> Submit Booking Request
+              <button type="submit" id="bookBtn" class="btn-g mt-3 w-100" style="justify-content:center;font-size:.97rem;padding:14px;border-radius:12px">
+                <i class="bi bi-send-fill"></i>Submit Booking Request
               </button>
-              <p style="color:rgba(255,255,255,.38);font-size:.76rem;text-align:center;margin-top:9px">We respond within a few hours &middot; Your details are kept private</p>
+              <p style="color:rgba(255,255,255,.36);font-size:.76rem;text-align:center;margin-top:9px">Or WhatsApp us directly for a faster reply &mdash; 07545 560 067</p>
             </div>
             <div class="fsuccess" id="formSuccess">
               <div class="tick"><i class="bi bi-check-circle-fill"></i></div>
-              <h3>Booking Request Sent!</h3>
-              <p>Thanks &mdash; we&rsquo;ll be in touch within a few hours to confirm your lesson.<br>Can&rsquo;t wait? Call or WhatsApp us directly:</p>
-              <a href="tel:+447545560067" class="btn-g mt-3 d-inline-flex"><i class="bi bi-telephone-fill"></i> 07545 560 067</a>
+              <h3>Booking Received!</h3>
+              <p>Thanks for getting in touch. We'll confirm your lesson shortly.<br>For a faster response, WhatsApp us directly:</p>
+              <a href="https://wa.me/447545560067" target="_blank" rel="noopener" class="btn-wa mt-3 d-inline-flex" style="padding:12px 28px"><i class="bi bi-whatsapp"></i>WhatsApp 07545 560 067</a>
             </div>
           </form>
         </div>
@@ -442,36 +510,36 @@
 <section class="sec sec-lt">
   <div class="container">
     <div class="text-center mb-5 reveal">
-      <div class="stag d-inline-flex">Why Choose Us</div>
-      <h2 class="stitle">Everything You Need to <span class="acc">Pass First Time</span></h2>
+      <div class="stag d-inline-flex">Why Choose Maven Drive</div>
+      <h2 class="stitle">The Right Choice for <span class="acc">Denton Learners</span></h2>
     </div>
     <div class="row g-4">
       <div class="col-md-6 col-xl-3 reveal">
         <div class="bcard">
           <div class="bico"><i class="bi bi-person-check-fill"></i></div>
-          <h3>Patient, Expert Instructors</h3>
-          <p>Calm, clear coaching that builds real confidence &mdash; perfect for nervous learners and those returning after a break.</p>
+          <h3>Patient, Friendly Instructors</h3>
+          <p>Calm, encouraging coaching that helps you build confidence at your own pace &mdash; whether you're a complete beginner or returning after a break.</p>
         </div>
       </div>
       <div class="col-md-6 col-xl-3 reveal rd1">
         <div class="bcard">
           <div class="bico"><i class="bi bi-gear-fill"></i></div>
           <h3>Manual &amp; Automatic &mdash; Same Price</h3>
-          <p>Both transmissions cost &pound;35/hr. A genuinely unique offer. Switch anytime. Modern dual-control cars maintained to the highest standard.</p>
+          <p>Both transmissions at £35/hr. No price difference, no pressure. Switch anytime. Modern dual-control cars kept in great condition.</p>
         </div>
       </div>
       <div class="col-md-6 col-xl-3 reveal rd2">
         <div class="bcard">
-          <div class="bico"><i class="bi bi-flag-fill"></i></div>
-          <h3>Test-Route Specialists</h3>
-          <p>We know every road around Denton, M34 and nearby DVSA test centres. Realistic mock tests with full debrief every time.</p>
+          <div class="bico"><i class="bi bi-whatsapp"></i></div>
+          <h3>WhatsApp &mdash; Instant Reply</h3>
+          <p>Got a question? Message us on WhatsApp and we reply quickly. No long waits, no phone tag &mdash; just a fast, friendly response.</p>
         </div>
       </div>
       <div class="col-md-6 col-xl-3 reveal rd3">
         <div class="bcard">
           <div class="bico"><i class="bi bi-geo-alt-fill"></i></div>
-          <h3>Door-to-Door Pick-Up</h3>
-          <p>We collect you from home, school, college or work across Denton, M34 and surrounding areas at no extra charge.</p>
+          <h3>Local to Denton &amp; M34</h3>
+          <p>We know every road, junction and roundabout in Denton. We collect you from your door and practise on the routes you'll actually face on test day.</p>
         </div>
       </div>
     </div>
@@ -484,13 +552,13 @@
     <div class="row g-5 align-items-start">
       <div class="col-lg-4 reveal">
         <div class="stag">What We Offer</div>
-        <h2 class="stitle">Services Built Around <span class="acc">You</span></h2>
-        <p class="sbody">From your very first lesson to test day, we provide personalised coaching and expert guidance every step of the way.</p>
+        <h2 class="stitle">Services Tailored <span class="acc">to You</span></h2>
+        <p class="sbody">From your first lesson through to test day, we provide structured, supportive coaching that moves at your pace.</p>
         <div class="d-flex flex-wrap gap-2 mt-4">
-          <button class="stab active" onclick="showTab('lessons',this)"><i class="bi bi-steering-wheel"></i> Lessons</button>
-          <button class="stab" onclick="showTab('refresher',this)"><i class="bi bi-arrow-repeat"></i> Refresher</button>
-          <button class="stab" onclick="showTab('mock',this)"><i class="bi bi-journal-check"></i> Mock Tests</button>
-          <button class="stab" onclick="showTab('intensive',this)"><i class="bi bi-lightning-charge"></i> Intensive</button>
+          <button class="stab active" onclick="showTab('lessons',this)"><i class="bi bi-steering-wheel"></i>Lessons</button>
+          <button class="stab" onclick="showTab('refresher',this)"><i class="bi bi-arrow-repeat"></i>Refresher</button>
+          <button class="stab" onclick="showTab('mock',this)"><i class="bi bi-journal-check"></i>Mock Test</button>
+          <button class="stab" onclick="showTab('intensive',this)"><i class="bi bi-lightning-charge"></i>Intensive</button>
         </div>
       </div>
       <div class="col-lg-8 reveal rd1">
@@ -498,19 +566,19 @@
           <div class="row align-items-center g-4">
             <div class="col-md-7">
               <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:10px">Driving Lessons</h3>
-              <p style="color:#888;font-size:.84rem;margin-bottom:16px">From junctions and roundabouts to complex manoeuvres and dual carriageways &mdash; we cover everything the DVSA test requires.</p>
+              <p style="color:#888;font-size:.84rem;margin-bottom:16px">We cover everything from basic car control through to junctions, roundabouts, dual carriageways and complex manoeuvres &mdash; all at your pace.</p>
               <ul class="ckl">
-                <li><i class="bi bi-check-circle-fill"></i> Personalised lesson plans &amp; progress tracking every session</li>
-                <li><i class="bi bi-check-circle-fill"></i> Free theory app guidance &amp; hazard perception support</li>
-                <li><i class="bi bi-check-circle-fill"></i> Pick-up from home, college or work in Denton &amp; M34</li>
-                <li><i class="bi bi-check-circle-fill"></i> Manual &amp; automatic at the exact same price &mdash; &pound;35/hr</li>
-                <li><i class="bi bi-check-circle-fill"></i> Morning, evening &amp; weekend slots available</li>
+                <li><i class="bi bi-check-circle-fill"></i>Personalised lesson plan and progress feedback every session</li>
+                <li><i class="bi bi-check-circle-fill"></i>Theory app guidance and hazard perception support</li>
+                <li><i class="bi bi-check-circle-fill"></i>Pick-up from home, school or work in Denton and M34</li>
+                <li><i class="bi bi-check-circle-fill"></i>Manual and automatic at the same price &mdash; £35/hr</li>
+                <li><i class="bi bi-check-circle-fill"></i>Morning, evening and weekend slots available</li>
               </ul>
             </div>
             <div class="col-md-5 text-center">
-              <div class="sptag"><sup>&pound;</sup>35<small>/hr</small></div>
-              <p style="color:#aaa;font-size:.78rem;margin:5px 0 16px">Manual &amp; automatic same price</p>
-              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i> Book Now</a>
+              <div class="sptag">£35<small>/hr</small></div>
+              <p style="color:#aaa;font-size:.78rem;margin:5px 0 18px">Manual and automatic same price</p>
+              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i>Book Now</a>
             </div>
           </div>
         </div>
@@ -518,18 +586,18 @@
           <div class="row align-items-center g-4">
             <div class="col-md-7">
               <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:10px">Refresher Courses</h3>
-              <p style="color:#888;font-size:.84rem;margin-bottom:16px">Returning after a break? Want to tackle motorways or improve parking? We&rsquo;ll rebuild your confidence fast.</p>
+              <p style="color:#888;font-size:.84rem;margin-bottom:16px">Passed your test a while ago and feeling rusty? We'll help you get your confidence back on the road quickly and safely.</p>
               <ul class="ckl">
-                <li><i class="bi bi-check-circle-fill"></i> Confidence-building at your own pace</li>
-                <li><i class="bi bi-check-circle-fill"></i> Motorway driving, parking &amp; hazard perception focus</li>
-                <li><i class="bi bi-check-circle-fill"></i> Flexible 60, 90 or 120-minute sessions</li>
-                <li><i class="bi bi-check-circle-fill"></i> Eco-driving &amp; modern road awareness tips</li>
+                <li><i class="bi bi-check-circle-fill"></i>Relaxed, confidence-building sessions at your pace</li>
+                <li><i class="bi bi-check-circle-fill"></i>Motorway driving, parking and hazard awareness focus</li>
+                <li><i class="bi bi-check-circle-fill"></i>Flexible 60, 90 or 120-minute session lengths</li>
+                <li><i class="bi bi-check-circle-fill"></i>Suitable for all skill levels &mdash; no judgment</li>
               </ul>
             </div>
             <div class="col-md-5 text-center">
-              <div class="sptag"><sup>&pound;</sup>35<small>/hr</small></div>
-              <p style="color:#aaa;font-size:.78rem;margin:5px 0 16px">Flexible session lengths</p>
-              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i> Book Now</a>
+              <div class="sptag">£35<small>/hr</small></div>
+              <p style="color:#aaa;font-size:.78rem;margin:5px 0 18px">Flexible session lengths</p>
+              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i>Book Now</a>
             </div>
           </div>
         </div>
@@ -537,18 +605,18 @@
           <div class="row align-items-center g-4">
             <div class="col-md-7">
               <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:10px">Mock Tests</h3>
-              <p style="color:#888;font-size:.84rem;margin-bottom:16px">Replicate your actual DVSA test experience with structured feedback so you know exactly what to fix before test day.</p>
+              <p style="color:#888;font-size:.84rem;margin-bottom:16px">A realistic practice run of your DVSA test using local routes. Helps you understand what to expect and gives you a clear picture of where to improve.</p>
               <ul class="ckl">
-                <li><i class="bi bi-check-circle-fill"></i> Real local test routes and current DVSA standards</li>
-                <li><i class="bi bi-check-circle-fill"></i> Detailed debrief with fault analysis &amp; action plan</li>
-                <li><i class="bi bi-check-circle-fill"></i> Builds test-day composure and reduces nerves</li>
-                <li><i class="bi bi-check-circle-fill"></i> Optional video review where available</li>
+                <li><i class="bi bi-check-circle-fill"></i>Conducted on real local test routes in and around Denton</li>
+                <li><i class="bi bi-check-circle-fill"></i>Detailed debrief and honest feedback afterwards</li>
+                <li><i class="bi bi-check-circle-fill"></i>Helps settle nerves and build test-day confidence</li>
+                <li><i class="bi bi-check-circle-fill"></i>Clear action plan of what to work on before test day</li>
               </ul>
             </div>
             <div class="col-md-5 text-center">
-              <div class="sptag"><sup>&pound;</sup>35<small>/session</small></div>
-              <p style="color:#aaa;font-size:.78rem;margin:5px 0 16px">Full mock test experience</p>
-              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i> Book Now</a>
+              <div class="sptag">£35<small>/session</small></div>
+              <p style="color:#aaa;font-size:.78rem;margin:5px 0 18px">Full mock test included</p>
+              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i>Book Now</a>
             </div>
           </div>
         </div>
@@ -556,18 +624,18 @@
           <div class="row align-items-center g-4">
             <div class="col-md-7">
               <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:10px">Intensive Courses</h3>
-              <p style="color:#888;font-size:.84rem;margin-bottom:16px">Need your licence quickly? Our intensive courses pack learning into days or weeks, keeping you test-ready fast.</p>
+              <p style="color:#888;font-size:.84rem;margin-bottom:16px">Need to learn quickly? We can arrange multiple lessons per week or per day to get you test-ready as efficiently as possible.</p>
               <ul class="ckl">
-                <li><i class="bi bi-check-circle-fill"></i> Tailored fast-track lesson plans</li>
-                <li><i class="bi bi-check-circle-fill"></i> Multiple lessons per week or per day available</li>
-                <li><i class="bi bi-check-circle-fill"></i> Mock test included in every package</li>
-                <li><i class="bi bi-check-circle-fill"></i> Test booking assistance provided</li>
+                <li><i class="bi bi-check-circle-fill"></i>Custom fast-track lesson plans</li>
+                <li><i class="bi bi-check-circle-fill"></i>Multiple sessions per week or daily available</li>
+                <li><i class="bi bi-check-circle-fill"></i>Mock test included in the package</li>
+                <li><i class="bi bi-check-circle-fill"></i>Help with test booking if needed</li>
               </ul>
             </div>
             <div class="col-md-5 text-center">
               <div class="sptag" style="font-size:2rem;padding-top:10px">Custom</div>
-              <p style="color:#aaa;font-size:.78rem;margin:5px 0 16px">Tailored to your timeline</p>
-              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i> Get a Quote</a>
+              <p style="color:#aaa;font-size:.78rem;margin:5px 0 18px">Tailored to your timeline</p>
+              <a href="#booking" class="btn-g d-inline-flex"><i class="bi bi-calendar-check"></i>Get a Quote</a>
             </div>
           </div>
         </div>
@@ -581,20 +649,20 @@
   <div class="container">
     <div class="text-center mb-5 reveal">
       <div class="stag d-inline-flex">Our Packages</div>
-      <h2 class="stitle">Simple, <span class="acc">Transparent</span> Pricing</h2>
-      <p class="sbody mx-auto" style="max-width:480px">No hidden fees. No surprises. Choose the option that fits your goals and schedule.</p>
+      <h2 class="stitle">Clear, <span class="acc">Honest Pricing</span></h2>
+      <p class="sbody mx-auto" style="max-width:460px">No hidden fees. No surprises. Choose the option that works for you.</p>
     </div>
     <div class="row g-4 justify-content-center">
       <div class="col-md-6 col-lg-4 reveal">
         <div class="pcard">
           <div class="plabel">Pay As You Go</div>
-          <div class="pamount">&pound;35</div>
-          <div class="pdesc">Per lesson &mdash; ultimate flexibility</div>
+          <div class="pamount">£35</div>
+          <div class="pdesc">Per lesson &mdash; full flexibility</div>
           <ul class="plist">
-            <li><i class="bi bi-check2"></i> 1-hour lesson</li>
-            <li><i class="bi bi-check2"></i> Manual or automatic</li>
-            <li><i class="bi bi-check2"></i> Pick-up &amp; drop-off included</li>
-            <li><i class="bi bi-check2"></i> Progress feedback every lesson</li>
+            <li><i class="bi bi-check2"></i>1-hour lesson</li>
+            <li><i class="bi bi-check2"></i>Manual or automatic</li>
+            <li><i class="bi bi-check2"></i>Pick-up and drop-off included</li>
+            <li><i class="bi bi-check2"></i>Progress notes after every lesson</li>
           </ul>
           <a href="#booking" class="btn-n">Book a Lesson</a>
         </div>
@@ -603,81 +671,78 @@
         <div class="pcard feat">
           <div class="pbadge">Most Popular</div>
           <div class="plabel">Starter Bundle</div>
-          <div class="pamount">&pound;350</div>
-          <div class="pdesc">10 lessons &mdash; best value to pass</div>
+          <div class="pamount">£350</div>
+          <div class="pdesc">10 lessons &mdash; great value</div>
           <ul class="plist">
-            <li><i class="bi bi-check2"></i> 10 &times; 1-hour lessons</li>
-            <li><i class="bi bi-check2"></i> Personalised lesson plan</li>
-            <li><i class="bi bi-check2"></i> Manual or automatic</li>
-            <li><i class="bi bi-check2"></i> Regular progress tracking</li>
-            <li><i class="bi bi-check2"></i> Free theory app guidance</li>
+            <li><i class="bi bi-check2"></i>10 x 1-hour lessons</li>
+            <li><i class="bi bi-check2"></i>Structured lesson plan</li>
+            <li><i class="bi bi-check2"></i>Manual or automatic</li>
+            <li><i class="bi bi-check2"></i>Progress tracked throughout</li>
+            <li><i class="bi bi-check2"></i>Theory support included</li>
           </ul>
           <a href="#booking" class="btn-n">Reserve Bundle</a>
         </div>
       </div>
       <div class="col-md-6 col-lg-4 reveal rd2">
         <div class="pcard">
-          <div class="plabel">Test Week Focus</div>
+          <div class="plabel">Test Prep Package</div>
           <div class="pamount" style="font-size:2rem;padding-top:6px">Custom</div>
-          <div class="pdesc">Intensive package around your test date</div>
+          <div class="pdesc">Built around your test date</div>
           <ul class="plist">
-            <li><i class="bi bi-check2"></i> Lessons leading up to your test</li>
-            <li><i class="bi bi-check2"></i> Full mock test included</li>
-            <li><i class="bi bi-check2"></i> Test-route familiarisation</li>
-            <li><i class="bi bi-check2"></i> Debrief &amp; improvement plan</li>
+            <li><i class="bi bi-check2"></i>Lessons in the lead-up to test</li>
+            <li><i class="bi bi-check2"></i>Full mock test included</li>
+            <li><i class="bi bi-check2"></i>Test-route practice in Denton</li>
+            <li><i class="bi bi-check2"></i>Honest feedback and action plan</li>
           </ul>
           <a href="#booking" class="btn-n">Get a Quote</a>
         </div>
       </div>
     </div>
-    <p class="text-center mt-4 reveal" style="color:#999;font-size:.8rem">Block bookings and intensive courses available &mdash; <a href="#booking" style="color:var(--gold-deep);font-weight:600">contact us for a custom quote.</a></p>
+    <p class="text-center mt-4 reveal" style="color:#999;font-size:.8rem">Intensive courses and block bookings also available &mdash; <a href="#booking" style="color:var(--gold-deep);font-weight:600">ask us for a custom quote.</a></p>
   </div>
 </section>
 
-<!-- DENTON & M34 LOCAL SECTION -->
+<!-- DENTON LOCAL SECTION -->
 <section id="denton" class="lsec">
   <div class="container">
     <div class="text-center mb-5 reveal">
-      <div class="stag d-inline-flex" style="justify-content:center">Local Expertise</div>
+      <div class="stag d-inline-flex" style="justify-content:center">Based in Denton</div>
       <h2 class="stitle" style="color:#fff">Driving Lessons in <span style="color:var(--gold);font-style:italic">Denton &amp; M34</span></h2>
-      <p style="color:rgba(255,255,255,.6);max-width:600px;margin:0 auto;font-size:.91rem;line-height:1.8;font-weight:300">We&rsquo;re based locally and know every road, junction, and test-centre route in the M34 postcode area. Our learners get a genuine insider advantage on test day.</p>
+      <p style="color:rgba(255,255,255,.6);max-width:580px;margin:0 auto;font-size:.91rem;line-height:1.8;font-weight:300">We're local to Denton and know every road, junction and roundabout in the area. That local knowledge gives our learners a real advantage on test day.</p>
     </div>
 
     <div class="text-center mb-5 reveal">
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Denton</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Audenshaw</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Droylsden</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Hyde</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Romiley</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Gorton</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Haughton Green</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Dukinfield</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Openshaw</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Failsworth</span>
-      <span class="apill"><i class="bi bi-pin-map-fill"></i> Bredbury</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i>Denton</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i>Haughton Green</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i>Audenshaw</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i>Droylsden</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i>Hyde</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i>Dukinfield</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i>Gorton</span>
+      <span class="apill"><i class="bi bi-pin-map-fill"></i>Romiley</span>
     </div>
 
     <div class="row g-4 mb-5">
       <div class="col-md-6 col-lg-3 reveal">
         <div class="rcard">
-          <h4><i class="bi bi-signpost-2-fill"></i> Key Roads We Train On</h4>
+          <h4><i class="bi bi-signpost-2-fill"></i>Roads We Train On</h4>
           <ul>
-            <li>Manchester Road (A57) &mdash; Denton to city</li>
-            <li>Stockport Road (A560) &mdash; Denton to Stockport</li>
-            <li>Ashton Road (A635) &mdash; Audenshaw</li>
-            <li>Hulme Road &mdash; Denton / Reddish</li>
-            <li>Crown Point Road, Denton</li>
-            <li>Windmill Lane, Denton</li>
-            <li>Two Trees Lane, Denton</li>
-            <li>Broomfield Lane, Haughton</li>
-            <li>Sunnyside Road, Denton</li>
+            <li>Manchester Road (A57)</li>
+            <li>Stockport Road (A560)</li>
+            <li>Ashton Road (A635)</li>
+            <li>Hulme Road</li>
+            <li>Crown Point Road</li>
+            <li>Windmill Lane</li>
+            <li>Two Trees Lane</li>
+            <li>Broomfield Lane</li>
+            <li>Sunnyside Road</li>
             <li>Dane Road, Audenshaw</li>
           </ul>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 reveal rd1">
         <div class="rcard">
-          <h4><i class="bi bi-mailbox2-flag"></i> Postcodes We Cover</h4>
+          <h4><i class="bi bi-mailbox2-flag"></i>Postcodes Covered</h4>
           <div class="pgrid">
             <span class="pc">M34 1</span>
             <span class="pc">M34 2</span>
@@ -687,34 +752,31 @@
             <span class="pc">M34 7</span>
             <span class="pc">SK14</span>
             <span class="pc">M43</span>
-            <span class="pc">M11</span>
-            <span class="pc">M12</span>
             <span class="pc">M18</span>
+            <span class="pc">M11</span>
             <span class="pc">OL7</span>
             <span class="pc">SK6</span>
-            <span class="pc">M35</span>
           </div>
-          <p style="color:rgba(255,255,255,.42);font-size:.74rem;margin-top:12px;margin-bottom:0">Not listed? Ask us &mdash; we likely cover your area.</p>
+          <p style="color:rgba(255,255,255,.4);font-size:.74rem;margin-top:12px;margin-bottom:0">Not sure? Just ask us.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 reveal rd2">
         <div class="rcard">
-          <h4><i class="bi bi-arrow-repeat"></i> Denton Junctions &amp; Roundabouts</h4>
+          <h4><i class="bi bi-arrow-repeat"></i>Key Junctions We Cover</h4>
           <ul>
-            <li>Denton roundabout (A57 / A560)</li>
-            <li>Crown Point retail roundabout</li>
+            <li>Denton roundabout (A57/A560)</li>
+            <li>Crown Point roundabout</li>
             <li>Audenshaw crossroads (A635)</li>
             <li>Haughton Green junction</li>
-            <li>Manchester Rd / Stockport Rd split</li>
-            <li>M60 Junction 24 (Denton island)</li>
-            <li>Bredbury island (A560 / M60)</li>
-            <li>Gorton roundabout (A57)</li>
+            <li>M60 Junction 24 &mdash; Denton</li>
+            <li>Bredbury island (A560)</li>
+            <li>Manchester Rd/Stockport Rd split</li>
           </ul>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 reveal rd3">
         <div class="rcard">
-          <h4><i class="bi bi-buildings-fill"></i> Local Landmarks We Use</h4>
+          <h4><i class="bi bi-buildings-fill"></i>Local Landmarks</h4>
           <ul>
             <li>Denton Town Centre</li>
             <li>Crown Point Shopping Park</li>
@@ -723,19 +785,18 @@
             <li>Denton Golf Club</li>
             <li>Haughton Dale Nature Reserve</li>
             <li>Audenshaw Reservoirs</li>
-            <li>Hyde Town Hall, SK14</li>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="reveal mb-3">
-      <h3 style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:5px">Nearby DVSA Test Centres</h3>
-      <p style="color:rgba(255,255,255,.48);font-size:.84rem;margin-bottom:22px">We practise the exact routes used at each centre. You&rsquo;ll arrive knowing every road.</p>
+      <h3 style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.45rem;margin-bottom:5px">Nearby DVSA Test Centres</h3>
+      <p style="color:rgba(255,255,255,.46);font-size:.84rem;margin-bottom:22px">We practise the routes used at each of these centres so you arrive knowing exactly what to expect.</p>
     </div>
     <div class="row g-3 reveal">
       <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Tameside</h4><p>Ashton-under-Lyne</p></div></div>
-      <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Stockport</h4><p>Stockport town centre</p></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Stockport</h4><p>Stockport centre</p></div></div>
       <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Gorton</h4><p>Manchester M18</p></div></div>
       <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Hyde</h4><p>Hyde, SK14</p></div></div>
       <div class="col-6 col-md-4 col-lg-2"><div class="ccard"><i class="bi bi-building-check"></i><h4>Didsbury</h4><p>South Manchester</p></div></div>
@@ -743,8 +804,7 @@
     </div>
 
     <div class="text-center mt-5 reveal">
-      <p style="color:rgba(255,255,255,.62);font-size:.93rem;margin-bottom:18px">Ready to learn with a local instructor who knows every road in M34?</p>
-      <a href="#booking" class="btn-g" style="font-size:.97rem;padding:14px 34px"><i class="bi bi-calendar-check-fill"></i> Book Your Lesson Today</a>
+      <a href="#booking" class="btn-g" style="font-size:.97rem;padding:14px 34px"><i class="bi bi-calendar-check-fill"></i>Book Your Lesson in Denton</a>
     </div>
   </div>
 </section>
@@ -754,31 +814,31 @@
   <div class="container">
     <div class="text-center mb-5 reveal">
       <div class="stag d-inline-flex">What Learners Say</div>
-      <h2 class="stitle">Real Results, <span class="acc">Real Stories</span></h2>
+      <h2 class="stitle">Heard from <span class="acc">Our Students</span></h2>
     </div>
     <div class="row g-4">
       <div class="col-md-4 reveal">
         <div class="tcard">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="ttxt">&ldquo;I was a nervous beginner from Denton who nearly gave up. After a few sessions I felt completely in control &mdash; passed first time! The instructor knew all the local roads brilliantly.&rdquo;</p>
+          <p class="ttxt">"I was a nervous beginner from Denton who nearly gave up on learning. After a few sessions I felt completely at ease &mdash; the instructor was patient and really knew the local roads."</p>
           <div class="tauth">A. Khan</div>
-          <div class="trole">Denton, M34 &mdash; First-time passer</div>
+          <div class="trole">Denton, M34</div>
         </div>
       </div>
       <div class="col-md-4 reveal rd1">
         <div class="tcard">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="ttxt">&ldquo;Clear, constructive feedback every lesson. The mock test covered the exact Tameside test centre routes and the real thing felt identical. Worth every penny.&rdquo;</p>
+          <p class="ttxt">"The mock test covered exactly the roads around the Tameside test centre. The real thing felt very familiar. The feedback was honest and really helped me focus on the right things."</p>
           <div class="tauth">J. Patel</div>
-          <div class="trole">Audenshaw &mdash; Recent passer</div>
+          <div class="trole">Audenshaw</div>
         </div>
       </div>
       <div class="col-md-4 reveal rd2">
         <div class="tcard">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="ttxt">&ldquo;Incredibly flexible &mdash; worked around my shifts. They picked me up from Crown Point and knew every road in M34. Friendly instructor, great value at &pound;35, passed with only minor faults!&rdquo;</p>
+          <p class="ttxt">"Really flexible with times around my work schedule. They picked me up from home in Denton and I always felt comfortable during lessons. Great value and would highly recommend."</p>
           <div class="tauth">S. Williams</div>
-          <div class="trole">Droylsden &mdash; Flexible learner</div>
+          <div class="trole">Droylsden</div>
         </div>
       </div>
     </div>
@@ -792,62 +852,62 @@
       <div class="col-lg-4 reveal">
         <div class="stag">Got Questions?</div>
         <h2 class="stitle">Frequently <span class="acc">Asked</span></h2>
-        <p class="sbody">Can&rsquo;t find your answer? Get in touch and we&rsquo;ll respond quickly.</p>
-        <a href="#booking" class="btn-g d-inline-flex mt-4"><i class="bi bi-chat-dots"></i> Ask Us</a>
+        <p class="sbody">Can't find your answer here? WhatsApp us and we'll reply straight away.</p>
+        <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I%20have%20a%20question" target="_blank" rel="noopener" class="btn-wa-sm mt-4 d-inline-flex"><i class="bi bi-whatsapp"></i>Ask Us on WhatsApp</a>
       </div>
       <div class="col-lg-8 reveal rd1">
         <div class="fitem">
-          <button class="fbtn" onclick="tFaq(this)">How long is a lesson? <span class="fico">+</span></button>
-          <div class="fans"><p>Standard lessons are 60 minutes. 90-minute and 120-minute sessions are available on request &mdash; great for intensive preparation close to test day. The &pound;35 rate applies per hour in all cases.</p></div>
+          <button class="fbtn" onclick="tFaq(this)">How long is each lesson?<span class="fico">+</span></button>
+          <div class="fans"><p>Standard lessons are 60 minutes. We also offer 90-minute and 120-minute sessions on request &mdash; useful if you want to cover more ground in one go or are preparing intensively for a test.</p></div>
         </div>
         <div class="fitem">
-          <button class="fbtn" onclick="tFaq(this)">Do you cover Denton and the M34 postcode area? <span class="fico">+</span></button>
-          <div class="fans"><p>Yes &mdash; Denton and M34 is our home patch. We cover all M34 postcodes (M34 1, 2, 3, 5, 6, 7) as well as Audenshaw, Droylsden, Hyde (SK14), Gorton (M18), Haughton Green, Dukinfield and surrounding areas. Pick-up is from your door at no extra charge.</p></div>
+          <button class="fbtn" onclick="tFaq(this)">Do you cover Denton and the M34 area?<span class="fico">+</span></button>
+          <div class="fans"><p>Yes &mdash; Denton is our home patch. We cover all M34 postcodes including M34 1, 2, 3, 5, 6 and 7, as well as Audenshaw, Droylsden, Haughton Green, Hyde and nearby areas. We pick you up from your door at no extra cost.</p></div>
         </div>
         <div class="fitem">
-          <button class="fbtn" onclick="tFaq(this)">Manual or automatic &mdash; which should I choose? <span class="fico">+</span></button>
-          <div class="fans"><p>Both cost exactly &pound;35/hr &mdash; a genuine USP of ours. A manual licence covers all vehicles, but automatic can be quicker to learn. We&rsquo;ll advise after your first lesson and you can switch at any time with no extra cost.</p></div>
+          <button class="fbtn" onclick="tFaq(this)">Manual or automatic &mdash; which is right for me?<span class="fico">+</span></button>
+          <div class="fans"><p>Both cost the same &mdash; £35/hr. A manual licence lets you drive any car. Automatic can sometimes be quicker to get comfortable with. We'll help you decide after your first lesson and you can always switch later.</p></div>
         </div>
         <div class="fitem">
-          <button class="fbtn" onclick="tFaq(this)">Which test centre will I take my test at? <span class="fico">+</span></button>
-          <div class="fans"><p>The closest DVSA test centres to Denton are Tameside (Ashton-under-Lyne), Gorton (M18), Hyde (SK14), and Stockport. We practise the exact routes used at each one so you&rsquo;ll know every road, junction and roundabout before test day.</p></div>
+          <button class="fbtn" onclick="tFaq(this)">Which test centre will I use?<span class="fico">+</span></button>
+          <div class="fans"><p>The nearest DVSA test centres to Denton are Tameside in Ashton-under-Lyne, Gorton, Hyde and Stockport. We make sure you're familiar with the specific routes used at whichever centre you test at.</p></div>
         </div>
         <div class="fitem">
-          <button class="fbtn" onclick="tFaq(this)">How many lessons will I need? <span class="fico">+</span></button>
-          <div class="fans"><p>The DVSA average is around 45 hours but many of our Denton-area learners pass in fewer with consistent practice. We give you an honest estimate after your first lesson and track your progress each session.</p></div>
+          <button class="fbtn" onclick="tFaq(this)">How many lessons will I need?<span class="fico">+</span></button>
+          <div class="fans"><p>It varies for everyone. We give you an honest assessment after your first lesson and track your progress session by session. There's no pressure &mdash; we go at whatever pace suits you.</p></div>
         </div>
         <div class="fitem">
-          <button class="fbtn" onclick="tFaq(this)">How do I pay? <span class="fico">+</span></button>
-          <div class="fans"><p>We accept bank transfer, cash or card. Block bookings can be pre-paid. No deposit required for your first lesson &mdash; just show up ready to learn!</p></div>
+          <button class="fbtn" onclick="tFaq(this)">How do I pay?<span class="fico">+</span></button>
+          <div class="fans"><p>We accept bank transfer, cash or card. Block bookings can be paid upfront. No deposit is needed for your first lesson.</p></div>
         </div>
         <div class="fitem">
-          <button class="fbtn" onclick="tFaq(this)">Do you do pick-up and drop-off? <span class="fico">+</span></button>
-          <div class="fans"><p>Yes &mdash; we collect you from home, school, university, college or work anywhere in our coverage area including Denton, Audenshaw, Droylsden, Hyde and surrounding M34 postcodes. All at no extra cost.</p></div>
+          <button class="fbtn" onclick="tFaq(this)">How quickly do you reply to WhatsApp messages?<span class="fico">+</span></button>
+          <div class="fans"><p>We aim to reply as quickly as possible &mdash; usually within minutes during the day. WhatsApp is the fastest way to get in touch with us, whether you have a question or want to book a lesson.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT STRIP -->
+<!-- CONTACT -->
 <section id="contact" class="cstrip">
   <div class="container">
     <div class="text-center mb-5 reveal">
       <div class="stag d-inline-flex">Get In Touch</div>
-      <h2 class="stitle">We&rsquo;re Just a <span class="acc">Call Away</span></h2>
-      <p class="sbody mx-auto" style="max-width:440px">Prefer to reach out directly? Here&rsquo;s every way to contact Maven Drive Academy.</p>
+      <h2 class="stitle">Ready to <span class="acc">Get Started?</span></h2>
+      <p class="sbody mx-auto" style="max-width:420px">Choose your preferred way to reach us. WhatsApp is the quickest.</p>
     </div>
-    <div class="row g-3">
+    <div class="row g-3 justify-content-center">
       <div class="col-md-6 col-lg-3 reveal">
-        <a href="tel:+447545560067" class="ccard2">
-          <div class="cico" style="background:#e8f0fe"><i class="bi bi-telephone-fill" style="color:var(--navy);font-size:1.1rem"></i></div>
-          <div><div class="clabel">Call Us</div><div class="cval">07545 560 067</div></div>
+        <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="ccard2">
+          <div class="cico" style="background:#e7f9ef"><i class="bi bi-whatsapp" style="color:#25D366;font-size:1.2rem"></i></div>
+          <div><div class="clabel">WhatsApp &mdash; Instant Reply</div><div class="cval">07545 560 067</div></div>
         </a>
       </div>
       <div class="col-md-6 col-lg-3 reveal rd1">
-        <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="ccard2">
-          <div class="cico" style="background:#e7f9ef"><i class="bi bi-whatsapp" style="color:#25D366;font-size:1.2rem"></i></div>
-          <div><div class="clabel">WhatsApp</div><div class="cval">Message us now &rarr;</div></div>
+        <a href="tel:+447545560067" class="ccard2">
+          <div class="cico" style="background:#e8f0fe"><i class="bi bi-telephone-fill" style="color:var(--navy);font-size:1.1rem"></i></div>
+          <div><div class="clabel">Call Us</div><div class="cval">07545 560 067</div></div>
         </a>
       </div>
       <div class="col-md-6 col-lg-3 reveal rd2">
@@ -871,11 +931,11 @@
 <!-- CTA BANNER -->
 <div class="ctab">
   <div class="container reveal">
-    <h2>Ready to Start Your Journey?</h2>
-    <p>Book your first lesson in Denton or M34 today &mdash; flexible times, no pressure, just results.</p>
+    <h2>Start Your Driving Journey Today</h2>
+    <p>Book a lesson in Denton or message us on WhatsApp and we'll reply straight away.</p>
     <div class="d-flex gap-3 justify-content-center flex-wrap">
-      <a href="#booking" class="btn-nl"><i class="bi bi-calendar-check-fill"></i> Book Now &mdash; &pound;35/hr</a>
-      <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="btn-wa"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+      <a href="#booking" class="btn-nl"><i class="bi bi-calendar-check-fill"></i>Book Now &mdash; £35/hr</a>
+      <a href="https://wa.me/447545560067?text=Hi%20Maven%20Drive%2C%20I'd%20like%20to%20book%20a%20lesson" target="_blank" rel="noopener" class="btn-wa"><i class="bi bi-whatsapp"></i>WhatsApp Us</a>
     </div>
   </div>
 </div>
@@ -886,16 +946,16 @@
     <div class="row g-4 pb-2">
       <div class="col-lg-4">
         <div class="fb">Maven <span>Drive Academy</span></div>
-        <p style="font-size:.76rem;color:rgba(255,255,255,.38);font-style:italic;margin-bottom:14px">&ldquo;Master the Drive, Own the Road!&rdquo;</p>
-        <p style="font-size:.83rem;line-height:1.8;max-width:275px">DVSA-approved driving lessons in Denton, M34 &amp; Greater Manchester. Manual &amp; automatic at the same price &mdash; &pound;35/hr.</p>
+        <p style="font-size:.76rem;color:rgba(255,255,255,.38);font-style:italic;margin-bottom:14px">Master the Drive, Own the Road!</p>
+        <p style="font-size:.83rem;line-height:1.8;max-width:280px">DVSA-approved driving lessons in Denton, M34 and surrounding areas. Manual and automatic at the same price &mdash; £35/hr.</p>
         <div class="d-flex gap-3 mt-4">
-          <a href="https://www.instagram.com/mavendriveacademy/?hl=en" target="_blank" rel="noopener" style="color:rgba(255,255,255,.48);font-size:1.25rem;transition:color .2s" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.facebook.com/mavendriveacademy" target="_blank" rel="noopener" style="color:rgba(255,255,255,.48);font-size:1.25rem;transition:color .2s" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://wa.me/447545560067" target="_blank" rel="noopener" style="color:rgba(255,255,255,.48);font-size:1.25rem;transition:color .2s" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://www.instagram.com/mavendriveacademy/?hl=en" target="_blank" rel="noopener" style="color:rgba(255,255,255,.46);font-size:1.25rem;transition:color .2s" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/mavendriveacademy" target="_blank" rel="noopener" style="color:rgba(255,255,255,.46);font-size:1.25rem;transition:color .2s" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://wa.me/447545560067" target="_blank" rel="noopener" style="color:#25D366;font-size:1.25rem;transition:color .2s" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
         </div>
         <div class="mt-4" style="font-size:.76rem;color:rgba(255,255,255,.3)">
-          <i class="bi bi-shield-check me-1" style="color:var(--gold)"></i> DVSA Approved &nbsp;&middot;&nbsp;
-          <i class="bi bi-star-fill me-1" style="color:var(--gold)"></i> 4.9&#9733; / 87 Reviews
+          <i class="bi bi-shield-check me-1" style="color:var(--gold)"></i>DVSA Approved &nbsp;&middot;&nbsp;
+          <i class="bi bi-star-fill me-1" style="color:var(--gold)"></i>4.9 Stars &mdash; 87 Reviews
         </div>
       </div>
       <div class="col-6 col-lg-2">
@@ -916,22 +976,22 @@
         <a href="#services" class="fl2">Intensive Courses</a>
       </div>
       <div class="col-lg-4">
-        <div class="fh">Contact &amp; Areas</div>
+        <div class="fh">Contact</div>
+        <a href="https://wa.me/447545560067" target="_blank" rel="noopener" class="fl2"><i class="bi bi-whatsapp me-2" style="color:#25D366"></i>WhatsApp &mdash; Instant Reply</a>
         <a href="tel:+447545560067" class="fl2"><i class="bi bi-telephone me-2"></i>07545 560 067</a>
-        <a href="https://wa.me/447545560067" target="_blank" rel="noopener" class="fl2"><i class="bi bi-whatsapp me-2" style="color:#25D366"></i>WhatsApp</a>
         <a href="https://www.instagram.com/mavendriveacademy" target="_blank" rel="noopener" class="fl2"><i class="bi bi-instagram me-2"></i>@mavendriveacademy</a>
         <a href="https://www.facebook.com/mavendriveacademy" target="_blank" rel="noopener" class="fl2"><i class="bi bi-facebook me-2"></i>Facebook</a>
-        <div class="mt-3" style="font-size:.78rem;color:rgba(255,255,255,.32);line-height:1.9">
-          <strong style="color:rgba(255,255,255,.48)">Areas:</strong><br>
-          Denton &middot; M34 1&ndash;7 &middot; Audenshaw &middot; Droylsden<br>
-          Hyde &middot; Haughton Green &middot; Gorton &middot; Openshaw
+        <div class="mt-3" style="font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.9">
+          <strong style="color:rgba(255,255,255,.46)">Main areas:</strong><br>
+          Denton &middot; M34 &middot; Audenshaw &middot; Droylsden<br>
+          Hyde &middot; Haughton Green &middot; Gorton
         </div>
       </div>
     </div>
     <div class="ftb">
       <p>&copy; 2025 Maven Drive Academy. All Rights Reserved.</p>
       <div class="pby">
-        <span>Designed &amp; hosted by</span>
+        <span>Designed and hosted by</span>
         <a href="https://www.sqwebsites.co.uk" target="_blank" rel="noopener" title="SQ Websites &mdash; Professional Web Design Manchester"><span class="sqlg">SQ</span></a>
         <a href="https://www.sqwebsites.co.uk" target="_blank" rel="noopener" style="color:rgba(255,255,255,.38);text-decoration:none;font-size:.74rem">sqwebsites.co.uk</a>
       </div>
@@ -948,20 +1008,6 @@ mobileClose.addEventListener('click',cm);
 function cm(){mobileNav.classList.remove('open');hamburger.setAttribute('aria-expanded','false')}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')cm()});
 
-/* SLIDESHOW */
-var slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.sdot'),cur=0,timer=null;
-function goSlide(n){
-  slides[cur].classList.remove('active');dots[cur].classList.remove('active');dots[cur].setAttribute('aria-selected','false');
-  cur=(n+slides.length)%slides.length;
-  slides[cur].classList.add('active');dots[cur].classList.add('active');dots[cur].setAttribute('aria-selected','true');
-}
-function startAuto(){timer=setInterval(function(){goSlide(cur+1)},5000)}
-function resetAuto(){clearInterval(timer);startAuto()}
-document.getElementById('slidePrev').addEventListener('click',function(){goSlide(cur-1);resetAuto()});
-document.getElementById('slideNext').addEventListener('click',function(){goSlide(cur+1);resetAuto()});
-dots.forEach(function(d){d.addEventListener('click',function(){goSlide(+d.dataset.slide);resetAuto()})});
-startAuto();
-
 /* SERVICE TABS */
 function showTab(id,btn){
   document.querySelectorAll('.spanel').forEach(function(p){p.classList.remove('active')});
@@ -977,7 +1023,7 @@ function tFaq(btn){
   if(!isOpen){item.classList.add('open');var a=item.querySelector('.fans');a.style.maxHeight=a.scrollHeight+'px'}
 }
 
-/* REVEAL */
+/* REVEAL ON SCROLL */
 var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.07,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
 
@@ -990,19 +1036,37 @@ form.addEventListener('submit',async function(e){
   bookBtn.innerHTML='<i class="bi bi-hourglass-split"></i> Sending...';
   try{
     var res=await fetch('https://formspree.io/f/xldpppve',{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-    if(res.ok){fFields.style.display='none';fSuccess.style.display='block'}
-    else{
+    if(res.ok){
+      fFields.style.display='none';
+      fSuccess.style.display='block';
+    } else {
       var data=await res.json();
       var msg=data.errors?data.errors.map(function(x){return x.message}).join(', '):'Something went wrong. Please try again.';
-      bookBtn.disabled=false;bookBtn.innerHTML='<i class="bi bi-exclamation-triangle"></i> Error &mdash; try again';
-      alert('Submission error: '+msg);
+      bookBtn.disabled=false;
+      bookBtn.innerHTML='<i class="bi bi-send-fill"></i> Submit Booking Request';
+      alert('There was a problem: '+msg);
     }
-  }catch(err){bookBtn.disabled=false;bookBtn.innerHTML='<i class="bi bi-exclamation-triangle"></i> Error &mdash; check connection'}
+  }catch(err){
+    bookBtn.disabled=false;
+    bookBtn.innerHTML='<i class="bi bi-send-fill"></i> Submit Booking Request';
+    alert('Could not send. Please WhatsApp us directly on 07545 560 067.');
+  }
 });
 
 /* STRUCTURED DATA */
 var ld=document.createElement('script');ld.type='application/ld+json';
-ld.text=JSON.stringify({"@context":"https://schema.org","@type":"DrivingSchool","name":"Maven Drive Academy","slogan":"Master the Drive, Own the Road!","telephone":"+447545560067","priceRange":"££","areaServed":["Denton","M34","Audenshaw","Droylsden","Hyde","Gorton","Haughton Green","Greater Manchester"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"87"},"sameAs":["https://www.instagram.com/mavendriveacademy/","https://www.facebook.com/mavendriveacademy"],"offers":{"@type":"Offer","name":"Driving Lesson","priceCurrency":"GBP","price":"35"}});
+ld.text=JSON.stringify({
+  "@context":"https://schema.org",
+  "@type":"DrivingSchool",
+  "name":"Maven Drive Academy",
+  "slogan":"Master the Drive, Own the Road!",
+  "telephone":"+447545560067",
+  "priceRange":"££",
+  "areaServed":["Denton","M34","Audenshaw","Droylsden","Hyde","Gorton","Haughton Green"],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"87"},
+  "sameAs":["https://www.instagram.com/mavendriveacademy/","https://www.facebook.com/mavendriveacademy"],
+  "offers":{"@type":"Offer","name":"Driving Lesson","priceCurrency":"GBP","price":"35"}
+});
 document.head.appendChild(ld);
 </script>
 </body>
